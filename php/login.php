@@ -49,7 +49,7 @@ if (isset($_POST['login-btn'])) {
         $_SESSION['loginmessage'] = "<div class='alert alert-danger'>
      <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Invalid Username or Password !
     </div>";
-        header("Location: index.php");
+        header("Location: loginpg.php");
     }
     $conn->close();
 }
