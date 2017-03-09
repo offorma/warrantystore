@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file:///Applications/MAMP/htdocs/warrantystore/.idea/untitled.iml" filepath="/Applications/MAMP/htdocs/warrantystore/.idea/untitled.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/warrantystore.iml" filepath="$PROJECT_DIR$/.idea/warrantystore.iml" />
     </modules>
   </component>
