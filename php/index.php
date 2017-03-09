@@ -8,83 +8,30 @@
 session_start();?>
 
 <?php include('header.html') ?>
+<div class="container">
 
-
-<div class=" container">
     <div class="row">
-        <div class=" col-lg-6 col-lg-offset-3 loginform">
-            <?php if (isset($_SESSION['loginmessage'])){
-                echo $_SESSION['loginmessage'];
-            } ?>
-            <?php if (isset($_SESSION['passmsg'])){
-                echo $_SESSION['passmsg'];
-            }
-            ?>
-            <?php if (isset($_SESSION['usernamemsg'])){
-                echo $_SESSION['usernamemsg'];
-            }
-            ?>
-            <?php if (isset($_SESSION['emailmsg'])){
-                echo $_SESSION['emailmsg'];
-            };
-            ?>
-            <?php if (isset($_SESSION['sqlmsg'])){
-                echo $_SESSION['sqlmsg'];
-            }
-            ?>
-            <?php if (isset($_SESSION['errormsg'])){
-                echo $_SESSION['errormsg'];
-            }
-            ?>
-            <ul class="nav nav-tabs">
-                <li class="active col-lg-3"><a href="#login" data-toggle="pill">Login</a></li>
-                <li class=" col-lg-3"><a href="#signup"  data-toggle="pill" >Sign up</a></li>
-            </ul>
-            <div class="tab-content">
-                <div id="login" class="tab-pane fade in active">
-                    <form id="login" action ="login.php" method="post">
-                        <div class="form-group">
-                            <label for="email1">Email address</label>
-                            <input type="email" class="form-control" id="email1" name="email" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="password1">Password</label>
-                            <input type="password" class="form-control" id="password1" name="password" placeholder="Password">
-                        </div>
-
-                        <button type="submit" name="login-btn" class="btn btn-default">Submit</button>
-                    </form>
-                </div>
-                <div id="signup" class="tab-pane fade">
-                    <form id="signup" action ="signup.php" method="post">
-                        <div class="form-group">
-                            <label for="email1">Email address</label>
-                            <input type="email" class="form-control" id="email1" name="email" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                        </div>
-                        <div class="form-group">
-                            <label for="password1">Password</label>
-                            <input type="password" class="form-control" id="password1" name="password1" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="password2">Confirm Password</label>
-                            <input type="password" class="form-control" id="password2" name="password2" placeholder="Password">
-                        </div>
-
-                        <button type="submit" name ="signup-btn" class="btn btn-default">Submit</button>
-                    </form>
-                </div>
-            </div>
+        <div class="col-md-8 col-md-offset-2">
+            <img src="../views/receipt1.jpg" alt="Image of receipt pile" height="100%" width="100%"/>
         </div>
     </div>
+
+
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h3>What is Lorem Ipsum?</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <br/><br/></p>
+            <h3>Why do we use it?</h3>
+            <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+            </p></div>
+
+
+
+    </div>
+
 </div>
-</div>
-
-
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
