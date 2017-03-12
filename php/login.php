@@ -43,4 +43,6 @@ if (isset($_POST['login-btn'])) {
         header("Location: loginpg.php");
     }
     $conn->close();
+    unset($_SESSION['emailmessage']);
+    unset($_SESSION['passwordmessage']);
 }
