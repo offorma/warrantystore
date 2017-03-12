@@ -6,7 +6,7 @@
  * Time: 5:29 PM
  */
 session_start();
-session_unset();
+
 if (isset($_SESSION['userSession'])!="") {
     header("Location: landing.php");
 }

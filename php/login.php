@@ -29,6 +29,7 @@ if (isset($_POST['login-btn'])) {
 
 
     }
+}
 
     $email = strip_tags($_POST['email']);
     $password = strip_tags($_POST['password']);
