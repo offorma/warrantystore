@@ -7,7 +7,7 @@
  */
 session_start();?>
 
-<?php include('header.html') ?>
+<?php include('header.php') ?>
 <div class="container">
 
     <div class="row">
