@@ -27,6 +27,11 @@ p{
     overflow: hidden;
     position: relative;
 }
+.dot{
+    border-color: dodgerblue;
+    border-bottom-style: dashed;
+    border:2px;
+}
 
 .fileContainer [type=file] {
     cursor: inherit;

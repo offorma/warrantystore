@@ -9,7 +9,7 @@ session_start();
 include('header.php');?>
 
 <div class="col-md-6 col-md-offset-3">
-    <label class="fileContainer">
+    <label class="fileContainer dot">
         Click here to trigger the file uploader!
         <input type="file"/>
     </label>
