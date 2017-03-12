@@ -16,19 +16,17 @@ if (isset($_SESSION['userSession'])&&(($_SESSION['userSession']) != "")) {
 }
 
 if (isset($_POST['login-btn'])) {
-    if (empty($_POST['email'])) {// this checks if email field is empty
+    if ((empty($_POST['email']))&&($_POST['email']!="")) {// this checks if email field is empty
         $_SESSION['loginmessage'] = "<div class='alert alert-danger'>
         <span class='glyphicon glyphicon-info-sign'></span>Email field cannot be empty </div>";
         header("Location: loginpg.php");
     }
-    if (empty($_POST['password'])) {//this checks if password field is empty
+    if ((empty($_POST['password']))&&($_POST['password']!="")) {//this checks if password field is empty
         $_SESSION['loginmessage'] = "<div class='alert alert-danger'>
      <span class='glyphicon glyphicon-info-sign'></span> Password field cannot be empty </div>";
         header("Location: loginpg.php");
-
-
     }
-}
+
 
     $email = strip_tags($_POST['email']);
     $password = strip_tags($_POST['password']);
