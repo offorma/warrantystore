@@ -6,8 +6,10 @@
  * Time: 5:33 PM
  */
 session_start();
-
 include('header.php');
-echo "<h1>welcome " .$_SESSION['userSession']."</h1>";
+echo '<div class"col-md-6 col-md-offset-3">
+<label class="control-label">Upload Image</label>
+<input class="input-group" type="file" name="image" accept="image/*" />
+    
+ </div>'?>
 
-echo '<a href="logout.php" >logout</a>';
