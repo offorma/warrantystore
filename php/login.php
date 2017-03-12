@@ -6,7 +6,6 @@
  * Time: 6:48 PM
  */
 session_start();
-session_unset();
 require_once 'db.php';
 
 
