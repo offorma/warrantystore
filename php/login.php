@@ -9,7 +9,7 @@ session_start();
 require_once 'db.php';
 
 if (isset($_POST['login-btn'])) {
-    if ((empty($_POST['email']))&&($_POST['email']!="")) {// this checks if email field is empty
+    if ((empty($_POST['email']))||($_POST['email']!="")) {// this checks if email field is empty
         $_SESSION['loginmessage'] = "<div class='alert alert-danger'>
         <span class='glyphicon glyphicon-info-sign'></span>Email field cannot be empty </div>";
         header("Location: loginpg.php");
