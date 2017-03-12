@@ -8,13 +8,6 @@
 session_start();
 require_once 'db.php';
 
-
-
-
-if (isset($_SESSION['userSession'])&&(($_SESSION['userSession']) != "")) {
-    header("Location: landing.php");
-}
-
 if (isset($_POST['login-btn'])) {
     if ((empty($_POST['email']))&&($_POST['email']!="")) {// this checks if email field is empty
         $_SESSION['loginmessage'] = "<div class='alert alert-danger'>
