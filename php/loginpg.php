@@ -16,6 +16,12 @@ include('header.php'); ?>
                 <?php if (isset($_SESSION['loginmessage'])){
                     echo $_SESSION['loginmessage'];
                 } ?>
+                <?php if (isset($_SESSION['emailmessage'])){
+                    echo $_SESSION['emailmessage'];
+                } ?>
+                <?php if (isset($_SESSION['passwordmessage'])){
+                    echo $_SESSION['passwordmessagemessage'];
+                } ?>
                 <?php if (isset($_SESSION['passmsg'])){
                     echo $_SESSION['passmsg'];
                 }

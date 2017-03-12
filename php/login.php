@@ -10,14 +10,14 @@ require_once 'db.php';
 
 if (isset($_POST['login-btn'])) {
     if ((empty($_POST['email']))||($_POST['email']!="")) {// this checks if email field is empty
-        $_SESSION['loginmessage'] = "<div class='alert alert-danger'>
+        $_SESSION['emailmessage'] = "<div class='alert alert-danger'>
         <span class='glyphicon glyphicon-info-sign'></span>Email field cannot be empty </div>";
-        header("Location: loginpg.php");
+        header('Location: loginpg.php');
     }
     if ((empty($_POST['password']))||($_POST['password']!="")) {//this checks if password field is empty
-        $_SESSION['loginmessage'] = "<div class='alert alert-danger'>
+        $_SESSION['passwordmessage'] = "<div class='alert alert-danger'>
      <span class='glyphicon glyphicon-info-sign'></span> Password field cannot be empty </div>";
-        header("Location: loginpg.php");
+        header('Location: loginpg.php');
     }
 
 
