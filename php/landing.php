@@ -7,9 +7,9 @@
  */
 session_start();
 include('header.php');
-echo '<div class"col-md-6 col-md-offset-3">
-<label class="control-label">Upload Image</label>
-<input class="input-group" type="file" name="image" accept="image/*" />
+echo '<label class="btn btn-default btn-file">
+    Browse <input type="file" hidden>
+</label>
     
  </div>'?>
 
