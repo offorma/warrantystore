@@ -17,6 +17,7 @@ if (isset($_SESSION['userSession'])&&(($_SESSION['userSession']) != "")) {
 }
 
 if (isset($_POST['login-btn'])) {
+    echo "i got here";
     if (empty($_POST['email'])) {// this checks if email field is empty
         $_SESSION['loginmessage'] = "<div class='alert alert-danger'>
      <span class='glyphicon glyphicon-info-sign'></span>Email field cannot be empty </div>";
