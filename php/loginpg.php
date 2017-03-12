@@ -7,20 +7,18 @@
  */
 session_start();
 include('header.php'); ?>
-<?php if (!isset($_POST['signup-btn'])){
-    unset($_SESSION['passmsg']);
-    unset($_SESSION['usernamemsg']);
-    unset($_SESSION['errormsg']);
-    unset($_SESSION['emailmsg']);
-    unset($_SESSION['sqlmsg']);
-}?>
-<?php if (!isset($_POST['login-btn'])){
-unset($_SESSION['emailmessage']);
-unset($_SESSION['passwordmessage']);}
-?>
+
+
+
     <div class=" container">
         <div class="row">
-
+          //  <?php if (!isset($_POST['signup-btn'])){
+          //  unset($_SESSION['passmsg']);
+          //  unset($_SESSION['usernamemsg']);
+            //unset($_SESSION['errormsg']);
+          //  unset($_SESSION['emailmsg']);
+         //   unset($_SESSION['sqlmsg']);
+          //  }?>
             <div class=" col-lg-6 col-lg-offset-3 loginform">
                 <?php if (isset($_SESSION['loginmessage'])){
                     echo $_SESSION['loginmessage'];
