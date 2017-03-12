@@ -9,9 +9,10 @@ session_start();
 include('header.php');?>
 
 <div class="col-md-6 col-md-offset-3">
-<label class="btn btn-default btn-file">
-    Browse <input type="file" hidden>
-</label>
+    <label class="fileContainer">
+        Click here to trigger the file uploader!
+        <input type="file"/>
+    </label>
     
  </div>
 
