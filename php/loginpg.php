@@ -12,6 +12,13 @@ include('header.php'); ?>
 
     <div class=" container">
         <div class="row">
+            <?php if (!isset($_POST['signup-btn'])){
+            unset($_SESSION['passmsg']);
+            unset($_SESSION['usernamemsg']);
+            unset($_SESSION['errormsg']);
+            unset($_SESSION['emailmsg']);
+            unset($_SESSION['sqlmsg']);
+            }?>
             <div class=" col-lg-6 col-lg-offset-3 loginform">
                 <?php if (isset($_SESSION['loginmessage'])){
                     echo $_SESSION['loginmessage'];

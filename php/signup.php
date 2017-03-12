@@ -71,10 +71,3 @@ if(isset($_POST['signup-btn'])) {
 
     $conn->close();
 
-if (isset($_GET)){
-    unset($_SESSION['passmsg']);
-    unset($_SESSION['usernamemsg']);
-    unset($_SESSION['errormsg']);
-    unset($_SESSION['emailmsg']);
-    unset($_SESSION['sqlmsg']);
-}
