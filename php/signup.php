@@ -7,9 +7,6 @@
  */
 session_start();
 
-if (isset($_SESSION['userSession'])!="") {
-    header("Location: landing.php");
-}
 require_once 'db.php';
 
 if(isset($_POST['signup-btn'])) {
