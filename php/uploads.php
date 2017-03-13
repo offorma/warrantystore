@@ -23,7 +23,10 @@ session_start();
 
             echo "this image extension".($imgExt)."<br>";
             $pic = rand(1000,100000000)."-".$imgFile;
-            echo "this the generated name".($pic)."<br>";}/*
+            echo "this the generated name".($pic)."<br>";}
+
+        echo in_array($imgExt, $valid_extensions);
+            /*
             if(in_array($imgExt, $valid_extensions)){//check if extension is valid
 
                 switch ($imgExt) {
