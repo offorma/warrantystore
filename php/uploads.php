@@ -23,6 +23,7 @@ session_start();
                             $_SESSION['imgsize']="Image size must be less than 5MB";
                         }else{
                             move_uploaded_file($pic_loc,$folder.$pic);
+                            header('location: landing.php');
                         }
                         echo "Image is a gif";
                         break;
@@ -31,6 +32,7 @@ session_start();
                             $_SESSION['imgsize']="Image size must be less than 5MB";
                         }else{
                             move_uploaded_file($pic_loc,$folder.$pic);
+                            header('location: landing.php');
                         }
                         echo "Image is a jpeg";
                         break;
@@ -39,6 +41,7 @@ session_start();
                             $_SESSION['imgsize']="Image size must be less than 5MB";
                         }else{
                             move_uploaded_file($pic_loc,$folder.$pic);
+                            header('location: landing.php');
                         }
                         echo "Image is a png";
                         break;
