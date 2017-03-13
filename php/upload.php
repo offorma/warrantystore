@@ -35,6 +35,8 @@
            move_uploaded_file($file_tmp,"uploads/".$file_name);
           $_SESSION['imgsuccess']='Image upload was sucessful';
            header('location: landing.php');
+       }else {
+           echo "Sorry, there was a problem uploading your file.";
        }
 
    }
