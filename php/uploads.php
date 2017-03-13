@@ -29,8 +29,11 @@ session_start();
                         if (($imgSize < 5242880) && ($_FILES['image']['error'] == 0)) {
                             $_SESSION['imgsize'] = "Image size must be less than 5MB";
                         } else {
-                            move_uploaded_file($tmp_dir, $folder . $pic);
-                            header('location: landing.php');
+                            if(move_uploaded_file($tmp_dir, $folder . $pic)){
+                                header('location: landing.php');
+                            }else{
+                                echo "Image cannot be moved";
+                            }
                         }
                         echo "Image is a gif";
                         break;
@@ -38,8 +41,11 @@ session_start();
                         if ($imgSize > 5242880) {
                             $_SESSION['imgsize'] = "Image size must be less than 5MB";
                         } else {
-                            move_uploaded_file($tmp_dir, $folder . $pic);
-                            header('location: landing.php');
+                            if(move_uploaded_file($tmp_dir, $folder . $pic)){
+                                header('location: landing.php');
+                            }else{
+                                echo "Image cannot be moved";
+                            }
                         }
                         echo "Image is a jpeg";
                         break;
@@ -47,8 +53,11 @@ session_start();
                         if ($imgSize > 5242880) {
                             $_SESSION['imgsize'] = "Image size must be less than 5MB";
                         } else {
-                            move_uploaded_file($tmp_dir, $folder . $pic);
-                            header('location: landing.php');
+                            if(move_uploaded_file($tmp_dir, $folder . $pic)){
+                                header('location: landing.php');
+                            }else{
+                                echo "Image cannot be moved";
+                            }
                         }
                         echo "Image is a png";
                         break;
@@ -56,8 +65,11 @@ session_start();
                         if ($imgSize > 5242880) {
                             $_SESSION['imgsize'] = "Image size must be less than 5MB";
                         } else {
-                            move_uploaded_file($tmp_dir, $folder . $pic);
+                            if(move_uploaded_file($tmp_dir, $folder . $pic)){
                             header('location: landing.php');
+                            }else{
+                                echo "Image cannot be moved";
+                            }
                         }
                         echo "Image is a jpg";
                         break;
