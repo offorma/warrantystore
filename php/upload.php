@@ -20,7 +20,7 @@
 
        if(in_array($file_ext,$expensions)=== false){
            $errors= true;
-               $_SESSION['imgext']="extension not allowed, please choose a JPEG or PNG file.";
+               $_SESSION['imgtext']="extension not allowed, please choose a JPEG or PNG file.";
                header('location: landing.php');
        }
 
