@@ -10,7 +10,7 @@ session_start();
     if(isset($_POST["file-btn"])) {
 
         $folder="uploads/";
-        if($_FILES['image']['size']==0) {
+        if(!empty($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name'])) {
             $pic = rand(1000,100000)."-".$_FILES['image']['name'];
             $pic_loc = $_FILES['pic']['tmp_name'];
 
@@ -40,8 +40,9 @@ session_start();
                         echo "Image is a png";
                         break;
                 }
-        } else {
-        echo "File is not an image.";
+        }
+        else {
+            echo "File is not an image.";
         }
     }
 ?>
