@@ -17,7 +17,7 @@ include('header.php');?>
                         <label for="file">Choose an image to upload</label>
                     </div>
 
-                        <button type="submit" name ="file-btn" class="btn btn-default">Upload</button>
+                        <button type="submit" name ="file-btn" class="btn btn-default center-block">Upload</button>
                 </form>
             </div>
         </div>
