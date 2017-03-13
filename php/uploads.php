@@ -23,7 +23,7 @@ session_start();
 
             echo "this image extension".($imgExt)."<br>";
             $pic = rand(1000,100000000)."-".$imgFile;
-            echo "this the generated name".($pic)."<br>";
+
 
         echo in_array($imgExt, $valid_extensions);
 
@@ -36,6 +36,7 @@ session_start();
                                    echo $_SESSION['imgsize'];
                                } else {
                                    if(move_uploaded_file($tmp_dir, $folder . $pic)){
+                                       echo "this the generated name".($pic)."<br>";
                                        echo move_uploaded_file($tmp_dir, $folder . $pic);
                                        //header('location: landing.php');
                                    }else{
