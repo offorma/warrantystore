@@ -19,7 +19,7 @@ session_start();
 
                 switch ($type) {
                     case "image/gif ":
-                        if(($_FILES['image']['size']>5242880)&&($_FILES['image']['size']==0)){
+                        if(($_FILES['image']['size']>5242880)&&($_FILES['image']['error']==0)){
                             $_SESSION['imgsize']="Image size must be less than 5MB";
                         }else{
                             move_uploaded_file($pic_loc,$folder.$pic);
@@ -27,7 +27,7 @@ session_start();
                         echo "Image is a gif";
                         break;
                     case "image/jpeg":
-                        if(($_FILES['image']['size']>5242880)&&($_FILES['image']['size']==0)){
+                        if(($_FILES['image']['size']>5242880)&&($_FILES['image']['error']==0)){
                             $_SESSION['imgsize']="Image size must be less than 5MB";
                         }else{
                             move_uploaded_file($pic_loc,$folder.$pic);
@@ -35,7 +35,7 @@ session_start();
                         echo "Image is a jpeg";
                         break;
                     case "image/png ":
-                        if(($_FILES['image']['size']>5242880)&&($_FILES['image']['size']==0)){
+                        if(($_FILES['image']['size']>5242880)&&($_FILES['image']['error']==0)){
                             $_SESSION['imgsize']="Image size must be less than 5MB";
                         }else{
                             move_uploaded_file($pic_loc,$folder.$pic);
