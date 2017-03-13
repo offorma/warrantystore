@@ -10,10 +10,16 @@ include('header.php');?>
 <body>
     <div class="container">
         <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <input type="file" name="file" id="file" class="inputfile" />
-            <label for="file">Upload an image</label>
-        </div>
+            <div class="col-md-6 col-md-offset-3">
+                <form>
+                    <div class="form-group">
+                        <input type="file" name="file" id="file" class="inputfile" />
+                        <label for="file">Upload an image</label>
+                    </div>
+
+                        <button type="submit" name ="file-btn" class="btn btn-default">Submit</button>
+                </form>
+            </div>
         </div>
      </div>
 
