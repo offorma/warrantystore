@@ -11,7 +11,7 @@ session_start();
 
         $folder="uploads/";
        // echo print_r($_FILES['image']);
-        if(isset($_FILES['image'])) {
+        if(isset($_FILES['image']['name'])) {
 
             $pic = rand(1000,100000)."-".$_FILES['image']['name'];
             $pic_loc = $_FILES['image']['tmp_name'];
