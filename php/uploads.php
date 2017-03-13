@@ -31,7 +31,7 @@ session_start();
 
                       switch ($imgExt) {
                            case 'gif':
-                               if (($imgSize < 995242880) && ($_FILES['image']['error'] == 0)) {
+                               if ($imgSize >=5242880) {
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
                                    echo $_SESSION['imgsize'];
                                } else {
