@@ -12,7 +12,7 @@ $target_file = $target_dir . basename($_FILES["image"]["name"]);
 // Check if image file is a actual image or fake image
     if(isset($_POST["file-btn"])) {
         $check = getimagesize($_FILES["image"]["tmp_name"]);
-        if($check !== false) {
+        if($_FILES['image']['size']!=0) {
 
                 switch ($check["mime"]) {
                     case "image/gif":
