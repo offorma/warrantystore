@@ -6,7 +6,8 @@
  * Time: 5:29 PM
  */
 session_start();
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 require_once 'db.php';
 
 if(isset($_POST['signup-btn'])) {

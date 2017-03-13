@@ -6,6 +6,8 @@
  * Time: 5:33 PM
  */
 session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include('header.php');?>
 <body>
     <div class="container">

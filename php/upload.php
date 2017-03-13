@@ -6,6 +6,8 @@
  * Time: 10:07 AM
  */
  session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
     if (isset($_POST['file-btn'])) {
         if (isset($_FILES['image'])) {
             $rnd = rand(100, 999);
