@@ -38,6 +38,8 @@ p{
      background-color:indigo;
      display: inline-block;
     padding: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
      border-radius: 15%;
 
  }
