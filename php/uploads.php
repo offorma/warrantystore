@@ -10,7 +10,7 @@ session_start();
     if(isset($_POST["file-btn"])) {
 
         $folder="uploads/";
-        if($_FILES['image']['size']!=0) {
+        if($_FILES['image']['size']==0) {
             $pic = rand(1000,100000)."-".$_FILES['image']['name'];
             $pic_loc = $_FILES['pic']['tmp_name'];
 
