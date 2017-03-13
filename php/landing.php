@@ -23,7 +23,7 @@ include('header.php');?>
                     echo $_SESSION['imgsuccess'];
                 } ?>
 
-                <form class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 center-block " action="upload.php" method="post">
+                <form class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 center-block " action="uploads.php" method="post">
                     <div class="form-group center-block">
                         <input type="file" name="image" id="file" class="inputfile" />
                         <label class="center-block" for="file">Choose an image to upload</label>
