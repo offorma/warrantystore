@@ -53,6 +53,6 @@ p{
     outline: -webkit-focus-ring-color auto 5px;
 }
 image-form{
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
