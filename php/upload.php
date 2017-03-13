@@ -6,7 +6,7 @@
  * Time: 10:07 AM
  */
  session_start();
-    if (isset($_POST['upload-btn'])) {
+    if (isset($_POST['file-btn'])) {
         if (isset($_FILES['image'])) {
             $rnd = rand(100, 999);
             $rnd = $rnd . "_";
