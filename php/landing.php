@@ -11,7 +11,7 @@ include('header.php');?>
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
             <input type="file" name="file" id="file" class="inputfile" />
-            <label for="file">Choose a file</label>
+            <label for="file">Upload an image</label>
         </div>
      </div>
 
