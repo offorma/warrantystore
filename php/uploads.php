@@ -13,6 +13,7 @@ session_start();
         echo print_r($_FILES['image']);
         $imgFile = $_FILES['image']['name'];
         $tmp_dir = $_FILES['image']['tmp_name'];
+        echo print_r($_FILES['image']['tmp_name']);
         $imgSize = $_FILES['image']['size'];
 
         if($imgFile) {
