@@ -15,26 +15,27 @@ session_start();
 
             $pic = rand(1000,100000)."-".$_FILES['image']['name'];
             $pic_loc = $_FILES['pic']['tmp_name'];
+            $type=$_FILES['image']['type'];
 
-                switch (exif_imagetype('$_FILES["image"]["name"]')) {
-                    case "IMAGETYPE_GIF":
-                        if($_FILES['image']['tmp_name']>5242880){
+                switch ($type) {
+                    case "image/gif ":
+                        if(($_FILES['image']['size']>5242880)&&($_FILES['image']['size']==0)){
                             $_SESSION['imgsize']="Image size must be less than 5MB";
                         }else{
                             move_uploaded_file($pic_loc,$folder.$pic);
                         }
                         echo "Image is a gif";
                         break;
-                    case "IMAGETYPE_JPEG":
-                        if($_FILES['image']['tmp_name']>5242880){
+                    case "image/jpeg":
+                        if(($_FILES['image']['size']>5242880)&&($_FILES['image']['size']==0)){
                             $_SESSION['imgsize']="Image size must be less than 5MB";
                         }else{
                             move_uploaded_file($pic_loc,$folder.$pic);
                         }
                         echo "Image is a jpeg";
                         break;
-                    case " 	IMAGETYPE_PNG":
-                        if($_FILES['image']['tmp_name']>5242880){
+                    case "image/png ":
+                        if(($_FILES['image']['size']>5242880)&&($_FILES['image']['size']==0)){
                             $_SESSION['imgsize']="Image size must be less than 5MB";
                         }else{
                             move_uploaded_file($pic_loc,$folder.$pic);
