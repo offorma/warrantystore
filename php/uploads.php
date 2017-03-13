@@ -6,19 +6,20 @@
  * Time: 11:18 AM
  */
 session_start();
-$target_dir = "uploads/";
-$target_file = basename($_FILES["image"]["name"]);
 
-// Check if image file is a actual image or fake image
     if(isset($_POST["file-btn"])) {
+
+        $folder="uploads/";
         if($_FILES['image']['size']!=0) {
+            $pic = rand(1000,100000)."-".$_FILES['image']['name'];
+            $pic_loc = $_FILES['pic']['tmp_name'];
 
                 switch (exif_imagetype('$_FILES["image"]["name"]')) {
                     case "IMAGETYPE_GIF":
                         if($_FILES['image']['tmp_name']>5242880){
                             $_SESSION['imgsize']="Image size must be less than 5MB";
                         }else{
-                            move_uploaded_file($_FILES["image"]["tmp_name"], $target_dir);
+                            move_uploaded_file($pic_loc,$folder.$pic);
                         }
                         echo "Image is a gif";
                         break;
@@ -26,7 +27,7 @@ $target_file = basename($_FILES["image"]["name"]);
                         if($_FILES['image']['tmp_name']>5242880){
                             $_SESSION['imgsize']="Image size must be less than 5MB";
                         }else{
-                            move_uploaded_file($_FILES["image"]["tmp_name"], $target_dir);
+                            move_uploaded_file($pic_loc,$folder.$pic);
                         }
                         echo "Image is a jpeg";
                         break;
@@ -34,14 +35,13 @@ $target_file = basename($_FILES["image"]["name"]);
                         if($_FILES['image']['tmp_name']>5242880){
                             $_SESSION['imgsize']="Image size must be less than 5MB";
                         }else{
-                            move_uploaded_file($_FILES["image"]["tmp_name"], $target_dir);
+                            move_uploaded_file($pic_loc,$folder.$pic);
                         }
                         echo "Image is a png";
                         break;
                 }
         } else {
         echo "File is not an image.";
-        $uploadOk = 0;
         }
     }
 ?>
