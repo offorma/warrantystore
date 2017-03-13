@@ -11,15 +11,15 @@ include('header.php');?>
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 image-form">
-<?php if (isset($_SESSION['imgtext'])){
-    echo $_SESSION['imgtext'];
-} ?>
-<?php if (isset($_SESSION['imgsize'])){
-    echo $_SESSION['imgsize'];
-} ?>
-<?php if (isset($_SESSION['imgsuccess'])){
-    echo $_SESSION['imgsuccess'];
-} ?>
+                <?php if (isset($_SESSION['imgtext'])){
+                    echo $_SESSION['imgtext'];
+                } ?>
+                <?php if (isset($_SESSION['imgsize'])){
+                    echo $_SESSION['imgsize'];
+                } ?>
+                <?php if (isset($_SESSION['imgsuccess'])){
+                    echo $_SESSION['imgsuccess'];
+                } ?>
 
                 <form class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 center-block " action="upload.php" method="post">
                     <div class="form-group center-block">
