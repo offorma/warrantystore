@@ -36,7 +36,8 @@ session_start();
                                    echo $_SESSION['imgsize'];
                                } else {
                                    if(move_uploaded_file($tmp_dir, $folder . $pic)){
-                                       header('location: landing.php');
+                                       echo move_uploaded_file($tmp_dir, $folder . $pic);
+                                       //header('location: landing.php');
                                    }else{
                                        echo "Image cannot be moved";
                                    }
