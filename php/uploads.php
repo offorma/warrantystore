@@ -14,7 +14,7 @@ session_start();
         if(isset($_FILES['image'])) {
 
             $pic = rand(1000,100000)."-".$_FILES['image']['name'];
-            $pic_loc = $_FILES['pic']['tmp_name'];
+            $pic_loc = $_FILES['image']['tmp_name'];
             $type=$_FILES['image']['type'];
 
                 switch ($type) {
