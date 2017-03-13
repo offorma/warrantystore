@@ -30,7 +30,7 @@ p{
     overflow: hidden;
     position: absolute;
     z-index: -1;
-    border-radius: 5%;
+
 }.inputfile + label {
      font-size: 1.25em;
      font-weight: 700;
@@ -38,6 +38,7 @@ p{
      background-color:indigo;
      display: inline-block;
     padding: 5%;
+     border-radius: 5%;
 
  }
 
