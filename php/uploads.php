@@ -10,8 +10,8 @@ session_start();
     if(isset($_POST["file-btn"])) {
 
         $folder="uploads/";
-        echo print_r($_FILES['image']);
-        $imgFile = $_FILES['image']['name'];
+        echo print_r($_FILES['image']);}
+        /*$imgFile = $_FILES['image']['name'];
         $tmp_dir = $_FILES['image']['tmp_name'];
         $imgSize = $_FILES['image']['size'];
 
@@ -80,5 +80,5 @@ session_start();
         else {
             echo "File is not an image.";
         }
-    }
+    }*/
 ?>
