@@ -10,7 +10,7 @@
        $rnd=rand(100,999);
        $rnd=$rnd."_";
 
-       $file_name = $rnd.$_FILES['image']['name'];
+       $file_name = $rnd.trim($_FILES['image']['name']);
        $file_size =$_FILES['image']['size'];
        $file_tmp =$_FILES['image']['tmp_name'];
        $file_type=$_FILES['image']['type'];
@@ -31,8 +31,8 @@
        }
 
        if($errors!=true){
-
-           move_uploaded_file($file_tmp,"uploads/".$file_name);
+            $target="uploads/".$file_name;
+           move_uploaded_file($file_tmp,$target);
           $_SESSION['imgsuccess']='Image upload was sucessful';
            header('location: landing.php');
        }else {
