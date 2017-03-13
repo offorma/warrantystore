@@ -10,7 +10,7 @@ session_start();
     if(isset($_POST["file-btn"])) {
 
         $folder="uploads/";
-        echo print_r($_FILES['image']);
+       // echo print_r($_FILES['image']);
         if(isset($_FILES['image'])) {
 
             $pic = rand(1000,100000)."-".$_FILES['image']['name'];
