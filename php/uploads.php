@@ -9,11 +9,10 @@ session_start();
 
     if(isset($_POST["file-btn"])) {
 
-        $folder="uploads/";
+        $folder="/php/uploads/";
         echo print_r($_FILES['image']);
         $imgFile = $_FILES['image']['name'];
         $tmp_dir = $_FILES['image']['tmp_name'];
-        echo print_r($_FILES['image']['tmp_name']);
         $imgSize = $_FILES['image']['size'];
 
         if($imgFile) {
