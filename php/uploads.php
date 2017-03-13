@@ -15,15 +15,15 @@ session_start();
         $tmp_dir = $_FILES['image']['tmp_name'];
         $imgSize = $_FILES['image']['size'];
 
-        if(true/*$imgFile*/) {
+        if($imgFile) {
 
              //generate random image name
             $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension and make it lowercase
             $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
 
-            echo "this image extension".($imgExt);
+            echo "this image extension".($imgExt)."<br>";
             $pic = rand(1000,100000000)."-".$imgFile;
-            echo "this image extension".($pic);}/*
+            echo "this the generated name".($pic)."<br>";}/*
             if(in_array($imgExt, $valid_extensions)){//check if extension is valid
 
                 switch ($imgExt) {
