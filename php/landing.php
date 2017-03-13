@@ -11,9 +11,9 @@ include('header.php');?>
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 image-form">
-                <form class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 center-block ">
+                <form class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 center-block " action="upload.php" method="post">
                     <div class="form-group center-block">
-                        <input type="file" name="file" id="file" class="inputfile" />
+                        <input type="file" name="image" id="file" class="inputfile" />
                         <label class="center-block" for="file">Choose an image to upload</label>
                     </div>
 
