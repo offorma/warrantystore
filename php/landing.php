@@ -9,12 +9,10 @@ session_start();
 include('header.php');?>
 <body>
     <div class="container">
-    <div class="col-md-6 col-md-offset-3">
-        <label class="fileContainer dot">
-            Click here to trigger the file uploader!
-            <input type="file"/>
-        </label>
-    </div>
+        <div class="col-md-6 col-md-offset-3">
+            <input type="file" name="file" id="file" class="inputfile" />
+            <label for="file">Choose a file</label>
+        </div>
      </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
