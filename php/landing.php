@@ -14,10 +14,10 @@ include('header.php');?>
                 <form>
                     <div class="form-group">
                         <input type="file" name="file" id="file" class="inputfile" />
-                        <label for="file">Upload an image</label>
+                        <label for="file">Choose an image to upload</label>
                     </div>
 
-                        <button type="submit" name ="file-btn" class="btn btn-default">Submit</button>
+                        <button type="submit" name ="file-btn" class="btn btn-default">Upload</button>
                 </form>
             </div>
         </div>
