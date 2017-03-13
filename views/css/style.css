@@ -52,7 +52,7 @@ p{
     outline: 1px dotted #000;
     outline: -webkit-focus-ring-color auto 5px;
 }
-image-form{
+.image-form{
     margin-top: auto;
     margin-bottom: auto;
 }
