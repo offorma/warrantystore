@@ -30,7 +30,7 @@ session_start();
             if(in_array($imgExt, $valid_extensions)){//check if extension is valid
 
                       switch ($imgExt) {
-                           case "gif ":
+                           case 'gif':
                                if (($imgSize < 5242880) && ($_FILES['image']['error'] == 0)) {
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
                                    echo $_SESSION['imgsize'];
