@@ -10,19 +10,20 @@ session_start();
     if(isset($_POST["file-btn"])) {
 
         $folder="uploads/";
-        echo print_r($_FILES['image']);}
-        /*$imgFile = $_FILES['image']['name'];
+        echo print_r($_FILES['image']);
+        $imgFile = $_FILES['image']['name'];
         $tmp_dir = $_FILES['image']['tmp_name'];
         $imgSize = $_FILES['image']['size'];
 
-        if($imgFile) {
+        if(true/*$imgFile*/) {
 
              //generate random image name
             $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension and make it lowercase
             $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
 
+            echo "this image extension".($imgExt);
             $pic = rand(1000,100000000)."-".$imgFile;
-
+            echo "this image extension".($pic);}/*
             if(in_array($imgExt, $valid_extensions)){//check if extension is valid
 
                 switch ($imgExt) {
@@ -79,6 +80,5 @@ session_start();
         }
         else {
             echo "File is not an image.";
-        }
-    }*/
-?>
+        }*/
+    }
