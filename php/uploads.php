@@ -24,11 +24,11 @@ require_once 'db.php';
             $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension and make it lowercase
             $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
 
-            echo "this image extension".($imgExt)."<br>";
+            //echo "this image extension".($imgExt)."<br>";
             $pic = rand(1000,100000000)."-".$imgFile;
 
 
-            echo in_array($imgExt, $valid_extensions);
+            //echo in_array($imgExt, $valid_extensions);
 
             if(in_array($imgExt, $valid_extensions)){//check if extension is valid
 
