@@ -13,7 +13,7 @@ include('header.php'); ?>
             <div class=" col-lg-6 col-lg-offset-3 loginform">
                 <?php if (isset($_SESSION['loginmessage'])){
                     echo $_SESSION['loginmessage'];
-                } elseif (empty($_POST['signup-btn'])){
+                } elseif (!isset($_POST['login-btn'])){
                 unset($_SESSION['loginmessage']);}?>
                 <?php if (isset($_SESSION['emailmessage'])){
                     echo $_SESSION['emailmessage'];
