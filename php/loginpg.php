@@ -14,7 +14,7 @@ include('header.php'); ?>
                 <?php if (isset($_SESSION['loginmessage'])){
                     echo $_SESSION['loginmessage'];
                 } elseif (empty($_POST['signup-btn'])){
-                unset($_SESSION['loginmessage']);?>
+                unset($_SESSION['loginmessage']);}?>
                 <?php if (isset($_SESSION['emailmessage'])){
                     echo $_SESSION['emailmessage'];
                 } ?>
