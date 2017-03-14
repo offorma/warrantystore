@@ -48,16 +48,16 @@ require_once 'db.php';
                                        $row = $catId->fetch_assoc();
                                        $categoryid =  $row["categoryid"];
                                        $usersession = $_SESSION['userSession'];
-                                       echo'<br> '.'this id session'. $_SESSION['userSession'];
+
                                        $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
                                        $urow = $user->fetch_assoc();
                                        $userid = $urow['userid'];
-                                       echo '<br> username'.$userid .'<br>';
 
 
-                                       //$sgl="INSERT INTO receipt (image_url, receipt_number, total_charge,categoryid,userid)VALUES ('$folder . $pic', '$rnumber1', '$tcharge1','$categoryid','$userid')";
-                                       echo move_uploaded_file($tmp_dir, $folder . $pic);
-                                       //header('location: landing.php');
+
+                                       $sgl="INSERT INTO receipt (image_url, receipt_number, total_charge,categoryid,userid)VALUES ('$folder . $pic', '$rnumber1', '$tcharge1','$categoryid','$userid')";
+                                       move_uploaded_file($tmp_dir, $folder . $pic);
+                                       header('location: landing.php');
                                    }
                                }
                                echo "Image is a gif";
