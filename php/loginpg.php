@@ -19,7 +19,7 @@ include('header.php'); ?>
                     echo $_SESSION['emailmessage'];
                 } ?>
                 <?php if (isset($_SESSION['passwordmessage'])){
-                    echo $_SESSION['passwordmessagemessage'];
+                    echo $_SESSION['passwordmessage'];
                 } ?>
                 <?php if (isset($_SESSION['passmsg'])){
                     echo $_SESSION['passmsg'];
