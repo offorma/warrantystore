@@ -15,14 +15,22 @@ if(!isset($_SESSION['userSession'])){
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 image-form">
-                        <?php if (isset($_SESSION['imgtext'])){
-                            echo $_SESSION['imgtext'];
+                        <?php if (isset($_SESSION['fileextention'])){
+                            echo $_SESSION['fileextention'];
                         } ?>
                         <?php if (isset($_SESSION['imgsize'])){
                             echo $_SESSION['imgsize'];
                         } ?>
-                        <?php if (isset($_SESSION['imgsuccess'])){
-                            echo $_SESSION['imgsuccess'];
+                        <?php if (isset($_SESSION['fileerror'])){
+                            echo $_SESSION['fileerror'];
+                        } ?>
+                        <?php
+                        if (isset($_SESSION['filesuccess'])){
+                            echo $_SESSION['filesuccess'];
+                        } ?>
+                        <?php
+                        if (isset($_SESSION['emptyInput'])){
+                            echo $_SESSION['emptyInput'];
                         } ?>
 
                         <form class=" form-img center-block " action="uploads.php" method="post" enctype="multipart/form-data">

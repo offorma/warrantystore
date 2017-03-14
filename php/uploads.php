@@ -36,16 +36,17 @@ require_once 'db.php';
                            case 'gif':
                                if ($imgSize >5242880) {
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
-                                   echo $_SESSION['imgsize'];
+                                   header('location: landing.php');
                                } else {
-                                   if(!move_uploaded_file($tmp_dir, $folder . $pic)){
-                                       echo "Image cannot be moved";
-                                   }else{
+                                   if (!move_uploaded_file($tmp_dir, $folder . $pic)) {
+                                       $_SESSION['fileerror'] = "<div class='alert alert-danger'>
+                                       <span class='glyphicon glyphicon-info-sign'></span>Image cannot be moved</div>";
+                                   } else {
                                        $rnumber1 = $conn->real_escape_string(strip_tags($_POST['rnumber']));
                                        $tcharge1 = floatval($conn->real_escape_string(strip_tags($_POST['tcharge'])));
                                        $catId = $conn->query("SELECT categoryid FROM category WHERE name='$cat'");
                                        $row = $catId->fetch_assoc();
-                                       $categoryid =  $row["categoryid"];
+                                       $categoryid = $row["categoryid"];
                                        $usersession = $_SESSION['userSession'];
 
                                        $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
@@ -57,22 +58,25 @@ require_once 'db.php';
                                        $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
                                        $conn->close();
                                        header('location: landing.php');
+                                       $_SESSION['filesuccess'] = "<div class='alert alert-success'>
+                                       <span class='glyphicon glyphicon-info-sign'></span>File upload was successful. Image is a gif</div>";
                                    }
                                }
-                               echo "Image is a gif";
                                break;
                            case "jpeg":
                                if ($imgSize > 5242880) {
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
+                                   header('location: landing.php');
                                } else {
-                                   if(!move_uploaded_file($tmp_dir, $folder . $pic)){
-                                       echo "Image cannot be moved";
-                                   }else{
+                                   if (!move_uploaded_file($tmp_dir, $folder . $pic)) {
+                                       $_SESSION['fileerror'] = "<div class='alert alert-danger'>
+                                       <span class='glyphicon glyphicon-info-sign'></span>Image cannot be moved</div>";
+                                   } else {
                                        $rnumber1 = $conn->real_escape_string(strip_tags($_POST['rnumber']));
                                        $tcharge1 = floatval($conn->real_escape_string(strip_tags($_POST['tcharge'])));
                                        $catId = $conn->query("SELECT categoryid FROM category WHERE name='$cat'");
                                        $row = $catId->fetch_assoc();
-                                       $categoryid =  $row["categoryid"];
+                                       $categoryid = $row["categoryid"];
                                        $usersession = $_SESSION['userSession'];
 
                                        $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
@@ -84,16 +88,19 @@ require_once 'db.php';
                                        $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
                                        $conn->close();
                                        header('location: landing.php');
+                                       $_SESSION['filesuccess'] = "<div class='alert alert-success'>
+                                       <span class='glyphicon glyphicon-info-sign'></span>File upload was successful. Image is a jpeg</div>";
                                    }
                                }
-                               echo "Image is a jpeg";
                                break;
                            case "png ":
                                if ($imgSize > 5242880) {
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
+                                   header('location: landing.php');
                                } else {
                                    if(!move_uploaded_file($tmp_dir, $folder . $pic)){
-                                       echo "Image cannot be moved";
+                                       $_SESSION['fileerror'] = "<div class='alert alert-danger'>
+                                       <span class='glyphicon glyphicon-info-sign'></span>Image cannot be moved</div>";
                                    }else{
                                        $rnumber1 = $conn->real_escape_string(strip_tags($_POST['rnumber']));
                                        $tcharge1 = floatval($conn->real_escape_string(strip_tags($_POST['tcharge'])));
@@ -111,16 +118,20 @@ require_once 'db.php';
                                        $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
                                        $conn->close();
                                        header('location: landing.php');
+                                       $_SESSION['filesuccess'] = "<div class='alert alert-success'>
+                                       <span class='glyphicon glyphicon-info-sign'></span>File upload was successful. Image is a png</div>";
                                    }
                                }
-                               echo "Image is a png";
                                break;
                            case "jpg ":
                                if ($imgSize > 5242880) {
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
+                                   header('location: landing.php');
                                } else {
                                    if(!move_uploaded_file($tmp_dir, $folder . $pic)){
-                                       echo "Image cannot be moved";
+                                       $_SESSION['fileerror'] = "<div class='alert alert-danger'>
+                                       <span class='glyphicon glyphicon-info-sign'></span>Image cannot be moved</div>";
+
                                    }else{
                                        $rnumber1 = $conn->real_escape_string(strip_tags($_POST['rnumber']));
                                        $tcharge1 = floatval($conn->real_escape_string(strip_tags($_POST['tcharge'])));
@@ -138,14 +149,23 @@ require_once 'db.php';
                                        $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
                                        $conn->close();
                                        header('location: landing.php');
+                                       $_SESSION['filesuccess'] = "<div class='alert alert-success'>
+                                       <span class='glyphicon glyphicon-info-sign'></span>File upload was successful. Image is a jpg</div>";
                                    }
                                }
-                               echo "Image is a jpg";
+
                                break;
                        }
-                   }
+
+                }else{
+                    $_SESSION['fileextention'] = "<div class='alert alert-danger'>
+                    <span class='glyphicon glyphicon-info-sign'></span>file must be an image with file extention of jpg, jpeg,png or gif</div>";
+
+                 }
+
                }
                else {
-                   echo "Please all input fields must be completed";
+                   $_SESSION['emptyInput'] = "<div class='alert alert-danger'>
+                    <span class='glyphicon glyphicon-info-sign'></span>Please all input fields must be completed</div>";
                }
     }
