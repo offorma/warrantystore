@@ -42,3 +42,6 @@ p{
     cursor: inherit;
     display: block;
 }
+.label{
+    width: 100%;
+}

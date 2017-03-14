@@ -26,7 +26,7 @@ include('header.php');?>
                 <form class=" center-block " action="uploads.php" method="post" enctype="multipart/form-data">
                     <div class="form-group center-block">
                         <!--!<input type="file" name="image" id="file" class="inputfile" />-->
-                        <label class="btn btn-default btn-file" for="file">
+                        <label class=" label btn btn-default btn-file" for="file">
                             <input type="file" name="image" id="file" style="display: none;"/>
                         Choose an image to upload </label>
                     </div>
