@@ -27,7 +27,7 @@ include('header.php');?>
                     <div class="form-group center-block">
                         <!--!<input type="file" name="image" id="file" class="inputfile" />-->
                         <label class="btn btn-default btn-file" for="file">
-                            <input type="file" name="image" id="file"/>
+                            <input type="file" name="image" id="file" style="display: none;"/>
                         Choose an image to upload </label>
                     </div>
                     <div class="form-group">
