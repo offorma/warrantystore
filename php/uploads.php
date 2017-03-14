@@ -41,10 +41,10 @@ require_once 'db.php';
                                    if(!move_uploaded_file($tmp_dir, $folder . $pic)){
                                        echo "Image cannot be moved";
                                    }else{
-                                       echo "this the generated name".($pic)."<br>";
+                                       echo "this the generated name ".($pic)."<br>";
                                        $rnumber1 = $conn->real_escape_string(strip_tags($_POST['rnumber']));
                                        $tcharge1 = $conn->real_escape_string(strip_tags($_POST['tcharge']));
-                                       $catId = $conn->query("SELECT id FROM category WHERE name='$cat'");
+                                       $catId = $conn->query("SELECT categoryid FROM category WHERE name='$cat'");
                                        echo $catId;
                                        echo move_uploaded_file($tmp_dir, $folder . $pic);
                                        //header('location: landing.php');
