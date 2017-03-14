@@ -26,8 +26,9 @@ include('header.php');?>
                 <form class=" center-block " action="uploads.php" method="post" enctype="multipart/form-data">
                     <div class="form-group center-block">
                         <!--!<input type="file" name="image" id="file" class="inputfile" />-->
-                        <input type="file" name="image" id="file" class="" />
-                        <label class="center-block" for="file">Choose an image to upload </label>
+                        <label class="center-block" for="file">
+                            <input type="file" name="image" id="file" class="" />
+                        Choose an image to upload </label>
                     </div>
                     <div class="form-group">
                         <label for="rnumber">Receipt number</label>
@@ -37,7 +38,10 @@ include('header.php');?>
                         <label for="rnumber">Total charge</label>
                         <input type="text" class="form-control" id="tcharge" name="tcharge" placeholder="Total charge">
                     </div>
-
+                    <div class="form-group">
+                        <label for="rnumber">Category</label>
+                        <input type="text" class="form-control" id="tcharge" name="tcharge" placeholder="Total charge">
+                    </div>
                         <button type="submit" name ="file-btn" class="btn btn-default center-block">Upload</button>
                 </form>
             </div>
