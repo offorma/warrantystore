@@ -11,9 +11,9 @@ ini_set('display_errors', 1);
 require_once 'db.php';
 
 if(isset($_POST['signup-btn'])) {
-    if (($_POST['password1'] != $_POST['password2'])) {// this checks to see if both password fields are a match
+    if (($_POST['password1'] != $_POST['password2'])||(empty($_POST['password1']))||(empty($_POST['password2']))) {// this checks to see if both password fields are a match
         $_SESSION['passmsg'] = "<div class='alert alert-danger'>
-         <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Password fields do not match</div>";
+         <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Password fields cannot be empty or they do not match</div>";
         header("Location: loginpg.php#signup");
     }elseif (empty($_POST['signup-btn'])){
         unset($_SESSION['passmsg']);
