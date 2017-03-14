@@ -11,6 +11,17 @@ include('header.php'); ?>
     <div class=" container">
         <div class="row">
             <div class=" col-lg-6 col-lg-offset-3 loginform">
+                <?php $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+                if($pageWasRefreshed){
+                    unset($_SESSION['loginmessage']);
+                    unset($_SESSION['emailmessage']);
+                    unset($_SESSION['passwordmessage']);
+                    unset($_SESSION['passmsg']);
+                    unset($_SESSION['usernamemsg']);
+                    unset($_SESSION['emailmsg']);
+                    unset($_SESSION['sqlmsg']);
+                    unset($_SESSION['errormsg']);
+                }?>
                 <?php
                 if (isset($_SESSION['loginmessage'])){
                     echo $_SESSION['loginmessage'];
