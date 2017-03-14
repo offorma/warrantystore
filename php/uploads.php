@@ -51,7 +51,7 @@ require_once 'db.php';
                                        $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
                                        $urow = $user->fetch_assoc();
                                        $userid = $urow['userid'];
-                                       echo $userid;
+                                       echo '<br>'.$userid .'<br>';
                                        echo move_uploaded_file($tmp_dir, $folder . $pic);
                                        //header('location: landing.php');
                                    }
