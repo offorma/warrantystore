@@ -14,8 +14,10 @@ session_start();
         $imgFile = $_FILES['image']['name'];
         $tmp_dir = $_FILES['image']['tmp_name'];
         $imgSize = $_FILES['image']['size'];
+        $rnumber = $_POST['rnumber'];
+        $tcharge = $_POST['tcharge'];
 
-        if($imgFile) {
+        if(($imgFile)&&(!empty($rnumber))&&(!empty($rnumber))) {
 
              //generate random image name
             $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension and make it lowercase
@@ -25,7 +27,7 @@ session_start();
             $pic = rand(1000,100000000)."-".$imgFile;
 
 
-        echo in_array($imgExt, $valid_extensions);
+            echo in_array($imgExt, $valid_extensions);
 
             if(in_array($imgExt, $valid_extensions)){//check if extension is valid
 
@@ -85,6 +87,6 @@ session_start();
                    }
                }
                else {
-                   echo "File is not an image.";
+                   echo "Please all input fields must be completed";
                }
     }
