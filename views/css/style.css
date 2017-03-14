@@ -23,36 +23,22 @@ p{
     padding-top: 2%;
     padding-bottom:2%;
 }
-.inputfile {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
+.btn-file {
+    position: relative;
     overflow: hidden;
+}
+.btn-file input[type=file] {
     position: absolute;
-    z-index: -1;
-
-}.inputfile + label {
-     font-size: 1.25em;
-     font-weight: 700;
-     color:cornflowerblue;
-     background-color:whitesmoke;
-     display: inline-block;
-    padding: 3%;
-    padding-left: 20%;
-    padding-right: 20%;
-     border-radius: 5%;
-
- }
-
-.inputfile:focus + label,
-.inputfile + label:hover {
-    background-color: lightcoral;
-}
-.inputfile:focus + label {
-    outline: 1px dotted #000;
-    outline: -webkit-focus-ring-color auto 5px;
-}
-.image-form{
-    margin-top: auto;
-    margin-bottom: auto;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
 }
