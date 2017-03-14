@@ -15,6 +15,15 @@ if(!isset($_SESSION['userSession'])){
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 image-form">
+                        <?php $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+                        if($pageWasRefreshed){
+                            unset($_SESSION['fileextention']);
+                            unset($_SESSION['imgsize']);
+                            unset($_SESSION['fileerror']);
+                            unset($_SESSION['filesuccess']);
+                            unset($_SESSION['emptyInput']);
+                        }
+                        ?>
                         <?php if (isset($_SESSION['fileextention'])){
                             echo $_SESSION['fileextention'];
                         } ?>
