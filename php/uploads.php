@@ -160,6 +160,7 @@ require_once 'db.php';
                 }else{
                     $_SESSION['fileextention'] = "<div class='alert alert-danger'>
                     <span class='glyphicon glyphicon-info-sign'></span>file must be an image with file extention of jpg, jpeg,png or gif</div>";
+                header('location: landing.php');
 
                  }
 
@@ -167,5 +168,6 @@ require_once 'db.php';
                else {
                    $_SESSION['emptyInput'] = "<div class='alert alert-danger'>
                     <span class='glyphicon glyphicon-info-sign'></span>Please all input fields must be completed</div>";
+                   header('location: landing.php');
                }
     }
