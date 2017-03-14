@@ -6,8 +6,7 @@
  * Time: 5:29 PM
  */
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 require_once 'db.php';
 
 if(isset($_POST['signup-btn'])) {
@@ -15,24 +14,17 @@ if(isset($_POST['signup-btn'])) {
         $_SESSION['passmsg'] = "<div class='alert alert-danger'>
          <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Password fields cannot be empty or they do not match</div>";
         header("Location: loginpg.php");
-    }elseif (empty($_POST['signup-btn'])){
-        unset($_SESSION['passmsg']);
     }
     if (empty($_POST['username'])) {//this checks if username field is empty
         $_SESSION['usernamemsg'] = "<div class='alert alert-danger'>
          <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Username field cannot be empty</div>";
         header("Location: loginpg.php");
 
-    }elseif (empty($_POST['signup-btn'])){
-        unset($_SESSION['usernamemsg']);
     }
     if (empty($_POST['email'])) {// this checks if email field is empty
         $_SESSION['emailmsg'] = "<div class='alert alert-danger'>
          <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Email field cannot be empty</div>";
         header("Location: loginpg.php");
-
-    }elseif (empty($_POST['signup-btn'])){
-        unset($_SESSION['emailmsg']);
     }
 }else{
 
