@@ -14,14 +14,14 @@ if(isset($_POST['signup-btn'])) {
     if (($_POST['password1'] != $_POST['password2'])||(empty($_POST['password1']))||(empty($_POST['password2']))) {// this checks to see if both password fields are a match
         $_SESSION['passmsg'] = "<div class='alert alert-danger'>
          <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Password fields cannot be empty or they do not match</div>";
-        header("Location: loginpg.php#signup");
+        header("Location: loginpg.php");
     }elseif (empty($_POST['signup-btn'])){
         unset($_SESSION['passmsg']);
     }
     if (empty($_POST['username'])) {//this checks if username field is empty
         $_SESSION['usernamemsg'] = "<div class='alert alert-danger'>
          <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Username field cannot be empty</div>";
-        header("Location: loginpg.php#signup");
+        header("Location: loginpg.php");
 
     }elseif (empty($_POST['signup-btn'])){
         unset($_SESSION['usernamemsg']);
@@ -29,7 +29,7 @@ if(isset($_POST['signup-btn'])) {
     if (empty($_POST['email'])) {// this checks if email field is empty
         $_SESSION['emailmsg'] = "<div class='alert alert-danger'>
          <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Email field cannot be empty</div>";
-        header("Location: loginpg.php#signup");
+        header("Location: loginpg.php");
 
     }elseif (empty($_POST['signup-btn'])){
         unset($_SESSION['emailmsg']);
