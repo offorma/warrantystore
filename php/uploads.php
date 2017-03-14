@@ -17,6 +17,7 @@ require_once 'db.php';
         $rnumber = $_POST['rnumber'];
         $tcharge = $_POST['tcharge'];
         $cat = $_POST['category'];
+        echo $cat;
 
         if(($imgFile)&&(!empty($rnumber))&&(!empty($rnumber))) {
 
