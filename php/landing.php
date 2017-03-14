@@ -23,7 +23,7 @@ include('header.php');?>
                     echo $_SESSION['imgsuccess'];
                 } ?>
 
-                <form class=" center-block " action="uploads.php" method="post" enctype="multipart/form-data">
+                <form class=" form-img center-block " action="uploads.php" method="post" enctype="multipart/form-data">
                     <div class="form-group center-block">
                         <!--!<input type="file" name="image" id="file" class="inputfile" />-->
                         <label class=" btn btn-default btn-file" for="file" style="width: 100%;">
