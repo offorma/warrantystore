@@ -63,7 +63,7 @@ require_once 'db.php';
                                    }
                                }
                                break;
-                           case "jpeg":
+                           case 'jpeg':
                                if ($imgSize > 5242880) {
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
                                    header('location: landing.php');
@@ -93,7 +93,7 @@ require_once 'db.php';
                                    }
                                }
                                break;
-                           case "png ":
+                           case 'png':
                                if ($imgSize > 5242880) {
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
                                    header('location: landing.php');
@@ -123,7 +123,7 @@ require_once 'db.php';
                                    }
                                }
                                break;
-                           case "jpg ":
+                           case 'jpg':
                                if ($imgSize > 5242880) {
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
                                    header('location: landing.php');
