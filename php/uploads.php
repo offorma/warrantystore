@@ -46,7 +46,7 @@ require_once 'db.php';
                                        $tcharge1 = $conn->real_escape_string(strip_tags($_POST['tcharge']));
                                        $catId = $conn->query("SELECT categoryid FROM category WHERE name='$cat'");
                                        $row = $catId->fetch_assoc();
-                                       echo $row['id'];
+                                       echo $row["categoryid"];
                                        echo move_uploaded_file($tmp_dir, $folder . $pic);
                                        //header('location: landing.php');
                                    }
