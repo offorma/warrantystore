@@ -46,7 +46,12 @@ require_once 'db.php';
                                        $tcharge1 = $conn->real_escape_string(strip_tags($_POST['tcharge']));
                                        $catId = $conn->query("SELECT categoryid FROM category WHERE name='$cat'");
                                        $row = $catId->fetch_assoc();
-                                       echo $row["categoryid"];
+                                       $categoryid =  $row["categoryid"];
+                                       $usersession = $_SESSION['userSession'];
+                                       $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
+                                       $urow = $user->fetch_assoc();
+                                       $userid = $urow['userid'];
+                                       echo $userid;
                                        echo move_uploaded_file($tmp_dir, $folder . $pic);
                                        //header('location: landing.php');
                                    }
