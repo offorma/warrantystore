@@ -9,7 +9,7 @@ session_start();
 
     if(isset($_POST["file-btn"])) {
 
-        $folder="http://teamewarranty.azurewebsites.net/php/uploads/";
+        $folder="site/wwwroot";
         echo print_r($_FILES['image']);
         $imgFile = $_FILES['image']['name'];
         $tmp_dir = $_FILES['image']['tmp_name'];
