@@ -17,7 +17,6 @@ require_once 'db.php';
         $rnumber = $_POST['rnumber'];
         $tcharge = $_POST['tcharge'];
         $cat = $_POST['category'];
-        echo $cat;
 
         if(($imgFile)&&(!empty($rnumber))&&(!empty($rnumber))) {
 
@@ -46,7 +45,8 @@ require_once 'db.php';
                                        $rnumber1 = $conn->real_escape_string(strip_tags($_POST['rnumber']));
                                        $tcharge1 = $conn->real_escape_string(strip_tags($_POST['tcharge']));
                                        $catId = $conn->query("SELECT categoryid FROM category WHERE name='$cat'");
-                                       echo $catId;
+                                       $row = $catId->fetch_assoc();
+                                       echo $row['id'];
                                        echo move_uploaded_file($tmp_dir, $folder . $pic);
                                        //header('location: landing.php');
                                    }
