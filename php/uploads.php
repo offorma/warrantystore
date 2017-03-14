@@ -54,8 +54,8 @@ require_once 'db.php';
                                        $userid = $urow['userid'];
 
                                        move_uploaded_file($tmp_dir, $folder . $pic);
-
-                                       $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge,categoryid,userid)VALUES ('$folder . $pic', '$rnumber1', '$tcharge1','$categoryid','$userid'))";
+                                        $imgurl = $folder . $pic;
+                                       $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge,categoryid,userid)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid'))";
                                        $conn->close();
                                        header('location: landing.php');
                                    }
