@@ -41,7 +41,6 @@ require_once 'db.php';
                                    if(!move_uploaded_file($tmp_dir, $folder . $pic)){
                                        echo "Image cannot be moved";
                                    }else{
-                                       echo "this the generated name ".($pic)."<br>";
                                        $rnumber1 = $conn->real_escape_string(strip_tags($_POST['rnumber']));
                                        $tcharge1 = floatval($conn->real_escape_string(strip_tags($_POST['tcharge'])));
                                        $catId = $conn->query("SELECT categoryid FROM category WHERE name='$cat'");
@@ -66,10 +65,25 @@ require_once 'db.php';
                                if ($imgSize > 5242880) {
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
                                } else {
-                                   if(move_uploaded_file($tmp_dir, $folder . $pic)){
-                                       header('location: landing.php');
-                                   }else{
+                                   if(!move_uploaded_file($tmp_dir, $folder . $pic)){
                                        echo "Image cannot be moved";
+                                   }else{
+                                       $rnumber1 = $conn->real_escape_string(strip_tags($_POST['rnumber']));
+                                       $tcharge1 = floatval($conn->real_escape_string(strip_tags($_POST['tcharge'])));
+                                       $catId = $conn->query("SELECT categoryid FROM category WHERE name='$cat'");
+                                       $row = $catId->fetch_assoc();
+                                       $categoryid =  $row["categoryid"];
+                                       $usersession = $_SESSION['userSession'];
+
+                                       $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
+                                       $urow = $user->fetch_assoc();
+                                       $userid = $urow['userid'];
+
+                                       move_uploaded_file($tmp_dir, $folder . $pic);
+                                       $imgurl = $folder . $pic;
+                                       $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
+                                       $conn->close();
+                                       header('location: landing.php');
                                    }
                                }
                                echo "Image is a jpeg";
@@ -78,10 +92,25 @@ require_once 'db.php';
                                if ($imgSize > 5242880) {
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
                                } else {
-                                   if(move_uploaded_file($tmp_dir, $folder . $pic)){
-                                       header('location: landing.php');
-                                   }else{
+                                   if(!move_uploaded_file($tmp_dir, $folder . $pic)){
                                        echo "Image cannot be moved";
+                                   }else{
+                                       $rnumber1 = $conn->real_escape_string(strip_tags($_POST['rnumber']));
+                                       $tcharge1 = floatval($conn->real_escape_string(strip_tags($_POST['tcharge'])));
+                                       $catId = $conn->query("SELECT categoryid FROM category WHERE name='$cat'");
+                                       $row = $catId->fetch_assoc();
+                                       $categoryid =  $row["categoryid"];
+                                       $usersession = $_SESSION['userSession'];
+
+                                       $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
+                                       $urow = $user->fetch_assoc();
+                                       $userid = $urow['userid'];
+
+                                       move_uploaded_file($tmp_dir, $folder . $pic);
+                                       $imgurl = $folder . $pic;
+                                       $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
+                                       $conn->close();
+                                       header('location: landing.php');
                                    }
                                }
                                echo "Image is a png";
@@ -90,10 +119,25 @@ require_once 'db.php';
                                if ($imgSize > 5242880) {
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
                                } else {
-                                   if(move_uploaded_file($tmp_dir, $folder . $pic)){
-                                   header('location: landing.php');
-                                   }else{
+                                   if(!move_uploaded_file($tmp_dir, $folder . $pic)){
                                        echo "Image cannot be moved";
+                                   }else{
+                                       $rnumber1 = $conn->real_escape_string(strip_tags($_POST['rnumber']));
+                                       $tcharge1 = floatval($conn->real_escape_string(strip_tags($_POST['tcharge'])));
+                                       $catId = $conn->query("SELECT categoryid FROM category WHERE name='$cat'");
+                                       $row = $catId->fetch_assoc();
+                                       $categoryid =  $row["categoryid"];
+                                       $usersession = $_SESSION['userSession'];
+
+                                       $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
+                                       $urow = $user->fetch_assoc();
+                                       $userid = $urow['userid'];
+
+                                       move_uploaded_file($tmp_dir, $folder . $pic);
+                                       $imgurl = $folder . $pic;
+                                       $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
+                                       $conn->close();
+                                       header('location: landing.php');
                                    }
                                }
                                echo "Image is a jpg";
