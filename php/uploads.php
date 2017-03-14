@@ -6,7 +6,7 @@
  * Time: 11:18 AM
  */
 session_start();
-
+require_once 'db.php';
     if(isset($_POST["file-btn"])) {
 
         $folder="../wwwroot";
@@ -16,6 +16,7 @@ session_start();
         $imgSize = $_FILES['image']['size'];
         $rnumber = $_POST['rnumber'];
         $tcharge = $_POST['tcharge'];
+        $cat = $_POST['category'];
 
         if(($imgFile)&&(!empty($rnumber))&&(!empty($rnumber))) {
 
@@ -37,12 +38,16 @@ session_start();
                                    $_SESSION['imgsize'] = "Image size must be less than 5MB";
                                    echo $_SESSION['imgsize'];
                                } else {
-                                   if(move_uploaded_file($tmp_dir, $folder . $pic)){
+                                   if(!move_uploaded_file($tmp_dir, $folder . $pic)){
+                                       echo "Image cannot be moved";
+                                   }else{
                                        echo "this the generated name".($pic)."<br>";
+                                       $rnumber1 = $conn->real_escape_string(strip_tags($_POST['rnumber']));
+                                       $tcharge1 = $conn->real_escape_string(strip_tags($_POST['tcharge']));
+                                       $catId = $conn->query("SELECT id FROM category WHERE name='$cat'");
+                                       echo $catId;
                                        echo move_uploaded_file($tmp_dir, $folder . $pic);
                                        //header('location: landing.php');
-                                   }else{
-                                       echo "Image cannot be moved";
                                    }
                                }
                                echo "Image is a gif";
