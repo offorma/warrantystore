@@ -5,7 +5,6 @@
  * Date: 2/26/17
  * Time: 5:33 PM
  */
-session_start();
 
 require_once 'db.php';
 include('header.php');?>
