@@ -10,7 +10,7 @@ require_once 'db.php';
     if(isset($_POST["file-btn"])) {
 
         $folder="../wwwroot";
-        echo print_r($_FILES['image']);
+        //echo print_r($_FILES['image']);
         $imgFile = $_FILES['image']['name'];
         $tmp_dir = $_FILES['image']['tmp_name'];
         $imgSize = $_FILES['image']['size'];
