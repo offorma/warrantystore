@@ -6,8 +6,8 @@
  * Time: 5:33 PM
  */
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
+require_once 'db.php';
 include('header.php');?>
 <body>
     <div class="container">
@@ -40,6 +40,23 @@ include('header.php');?>
                     </div>
                     <div class="form-group">
                         <label for="rnumber">Category</label>
+                        <?php
+
+                        $sql = "SELECT name FROM category";
+                        $result = $conn->query($sql);?>
+                        <select class="selectpicker">
+                        <?php
+
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while($row = $result->fetch_assoc()) {
+
+                                echo'<option >$row["name"]</option>';
+                            }
+                        }
+
+
+                        ?></select>
                         <input type="text" class="form-control" id="tcharge" name="tcharge" placeholder="Total charge">
                     </div>
                         <button type="submit" name ="file-btn" class="btn btn-default center-block">Upload</button>
