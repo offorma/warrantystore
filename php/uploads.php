@@ -53,10 +53,10 @@ require_once 'db.php';
                                        $urow = $user->fetch_assoc();
                                        $userid = $urow['userid'];
 
-
-
-                                       $sgl="INSERT INTO receipt (image_url, receipt_number, total_charge,categoryid,userid)VALUES ('$folder . $pic', '$rnumber1', '$tcharge1','$categoryid','$userid')";
                                        move_uploaded_file($tmp_dir, $folder . $pic);
+
+                                       $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge,categoryid,userid)VALUES ('$folder . $pic', '$rnumber1', '$tcharge1','$categoryid','$userid'))";
+                                       $conn->close();
                                        header('location: landing.php');
                                    }
                                }
