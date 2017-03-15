@@ -14,7 +14,7 @@ ini_set('display_errors', 1);
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <img src="../views/receipt1.jpg" alt="Image of receipt pile" height="100%" width="100%"/>
+            <!--<img src="../views/receipt1.jpg" alt="Image of receipt pile" height="100%" width="100%"/>-->
         </div>
     </div>
 
