@@ -11,13 +11,13 @@ ini_set('display_errors', 1);
 
 <?php include('header.php') ?>
 <div class="container">
-
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <!--<img src="../views/receipt1.jpg" alt="Image of receipt pile" height="100%" width="100%"/>-->
+    <!--
+      <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <img src="../views/receipt1.jpg" alt="Image of receipt pile" height="100%" width="100%"/>
         </div>
     </div>
-
+-->
 
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
