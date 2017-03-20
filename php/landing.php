@@ -89,7 +89,7 @@ if(!isset($_SESSION['userSession'])){
 
                                 $sql = "SELECT name, tagid FROM tag where userid = '$userid'";
                                 $result = $conn->query($sql);?>
-                                <select class="selectpicker form-control" name="tag" multiple>
+                                <select class="selectpicker form-control" name="tag[]" multiple>
                                     <?php
 
                                     if ($result->num_rows > 0) {
