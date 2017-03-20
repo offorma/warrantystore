@@ -157,8 +157,5 @@ if(!isset($_SESSION['userSession'])){
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.js"></script>
             <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-            $(document).ready(function(e) {
-            $('.selectpicker').selectpicker();
-            });
         </body>
         </html>
