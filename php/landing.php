@@ -14,7 +14,7 @@ if(!isset($_SESSION['userSession'])){
         <body>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 image-form">
+                    <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 image-form">
                         <?php $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
                         if($pageWasRefreshed){
                             unset($_SESSION['fileextention']);
@@ -78,6 +78,27 @@ if(!isset($_SESSION['userSession'])){
                             </div>
                                 <button type="submit" name ="file-btn" class="btn btn-default center-block">Upload</button>
                         </form>
+                    </div>
+                    <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1">
+                        <div>
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="tag">Tag Name</label>
+                                    <input type="text" class="form-control" id="tag" name="tag" placeholder="Enter a tag name">
+                                </div>
+                                <button type="submit" name ="file-btn" class="btn btn-default center-block">Create Tag</button>
+                            </form>
+
+                        </div>
+                        <div>
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="category">Category Name</label>
+                                    <input type="text" class="form-control" id="category" name="category" placeholder="Enter a category name">
+                                </div>
+                                <button type="submit" name ="file-btn" class="btn btn-default center-block">Create Category</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
              </div>
