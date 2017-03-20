@@ -8,7 +8,7 @@
 session_start();
 require_once 'db.php';
 if(isset($_POST["createtag-btn"])) {
-    if(isset($_POST["tag"])&&(!empty(tag))){
+    if(isset($_POST["tag"])&&(!empty($_POST["tag"]))){
 
         $tag = $conn->real_escape_string(strip_tags($_POST['tag']));
         $usersession = $_SESSION['userSession'];
