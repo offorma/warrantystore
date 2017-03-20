@@ -81,7 +81,7 @@ if(!isset($_SESSION['userSession'])){
                     </div>
                     <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1">
                         <div>
-                            <form action="">
+                            <form  class="form-img" action="">
                                 <div class="form-group">
                                     <label for="tag">Tag Name</label>
                                     <input type="text" class="form-control" id="tag" name="tag" placeholder="Enter a tag name">
@@ -91,7 +91,7 @@ if(!isset($_SESSION['userSession'])){
 
                         </div>
                         <div>
-                            <form action="">
+                            <form class="form-img" action="">
                                 <div class="form-group">
                                     <label for="category">Category Name</label>
                                     <input type="text" class="form-control" id="category" name="category" placeholder="Enter a category name">
