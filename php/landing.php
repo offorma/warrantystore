@@ -79,6 +79,30 @@ if(!isset($_SESSION['userSession'])){
                                 <input type="text" class="form-control" id="tcharge" name="tcharge" placeholder="Total charge">
                             </div>
                             <div class="form-group">
+                                <label for="category">Tags</label>
+                                <?php
+                                $usersession = $_SESSION['userSession'];
+
+                                $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
+                                $urow = $user->fetch_assoc();
+                                $userid = $urow['userid'];
+
+                                $sql = "SELECT name FROM tag where userid = '$userid'";
+                                $result = $conn->query($sql);?>
+                                <select class="selectpicker form-control" name="tag" multiple>
+                                    <?php
+
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while($row = $result->fetch_assoc()) {
+
+                                            echo'<option >'.$row["name"].'</option>';
+                                        }
+                                    }
+                                    ?></select>
+
+                            </div>
+                            <div class="form-group">
                                 <label for="category">Category</label>
                                 <?php
                                 $usersession = $_SESSION['userSession'];
