@@ -17,6 +17,7 @@ require_once 'db.php';
         $rnumber = $_POST['rnumber'];
         $tcharge = $_POST['tcharge'];
         $cat = $_POST['category'];
+        $cars[] = $_POST['tag'];
 
         if(($imgFile)&&(!empty($rnumber))&&(!empty($rnumber))) {
 

@@ -87,7 +87,7 @@ if(!isset($_SESSION['userSession'])){
                                 $urow = $user->fetch_assoc();
                                 $userid = $urow['userid'];
 
-                                $sql = "SELECT name FROM tag where userid = '$userid'";
+                                $sql = "SELECT name, tagid FROM tag where userid = '$userid'";
                                 $result = $conn->query($sql);?>
                                 <select class="selectpicker form-control" name="tag" multiple>
                                     <?php
@@ -96,7 +96,7 @@ if(!isset($_SESSION['userSession'])){
                                         // output data of each row
                                         while($row = $result->fetch_assoc()) {
 
-                                            echo'<option >'.$row["name"].'</option>';
+                                            echo'<option value="'.$row["tagid"].'" >'.$row["name"].'</option>';
                                         }
                                     }
                                     ?></select>
@@ -111,7 +111,7 @@ if(!isset($_SESSION['userSession'])){
                                 $urow = $user->fetch_assoc();
                                 $userid = $urow['userid'];
 
-                                $sql = "SELECT name, categoryid FROM category where userid = '$userid'";
+                                $sql = "SELECT name FROM category where userid = '$userid'";
                                 $result = $conn->query($sql);?>
                                 <select class="selectpicker form-control" name="category">
                                 <?php
@@ -120,7 +120,7 @@ if(!isset($_SESSION['userSession'])){
                                     // output data of each row
                                     while($row = $result->fetch_assoc()) {
 
-                                        echo'<option value="'.$row["categoryid"].'">'.$row["name"].'</option>';
+                                        echo'<option >'.$row["name"].'</option>';
                                     }
                                 }
                                 ?></select>
