@@ -141,7 +141,7 @@ if(!isset($_SESSION['userSession'])){
 
                         </div>
                         <div>
-                            <form class="form-img" action="">
+                            <form class="form-img" action="createcat.php" method="post">
                                 <div class="form-group">
                                     <label for="category">Category Name</label>
                                     <input type="text" class="form-control" id="category" name="category" placeholder="Enter a category name">
