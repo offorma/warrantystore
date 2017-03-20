@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
     <link rel="stylesheet" href="../views/css/style.css">
 </head>
