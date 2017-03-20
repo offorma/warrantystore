@@ -14,7 +14,7 @@ if(!isset($_SESSION['userSession'])){
         <body>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-6>
+                    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-6">
                         <?php $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
                     if($pageWasRefreshed){
                         unset($_SESSION['fileextention']);
