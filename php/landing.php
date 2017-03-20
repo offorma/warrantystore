@@ -146,7 +146,7 @@ if(!isset($_SESSION['userSession'])){
                                     <label for="category">Category Name</label>
                                     <input type="text" class="form-control" id="category" name="category" placeholder="Enter a category name">
                                 </div>
-                                <button type="submit" name ="file-btn" class="btn btn-default center-block">Create Category</button>
+                                <button type="submit" name ="createcat-btn" class="btn btn-default center-block">Create Category</button>
                             </form>
                         </div>
                     </div>
