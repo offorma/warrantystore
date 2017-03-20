@@ -17,9 +17,9 @@ require_once 'db.php';
         $rnumber = $_POST['rnumber'];
         $tcharge = $_POST['tcharge'];
         $cat = $_POST['category'];
-        $cars[] = $_POST['tag'];
+        $tag[] = $_POST['tag'];
 
-        if(($imgFile)&&(!empty($rnumber))&&(!empty($rnumber))) {
+        if(($imgFile)&&(!empty($rnumber))&&(sizeof($tag)>0)&&(!empty($rnumber))) {
 
              //generate random image name
             $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension and make it lowercase
@@ -57,6 +57,14 @@ require_once 'db.php';
                                        move_uploaded_file($tmp_dir, $folder . $pic);
                                        $imgurl = $folder . $pic;
                                        $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
+
+                                       $rquery = $conn->query("SELECT receiptid FROM receipt WHERE image_url='$imgurl'");
+                                       $ridrow = $user->fetch_assoc();
+                                       $rid = $ridrow['receiptid'];
+
+                                           foreach ($tag as $select) {
+                                               $conn->query(" INSERT INTO receipt_tag(receiptid,tagid)VALUES('$rid','$select')");
+                                           }
                                        $conn->close();
                                        header('location: landing.php');
                                        $_SESSION['filesuccess'] = "<div class='alert alert-success'>
