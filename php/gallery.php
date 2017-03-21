@@ -8,8 +8,10 @@
 session_start();
 require_once 'db.php';
 ?>
+<?php include('header.php') ?>
 
 
+<body>
 <div class="container">
     <div class="gallery">
         <?php
@@ -27,14 +29,13 @@ require_once 'db.php';
                 $imageThumbURL = $row["image_url"];
                 $imageURL = $row["image_url"];
                 ?>
-                <a href="<?php echo $imageURL; ?>" data-fancybox="group" data-caption="<?php ?>" >
+                <a href="<?php echo $imageURL; ?>" data-fancybox="group" data-caption="<?php echo $row[""]; ?>" >
                     <img  class="img-thumbnail" width="100px" height="100px" src="<?php echo $imageThumbURL; ?>" alt="" />
                 </a>
             <?php }
         } ?>
     </div>
 </div>
-
 <style type="text/css">
     .gallery img {
         width: 20%;
