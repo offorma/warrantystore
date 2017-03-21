@@ -57,9 +57,9 @@ require_once 'db.php';
 
                                        move_uploaded_file($tmp_dir, $folder . $pic);
                                        $imgurl = $folder . $pic;
-                                       $ece=$conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
+                                       $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
 
-                                       echo $rid = mysqli_insert_id($ece);
+                                       echo $rid = mysqli_insert_id($conn);
 
 
 
