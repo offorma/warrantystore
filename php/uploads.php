@@ -67,7 +67,7 @@ require_once 'db.php';
                                                $conn->query(" INSERT INTO receipt_tag(receiptid,tagid)VALUES('$rid','$select')");
                                            }
                                        $conn->close();
-                                       header('location: laning.php');
+                                       //header('location: laning.php');
                                        $_SESSION['filesuccess'] = "<div class='alert alert-success'>
                                        <span class='glyphicon glyphicon-info-sign'></span>File upload was successful. Image is a gif</div>";
                                    }
