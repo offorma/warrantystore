@@ -28,7 +28,7 @@
             <li><a href="#">Who are we?</a></li>
             <?php
             if (isset($_SESSION['userSession'])) {
-                echo' <li><a href="/gallery.php">Gallery</a></li>';
+                echo' <li><a href="gallery.php">Gallery</a></li>';
             }?>
 
         </ul>
