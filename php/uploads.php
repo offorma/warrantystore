@@ -57,9 +57,9 @@ require_once 'db.php';
 
                                        move_uploaded_file($tmp_dir, $folder . $pic);
                                        $imgurl = $folder . $pic;
-                                       $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
+                                       $ece=$conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
 
-                                       echo $rid = mysqli_insert_id();
+                                       echo $rid = mysqli_insert_id($ece);
 
 
 
@@ -67,7 +67,7 @@ require_once 'db.php';
                                                $conn->query(" INSERT INTO receipt_tag(receiptid,tagid)VALUES('$rid','$select')");
                                            }
                                        $conn->close();
-                                       //header('location: laning.php');
+                                       //header('location: landing.php');
                                        $_SESSION['filesuccess'] = "<div class='alert alert-success'>
                                        <span class='glyphicon glyphicon-info-sign'></span>File upload was successful. Image is a gif</div>";
                                    }
