@@ -28,7 +28,7 @@ require_once 'db.php';
                 $imageURL = $row["image_url"];
                 ?>
                 <a href="<?php echo $imageURL; ?>" data-fancybox="group" data-caption="<?php echo $row[""]; ?>" >
-                    <img  class="img-thumbnail" src="<?php echo $imageThumbURL; ?>" alt="" />
+                    <img  class="img-thumbnail" width="100px" height="100px" src="<?php echo $imageThumbURL; ?>" alt="" />
                 </a>
             <?php }
         } ?>
