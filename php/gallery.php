@@ -25,7 +25,7 @@ require_once 'db.php';
         $query = $conn->query("SELECT image_url FROM receipt where userid = '$userid'");
 
         if($query->num_rows > 0){
-            ?><div class=" row"></div>
+            ?><div class=" row">
             <?php
             $count= 0;
             while($row = $query->fetch_assoc()){
