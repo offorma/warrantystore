@@ -18,7 +18,7 @@ require_once 'db.php';
         $tcharge = $_POST['tcharge'];
         $cat = $_POST['category'];
         $tag[] = $_POST['tag'];
-        //echo $_POST['tag'];
+
 
         if(($imgFile)&&(!empty($rnumber))&&(sizeof($tag)>0)&&(!empty($rnumber))) {
 
@@ -60,6 +60,8 @@ require_once 'db.php';
                                        $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
 
                                        echo $rid = mysqli_insert_id($conn);
+
+                                       print_r($_POST['tag']) ;
 
 
 
