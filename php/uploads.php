@@ -65,7 +65,7 @@ require_once 'db.php';
 
 
                                        $_SESSION['fileerror'] = "<div class='alert alert-danger'>
-                                       <span class='glyphicon glyphicon-info-sign'></span> ".echo $rid."Image cannot be moved</div>";
+                                       <span class='glyphicon glyphicon-info-sign'></span> echo $rid Image cannot be moved</div>";
 
                                            foreach ($tag as $select) {
                                                $conn->query(" INSERT INTO receipt_tag(receiptid,tagid)VALUES('$rid','$select')");
