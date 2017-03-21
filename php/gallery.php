@@ -25,13 +25,20 @@ require_once 'db.php';
         $query = $conn->query("SELECT image_url FROM receipt where userid = '$userid'");
 
         if($query->num_rows > 0){
+            ?><div class=" row"></div>
+            <?php
+            $count= 0;
             while($row = $query->fetch_assoc()){
+
                 $imageThumbURL = $row["image_url"];
                 $imageURL = $row["image_url"];
                 ?>
                 <a href="<?php echo $imageURL; ?>" data-fancybox="group" data-caption="<?php echo $row[""]; ?>" >
                     <img  class="img-thumbnail" width="100px" height="100px" src="<?php echo $imageThumbURL; ?>" alt="" />
                 </a>
+                <?php if ($count+1%3==0){
+                    echo "</div><div class='row' >";
+                }?>
             <?php }
         } ?>
     </div>
