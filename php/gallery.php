@@ -46,7 +46,6 @@ require_once 'db.php';
 </div>
 <style type="text/css">
     .gallery img {
-        width: 20%;
         height: auto;
         border-radius: 5px;
         cursor: pointer;
