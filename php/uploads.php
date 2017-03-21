@@ -59,13 +59,11 @@ require_once 'db.php';
                                        $imgurl = $folder . $pic;
                                        $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
 
-                                       $rquery = $conn->query("SELECT receiptid FROM receipt WHERE image_url LIKE '%$imgurl%'");
-                                       $ridrow = $user->fetch_assoc();
-                                       $rid = $ridrow['receiptid'];
+                                       $rid = last_insert_id();
 
 
                                        $_SESSION['fileerror'] = "<div class='alert alert-danger'>
-                                       <span class='glyphicon glyphicon-info-sign'></span> echo $rid Image cannot be moved</div>";
+                                       <span class='glyphicon glyphicon-info-sign'></span> echo($rid) Image cannot be moved</div>";
 
                                            foreach ($tag as $select) {
                                                $conn->query(" INSERT INTO receipt_tag(receiptid,tagid)VALUES('$rid','$select')");
