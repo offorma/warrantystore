@@ -6,7 +6,7 @@
     <title>Welcome</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css">
     <link rel="stylesheet" href="../views/css/style.css">
 </head>
 <body>
@@ -26,6 +26,10 @@
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#">What is it?</a></li>
             <li><a href="#">Who are we?</a></li>
+            <?php
+            if (isset($_SESSION['userSession'])) {
+                echo' <li><a href="/gallery.php">Gallery</a></li>';
+            }?>
 
         </ul>
         <form class="navbar-form navbar-left">
