@@ -61,15 +61,11 @@ require_once 'db.php';
 
                                        echo $rid = mysqli_insert_id($conn);
 
-                                       print_r($_POST['tag']) ;
-
-
-
                                            foreach ($tag as $select) {
                                                $conn->query(" INSERT INTO receipt_tag(receiptid,tagid)VALUES('$rid','$select')");
                                            }
                                        $conn->close();
-                                       //header('location: landing.php');
+                                       header('location: landing.php');
                                        $_SESSION['filesuccess'] = "<div class='alert alert-success'>
                                        <span class='glyphicon glyphicon-info-sign'></span>File upload was successful. Image is a gif</div>";
                                    }
