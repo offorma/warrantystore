@@ -59,7 +59,7 @@ require_once 'db.php';
                                        $imgurl = $folder . $pic;
                                        $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
 
-                                       echo $rid = mysqli_insert_id($conn);
+                                       $rid = mysqli_insert_id($conn);
 
                                            foreach ($tag as $select) {
                                                $conn->query(" INSERT INTO receipt_tag(receiptid,tagid)VALUES('$rid','$select')");
@@ -94,6 +94,19 @@ require_once 'db.php';
                                        move_uploaded_file($tmp_dir, $folder . $pic);
                                        $imgurl = $folder . $pic;
                                        $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
+
+
+                                       $rid = mysqli_insert_id($conn);
+
+                                       foreach ($tag as $select) {
+                                           $conn->query(" INSERT INTO receipt_tag(receiptid,tagid)VALUES('$rid','$select')");
+                                       }
+
+                                       $rid = mysqli_insert_id($conn);
+
+                                       foreach ($tag as $select) {
+                                           $conn->query(" INSERT INTO receipt_tag(receiptid,tagid)VALUES('$rid','$select')");
+                                       }
                                        $conn->close();
                                        header('location: landing.php');
                                        $_SESSION['filesuccess'] = "<div class='alert alert-success'>
@@ -124,6 +137,13 @@ require_once 'db.php';
                                        move_uploaded_file($tmp_dir, $folder . $pic);
                                        $imgurl = $folder . $pic;
                                        $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
+
+                                       $rid = mysqli_insert_id($conn);
+
+                                       foreach ($tag as $select) {
+                                           $conn->query(" INSERT INTO receipt_tag(receiptid,tagid)VALUES('$rid','$select')");
+                                       }
+
                                        $conn->close();
                                        header('location: landing.php');
                                        $_SESSION['filesuccess'] = "<div class='alert alert-success'>
@@ -155,6 +175,13 @@ require_once 'db.php';
                                        move_uploaded_file($tmp_dir, $folder . $pic);
                                        $imgurl = $folder . $pic;
                                        $conn->query("INSERT INTO receipt (image_url, receipt_number, total_charge, categoryid, userid, details)VALUES ('$imgurl', '$rnumber1', '$tcharge1','$categoryid','$userid','')");
+
+                                       $rid = mysqli_insert_id($conn);
+
+                                       foreach ($tag as $select) {
+                                           $conn->query(" INSERT INTO receipt_tag(receiptid,tagid)VALUES('$rid','$select')");
+                                       }
+
                                        $conn->close();
                                        header('location: landing.php');
                                        $_SESSION['filesuccess'] = "<div class='alert alert-success'>
