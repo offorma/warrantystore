@@ -39,8 +39,9 @@ require_once 'db.php';
                 <?php
                 if (($count+1)%3==0){
                     echo "</div><div class='row' >";
-                    $count++;
+
                 }?>
+                $count++;
             <?php }
         } ?>
     </div>
