@@ -46,3 +46,10 @@ p{
     margin-top: 15%;
     margin-bottom: 15%;
 }
+.gallery img {
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+    margin-bottom: 10px;
+}
