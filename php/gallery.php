@@ -36,7 +36,8 @@ require_once 'db.php';
                 <a href="<?php echo $imageURL; ?>" data-fancybox="group" data-caption="<?php echo $row[""]; ?>" >
                     <img  class="img-thumbnail" width="100px" height="100px" src="<?php echo $imageThumbURL; ?>" alt="" />
                 </a>
-                <?php if ($count+1%3==0){
+                <?php $count++;
+                if ($count+1%3==0){
                     echo "</div><div class='row' >";
                 }?>
             <?php }
