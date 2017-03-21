@@ -41,7 +41,7 @@ require_once 'db.php';
                     echo "</div><div class='row' >";
 
                 }?>
-                $count++;
+                <?php$count++;?>
             <?php }
         } ?>
     </div>
