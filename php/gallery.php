@@ -35,6 +35,15 @@ require_once 'db.php';
     </div>
 </div>
 
+<style type="text/css">
+    .gallery img {
+        width: 20%;
+        height: auto;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .3s;
+    }
+</style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
