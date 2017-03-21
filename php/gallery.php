@@ -10,8 +10,6 @@ require_once 'db.php';
 ?>
 <?php include('header.php') ?>
 
-
-<body>
 <div class="container">
     <div class="gallery">
         <?php
@@ -44,6 +42,7 @@ require_once 'db.php';
             <?php }
         } ?>
     </div>
+</div>
 </div>
 <style type="text/css">
     .gallery img {
