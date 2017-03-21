@@ -26,6 +26,7 @@ require_once 'db.php';
             ?><div class=" row">
             <?php
             $count= 0;
+            $imageThumbURL ;
             while($row = $query->fetch_assoc()){
 
                 $imageThumbURL = $row["image_url"];
@@ -43,11 +44,20 @@ require_once 'db.php';
         } ?>
     </div>
 </div>
+    <script>
+        Tesseract.recognize("<?php echo $imageThumbURL; ?>", {
+            lang: 'ind',
+            tessedit_char_blacklist: 'e'
+        })
+            .progress(function(message){ console.log(message) })
+            .then(function(result) { console.log(result) });
+    </script>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+<script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
 <script type="text/javascript">
     $("[data-fancybox]").fancybox({ });
 </script>
