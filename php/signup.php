@@ -42,7 +42,7 @@ if(isset($_POST['signup-btn'])) {
         $count=$check_email->num_rows;
 
         if ($count==0) {
-            echo "me";
+            echo "me"
             $query = "INSERT INTO user(username,email,password) VALUES('$uname','$email','$hashed_password')";
 
             if ($conn->query($query)) {
