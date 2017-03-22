@@ -32,8 +32,7 @@ require_once 'db.php';
             }else{
                 $em=$_POST['email'];
             }
-        }else{
-        echo "me";
+
                 $unam = strip_tags($up);
                 $emai = strip_tags($un);
                 $upas = strip_tags($em);
