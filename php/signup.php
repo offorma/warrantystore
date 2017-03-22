@@ -59,11 +59,11 @@ if(isset($_POST['signup-btn'])) {
             }
 
         } else {
-            header("Location: loginpg.php");
 
             $_SESSION['errormsg'] = "<div class='alert alert-danger'>
          <span class='glyphicon glyphicon-info-sign'></span> &nbsp; sorry email already taken !
         </div>";
+            header("Location: loginpg.php");
         }
 
     }
