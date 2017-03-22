@@ -55,7 +55,7 @@ if(isset($_POST['signup-btn'])) {
 
                 $_SESSION['sqlmsg'] = "<div class='alert alert-danger'>
           <span class='glyphicon glyphicon-info-sign'></span> &nbsp; error while registering !
-         </div>";
+         </div>"; header("Location: loginpg.php");
             }
 
         } else {
