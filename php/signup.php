@@ -33,9 +33,9 @@ require_once 'db.php';
                 $em=$_POST['email'];
             }
 
-                $unam = strip_tags($up);
-                $emai = strip_tags($un);
-                $upas = strip_tags($em);
+                $unam = strip_tags($un);
+                $emai = strip_tags($em);
+                $upas = strip_tags($up);
 
                 $uname = $conn->real_escape_string($unam);
                 $email = $conn->real_escape_string($emai);
