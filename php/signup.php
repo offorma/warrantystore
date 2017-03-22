@@ -28,13 +28,13 @@ if(isset($_POST['signup-btn'])) {
     }
 }else{
 
-        $uname = strip_tags($_POST['username']);
-        $email = strip_tags($_POST['email']);
-        $upass = strip_tags($_POST['password1']);
+        $unam = strip_tags($_POST['username']);
+        $emai = strip_tags($_POST['email']);
+        $upas = strip_tags($_POST['password1']);
 
-        $uname = $conn->real_escape_string($uname);
-        $email = $conn->real_escape_string($email);
-        $upass = $conn->real_escape_string($upass);
+        $uname = $conn->real_escape_string($unam);
+        $email = $conn->real_escape_string($emai);
+        $upass = $conn->real_escape_string($upas);
 
         $hashed_password = password_hash($upass, PASSWORD_DEFAULT); //here i am hashing the password
 
