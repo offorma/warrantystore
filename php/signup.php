@@ -38,7 +38,7 @@ if(isset($_POST['signup-btn'])) {
 
         $hashed_password = password_hash($upass, PASSWORD_DEFAULT); //here i am hashing the password
 
-        $check_email = $conn->query("SELECT email FROM user WHERE email='$email'");
+        $check_email = $conn->query("SELECT email FROM user WHERE email like'%$email%'");
         $count=$check_email->num_rows;
 
         if ($count==0) {
