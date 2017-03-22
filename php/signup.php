@@ -69,4 +69,5 @@ if(isset($_POST['signup-btn'])) {
     }
 
     $conn->close();
+?>
 
