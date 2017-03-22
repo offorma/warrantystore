@@ -36,7 +36,7 @@ if(isset($_POST['signup-btn'])) {
         $email = $conn->real_escape_string($email);
         $upass = $conn->real_escape_string($upass);
 
-        $hashed_password = password_hash($upass, PASSWORD_DEFAULT); //here i am hassing the password
+        $hashed_password = password_hash($upass, PASSWORD_DEFAULT); //here i am hashing the password
 
         $check_email = $conn->query("SELECT email FROM user WHERE email='$email'");
         $count=$check_email->num_rows;
