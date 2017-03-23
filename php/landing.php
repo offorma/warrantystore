@@ -8,6 +8,7 @@ include('header.php');
  * Date: 2/26/17
  * Time: 5:33 PM
  */
+session_start();
 if(!isset($_SESSION['userSession'])){
     header('location:index.php');
 }?>
