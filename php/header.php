@@ -1,4 +1,4 @@
-<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +29,7 @@
             <?php
             if (isset($_SESSION['userSession'])) {
                 echo' <li><a href="gallery.php">Gallery</a></li>';
+                echo' <li><a href="landing.php">Upload</a></li>'; 
             }?>
 
         </ul>

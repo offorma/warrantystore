@@ -34,7 +34,7 @@ if (isset($_POST['login-btn'])) {
 
     if (password_verify($password, $row['password']) && $count==1) {
         $_SESSION['userSession'] = $row['username'];
-        header("Location: landing.php");
+        header("Location: index.php");
     } else {
 
         $_SESSION['loginmessage'] = "<div class='alert alert-danger'>

@@ -33,7 +33,7 @@ require_once 'db.php';
                 $imageURL = $row["image_url"];
                 ?>
                 <div class="col-md-4 col-lg-4 col-xs-12"><a href="<?php echo $imageURL; ?>" style="display:block;" data-fancybox="group" data-caption="<?php ?>" >
-                    <img  class="img-thumbnail" style="display: block"  height="100%" src="<?php echo $imageThumbURL; ?>" alt="" />
+                    <img  class="img-thumbnail" style="display: block; height: 100px; width:100px;" src="<?php echo $imageThumbURL; ?>" alt="" />
                 </a></div>
                 <?php
                 if (($count+1)%3==0){
