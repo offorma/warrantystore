@@ -1,7 +1,7 @@
 <?php
 
 require_once 'db.php';
-include('header.php');
+
 /**
  * Created by PhpStorm.
  * User: offormachukwunonso
@@ -11,6 +11,8 @@ include('header.php');
 session_start();
 if(!isset($_SESSION['userSession'])){
     header('location:index.php');
+    include('header.php');    
+
 }?>
         <body>
             <div class="container">
