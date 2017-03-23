@@ -1,18 +1,17 @@
 <?php
-
+session_start();
 require_once 'db.php';
-
+include('header.php');
 /**
  * Created by PhpStorm.
  * User: offormachukwunonso
  * Date: 2/26/17
  * Time: 5:33 PM
  */
-session_start();
+
 if(!isset($_SESSION['userSession'])){
     header('location:index.php');
-    include('header.php');    
-
+    
 }?>
         <body>
             <div class="container">
