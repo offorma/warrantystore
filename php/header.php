@@ -23,7 +23,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="#">What is it?</a></li>
             <li><a href="#">Who are we?</a></li>
             <?php
