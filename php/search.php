@@ -43,12 +43,12 @@ if(isset($_POST["tag"])) {
 
     $receiptid = array();
 
-    while($urow = $get_receiptid->fetch_assoc()){
+    while($urow = $conn->fetch_assoc($get_receiptid)){
 
         $receiptid[] = $urow;
     }
 
-
+echo $receiptid;
 
 
 
