@@ -42,14 +42,16 @@ if(isset($_POST["tag"])) {
     $get_receiptid = $conn->query("SELECT receiptid FROM receipt_tag WHERE tagid= '$tagid'");
 
     $receiptids = array();
-
+    $count=0;
     while($urow = $get_receiptid->fetch_assoc()){
-
+// add each row returned into an array
         $receiptids[] = $urow;
+        $count++;
+
     }
 
-        $count= count ($receiptids) ;
-    for($i=0;$i<$count-1; $i++) {
+
+    for($i=0;$i=$count; $i++) {
         $recieptid = $receiptids[0]["receiptid"];
 
         echo $recieptid."\n";
