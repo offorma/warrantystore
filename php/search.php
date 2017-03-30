@@ -54,10 +54,10 @@ if(isset($_POST["tag"])) {
 
         $get_receiptimg = $conn->query("SELECT image_url FROM receipt WHERE receiptid= '$receiptid'");
 
-        echo $get_receiptimg;
-        $urow = $get_receiptimg->fetch_assoc();
-        $image_url = $urow['image_url'];
-        echo $image_url;
+        echo "xx".$get_receiptimg;
+     //   $urow = $get_receiptimg->fetch_assoc();
+       // $image_url = $urow['image_url'];
+       // echo $image_url;
     }
 //get image
 
