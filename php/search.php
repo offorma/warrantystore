@@ -43,7 +43,7 @@ if(isset($_POST["tag"])) {
 
     $receiptid = array();
 
-    while($urow = $conn->fetch_assoc($get_receiptid)){
+    while($urow = $conn->mysqli_fetch_assoc($get_receiptid)){
 
         $receiptid[] = $urow;
     }
