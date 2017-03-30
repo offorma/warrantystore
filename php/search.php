@@ -55,11 +55,11 @@ echo $recieptid;
         //get image
         $get_receiptimg = $conn->query("SELECT image_url FROM receipt WHERE recieptid= '$recieptid'");
 
-        if (!$get_receiptimg)
+        if ($get_receiptimg== true)
         {
-            var_dump(mysqli_error($this->_dbconnect));
+            echo "sucess";
         }
-       $urow = $get_receiptimg->fetch_assoc();
+     //  $urow = $get_receiptimg->fetch_assoc();
         $image_url = $urow['image_url'];
 
 ?>
