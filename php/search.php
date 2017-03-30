@@ -32,7 +32,7 @@ include 'db.php';
 if(isset($_POST["tag"])) {
 
     $tag = $_POST["tag"];
-    echo $tag;
+
 
     $get_tagid = $conn->query("SELECT tagid FROM tag WHERE name like '%$tag%'");
 
