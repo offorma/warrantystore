@@ -57,7 +57,7 @@ if(isset($_POST["tag"])) {
         echo $get_receiptimg;
      //   $urow = $get_receiptimg->fetch_assoc();
        // $image_url = $urow['image_url'];
-       // echo $image_url;
+     
     }
 //get image
 
