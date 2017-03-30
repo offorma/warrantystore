@@ -60,7 +60,7 @@ if(isset($_POST["tag"])) {
         $row = mysqli_fetch_assoc($results);
         //echo $results;
        //$urow = $results->fetch_assoc();
-        $image_url = $urow['image_url'];
+        $image_url = $row['image_url'];
 
 
 
