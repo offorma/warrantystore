@@ -50,17 +50,17 @@ if(isset($_POST["tag"])) {
     }
     $imageThumbURL;
     for($i=0;$i<$count; $i++) {
-        $recieptid = $receiptids[$i]["receiptid"];
+        $receiptid = $receiptids[$i]["receiptid"];
 
+        $get_receiptimg = $conn->query("SELECT image_url FROM receipt WHERE receiptid= '$receiptid'");
 
+        echo $get_receiptimg;
+        $urow = $get_receiptimg->fetch_assoc();
+        $image_url = $urow['image_url'];
+        echo $image_url;
     }
 //get image
-    $get_receiptimg = $conn->query("SELECT image_url FROM receipt WHERE recieptid= '$recieptid'");
 
-    echo $get_receiptimg;
-    $urow = $get_receiptimg->fetch_assoc();
-    $image_url = $urow['image_url'];
-    echo $image_url;
 }
 
 /*?>
