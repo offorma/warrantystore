@@ -38,7 +38,7 @@ if(isset($_POST["tag"])) {
 
     $urow = $get_tagid->fetch_assoc();
     $tagid = $urow['tagid'];
-
+echo $tagid;
     $get_receiptid = $conn->query("SELECT receiptid FROM receipt_tag WHERE tagid= '$tagid'");
 
     $receiptid = array();
