@@ -48,7 +48,7 @@ if(isset($_POST["tag"])) {
         $receiptid[] = $urow;
     }
 
-echo $receiptid[1][0];
+echo $receiptid[0]["receiptid"];
 
 
 
