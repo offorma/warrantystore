@@ -49,21 +49,20 @@ if(isset($_POST["tag"])) {
         $count++;
     }
     $imageThumbURL;
+
+
     for($i=0;$i<$count; $i++) {
         $receiptid = $receiptids[$i]["receiptid"];
-
-        $get_receiptimg = $conn->query("SELECT image_url FROM receipt WHERE receiptid= '$receiptid'");
+//get image
+       $get_receiptimg = $conn->query("SELECT image_url FROM receipt WHERE receiptid= '$receiptid'");
 
         echo $get_receiptimg;
      //   $urow = $get_receiptimg->fetch_assoc();
        // $image_url = $urow['image_url'];
-     
-    }
-//get image
 
-}
 
-/*?>
+
+?>
         <div class="col-md-4 col-lg-4 col-xs-12"><a href="<?php echo $image_url; ?>" style="display:block;" data-fancybox="group" data-caption="<?php ?>" >
                     <img  class="img-thumbnail" style="display: block; height: 200px; width:200px;" src="<?php echo $imageThumbURL; ?>" alt="" />
                 </a></div>
