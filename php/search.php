@@ -54,9 +54,8 @@ if(isset($_POST["tag"])) {
     for($i=0;$i<$count; $i++) {
         $receiptid = $receiptids[$i]["receiptid"];
 //get image
-       $get_receiptimg = $conn->query("SELECT image_url FROM receipt WHERE receiptid= '$receiptid'");
-
-        echo $get_receiptimg;
+        $get_img = $conn->query("SELECT image_url FROM receipt WHERE receiptid= '$receiptid'");
+        echo $get_img;
      //   $urow = $get_receiptimg->fetch_assoc();
        // $image_url = $urow['image_url'];
 
