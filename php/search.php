@@ -51,11 +51,11 @@ if(isset($_POST["tag"])) {
     $imageThumbURL;
     for($i=0;$i<$count; $i++) {
         $recieptid = $receiptids[$i]["receiptid"];
-
+echo $recieptid;
         //get image
         $get_receiptimg = $conn->query("SELECT image_url FROM receipt WHERE recieptid= '$recieptid'");
 
-       $urow = $get_receiptimg->fetch_assoc();
+      // $urow = $get_receiptimg->fetch_assoc();
         $image_url = $urow['image_url'];
 
 ?>
