@@ -49,7 +49,7 @@ if(isset($_POST["tag"])) {
     }
 
     echo count ($receiptid);
-    echo "blah" . $receiptid[0]["receiptid"] . "blah";
+    echo "blah" . $receiptid[1]["receiptid"] . "blah";
 
 
 
