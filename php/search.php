@@ -58,7 +58,7 @@ if(isset($_POST["tag"])) {
 
         $results = $conn->query ($get_img);
         $row = mysqli_fetch_assoc($results);
-        echo $results;
+        //echo $results;
        //$urow = $results->fetch_assoc();
         $image_url = $urow['image_url'];
 
