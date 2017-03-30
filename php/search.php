@@ -48,7 +48,7 @@ echo $tagid;
         $receiptid[] = $urow;
     }
 
-echo $receiptid;
+
 
 
 
