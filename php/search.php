@@ -49,7 +49,7 @@ if(isset($_POST["tag"])) {
     }
 
         $count= count ($receiptids) ;
-    for($i=0;$i<$count-1; $count--) {
+    for($i=0;$i<$count-1; $i++) {
         $recieptid = $receiptids[0]["receiptid"];
 
         echo $recieptid."\n";
