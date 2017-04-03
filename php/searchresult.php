@@ -106,7 +106,7 @@ if(!isset($_SESSION['userSession'])){
 
                 if($query->num_rows > 0) {
                     echo "<div class=' row'>";
-                    unset($_SESSION['searchmsg']);
+                    $_SESSION['searchmsg']="";
 
                     $count= 0;
                     $imageThumbURL ;
@@ -149,7 +149,7 @@ if(!isset($_SESSION['userSession'])){
                 if($query->num_rows > 0) {
                     echo "<div class=' row'>";
 
-                    unset($_SESSION['searchmsg']);
+                    $_SESSION['searchmsg']="";
                     $count= 0;
                     $imageThumbURL ;
                     while($row = $query->fetch_assoc()){
@@ -195,7 +195,7 @@ if(!isset($_SESSION['userSession'])){
                 if($query->num_rows > 0) {
                     echo "<div class=' row' >";
 
-                    unset($_SESSION['searchmsg']);
+                    $_SESSION['searchmsg']="";
                     $count= 0;
                     $imageThumbURL ;
                     while($row = $query->fetch_assoc()){
