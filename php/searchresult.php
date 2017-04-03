@@ -9,6 +9,11 @@ session_start();
 require_once 'db.php';
 ?>
 <?php include('header.php') ?>
+<?php
+if(!isset($_SESSION['userSession'])){
+    header('location:index.php');
+
+}?>
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3 gsearch">
