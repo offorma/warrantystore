@@ -47,7 +47,7 @@ require_once 'db.php';
                     $urow = $user->fetch_assoc();
                     $userid = $urow['userid'];
 
-                    $sql = "SELECT name FROM category where userid = '$userid'";
+                    $sql = "SELECT name, categoryid FROM category where userid = '$userid'";
                     $result = $conn->query($sql);?>
                     <select class="selectpicker form-control" name="category" id="category">
                         <option>Select category</option>
@@ -57,7 +57,7 @@ require_once 'db.php';
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
 
-                                echo'<option >'.$row["name"].'</option>';
+                                echo'<option value="'.$row["categoryid"].'">'.$row["name"].'</option>';
                             }
                         }
                         ?></select>
