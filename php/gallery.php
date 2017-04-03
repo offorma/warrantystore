@@ -12,6 +12,20 @@ require_once 'db.php';
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd">
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
             <form class ="form-inline" action="" method="post">
                 <div class="form-group col-md-4">
                     <label for="category">Tags</label>
