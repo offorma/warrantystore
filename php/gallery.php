@@ -102,7 +102,8 @@ header('location:index.php');
                     <img  class="img-thumbnail" style="display: block; height: 200px; width:200px;" src="<?php echo $imageThumbURL; ?>" alt="" />
                 </a>
                 <button class="btn btn-success">Recognize</button>
-                    <button class="btn btn-success">Delete</button>
+                    <<button class="btn btn-danger" data-href="<?php echo $imageThumbURL; ?>" data-toggle="modal" data-target="#confirm-delete"> Delete
+                    <i class="fa fa-trash-o"></i></button>
                 </div>
                 <?php
                 if (($count+1)%3==0){
@@ -113,6 +114,24 @@ header('location:index.php');
         } ?>
     </div>
 </div>
+    <div id="confirm-delete" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure that you want to delete this module</p>
+                    <p class="text-warning"><small>If you click "delete" your data will be lost permanently</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
+                    <button type="button" class="btn btn-danger btn-ok">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         Tesseract.recognize("<?php echo $imageThumbURL; ?>", {
             lang: 'ind',
