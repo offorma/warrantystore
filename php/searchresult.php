@@ -16,63 +16,6 @@ if(!isset($_SESSION['userSession'])){
 }?>
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3 gsearch">
-
-            <form class ="form-inline" action="searchresult.php" method="post">
-                <div class="form-group col-md-4">
-
-                    <?php
-                    $usersession = $_SESSION['userSession'];
-
-                    $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
-                    $urow = $user->fetch_assoc();
-                    $userid = $urow['userid'];
-
-                    $sql = "SELECT name, tagid FROM tag where userid = '$userid'";
-                    $result = $conn->query($sql);?>
-                    <select class="selectpicker form-control" name="tag" id="tag">
-                        <option >Select tag</option>
-                        <?php
-
-                        if ($result->num_rows > 0) {
-                            // output data of each row
-                            while($row = $result->fetch_assoc()) {
-
-                                echo'<option value="'.$row["tagid"].'" >'.$row["name"].'</option>';
-                            }
-                        }
-                        ?></select>
-
-                </div>
-                <div class="form-group col-md-4">
-                    <?php
-                    $usersession = $_SESSION['userSession'];
-
-                    $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
-                    $urow = $user->fetch_assoc();
-                    $userid = $urow['userid'];
-
-                    $sql = "SELECT name, categoryid FROM category where userid = '$userid'";
-                    $result = $conn->query($sql);?>
-                    <select class="selectpicker form-control" name="category" id="category">
-                        <option>Select category</option>
-                        <?php
-
-                        if ($result->num_rows > 0) {
-                            // output data of each row
-                            while($row = $result->fetch_assoc()) {
-
-                                echo'<option value="'.$row["categoryid"].'">'.$row["name"].'</option>';
-                            }
-                        }
-                        ?></select>
-
-                </div>
-                    <button type="submit" name ="searchGallery" class="btn btn-default">Search</button>
-            </form>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-md-6 col-md-offset-3">
         <?php $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && ($_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0');
         if($pageWasRefreshed){
