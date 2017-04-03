@@ -14,8 +14,8 @@ require_once 'db.php';
     <div class="gallery">
 
         <div class="row">
-            <div class="">
-                <form>
+            <div class="col-md-12">
+                <form class ="form-horizontal">
                 <div class="form-group">
                     <label for="category">Tags</label>
                     <?php
