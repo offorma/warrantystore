@@ -12,7 +12,7 @@ require_once 'db.php';
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <form class ="form-horizontal" action="" method="post">
+            <form class ="form-inline" action="" method="post">
                 <div class="form-inline col-md-4">
                     <label for="category">Tags</label>
                     <?php
