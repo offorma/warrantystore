@@ -9,64 +9,67 @@ session_start();
 require_once 'db.php';
 ?>
 <?php include('header.php') ?>
-
 <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <form class ="form-horizontal" action="" method="post">
-                    <div class="form-group">
-                        <label for="category">Tags</label>
+    <div class="row">
+        <div class="col-md-12">
+            <form class ="form-horizontal" action="" method="post">
+                <div class="form-group">
+                    <label for="category">Tags</label>
+                    <?php
+                    $usersession = $_SESSION['userSession'];
+
+                    $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
+                    $urow = $user->fetch_assoc();
+                    $userid = $urow['userid'];
+
+                    $sql = "SELECT name, tagid FROM tag where userid = '$userid'";
+                    $result = $conn->query($sql);?>
+                    <select class="selectpicker form-control" name="tag">
+                        <option>Select tag</option>
                         <?php
-                        $usersession = $_SESSION['userSession'];
 
-                        $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
-                        $urow = $user->fetch_assoc();
-                        $userid = $urow['userid'];
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while($row = $result->fetch_assoc()) {
 
-                        $sql = "SELECT name, tagid FROM tag where userid = '$userid'";
-                        $result = $conn->query($sql);?>
-                        <select class="selectpicker form-control" name="tag">
-                            <option>Select tag</option>
-                            <?php
-
-                            if ($result->num_rows > 0) {
-                                // output data of each row
-                                while($row = $result->fetch_assoc()) {
-
-                                    echo'<option value="'.$row["tagid"].'" >'.$row["name"].'</option>';
-                                }
+                                echo'<option value="'.$row["tagid"].'" >'.$row["name"].'</option>';
                             }
-                            ?></select>
+                        }
+                        ?></select>
 
-                    </div>
-                    <div class="form-group">
-                        <label for="category">Category</label>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <?php
+                    $usersession = $_SESSION['userSession'];
+
+                    $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
+                    $urow = $user->fetch_assoc();
+                    $userid = $urow['userid'];
+
+                    $sql = "SELECT name FROM category where userid = '$userid'";
+                    $result = $conn->query($sql);?>
+                    <select class="selectpicker form-control" name="category">
+                        <option>Select category</option>
                         <?php
-                        $usersession = $_SESSION['userSession'];
 
-                        $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
-                        $urow = $user->fetch_assoc();
-                        $userid = $urow['userid'];
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while($row = $result->fetch_assoc()) {
 
-                        $sql = "SELECT name FROM category where userid = '$userid'";
-                        $result = $conn->query($sql);?>
-                        <select class="selectpicker form-control" name="category">
-                            <option>Select category</option>
-                            <?php
-
-                            if ($result->num_rows > 0) {
-                                // output data of each row
-                                while($row = $result->fetch_assoc()) {
-
-                                    echo'<option >'.$row["name"].'</option>';
-                                }
+                                echo'<option >'.$row["name"].'</option>';
                             }
-                            ?></select>
+                        }
+                        ?></select>
 
-                    </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
+    </div>
+
+</div>
+<div class="container">
+
     <div class="gallery">
         <?php
         $usersession = $_SESSION['userSession'];
