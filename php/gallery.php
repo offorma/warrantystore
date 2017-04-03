@@ -13,7 +13,7 @@ require_once 'db.php';
     <div class="row">
         <div class="col-md-12">
             <form class ="form-horizontal" action="" method="post">
-                <div class="form-group">
+                <div class="form-inline col-md-4">
                     <label for="category">Tags</label>
                     <?php
                     $usersession = $_SESSION['userSession'];
@@ -38,7 +38,7 @@ require_once 'db.php';
                         ?></select>
 
                 </div>
-                <div class="form-inline"">
+                <div class="form-inline col-md-4">
                     <label for="category">Category</label>
                     <?php
                     $usersession = $_SESSION['userSession'];
