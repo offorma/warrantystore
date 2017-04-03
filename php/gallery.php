@@ -11,7 +11,7 @@ require_once 'db.php';
 <?php include('header.php') ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3 gsearch">
 
             <form class ="form-inline" action="" method="post">
                 <div class="form-group col-md-4">
