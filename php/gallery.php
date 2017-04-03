@@ -15,7 +15,7 @@ require_once 'db.php';
 
             <form class ="form-inline" action="" method="post">
                 <div class="form-group ">
-                    <label for="tag">Tags</label>
+
                     <?php
                     $usersession = $_SESSION['userSession'];
 
@@ -40,7 +40,6 @@ require_once 'db.php';
 
                 </div>
                 <div class="form-group">
-                    <label for="category">Category</label>
                     <?php
                     $usersession = $_SESSION['userSession'];
 
