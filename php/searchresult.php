@@ -105,7 +105,7 @@ if(!isset($_SESSION['userSession'])){
                     $imageURL = $row["image_url"];
 
                        echo"<div class='col-md-4 col-lg-4 col-xs-12'><a href='$imageURL' style='display:block;' data-fancybox='group' data-caption='' >
-                                <img  class='img-thumbnail' style='display: block; height: 200px; width:200px;' src='' $imageThumbURL' alt='' />
+                                <img  class='img-thumbnail' style='display: block; height: 200px; width:200px;' src='$imageThumbURL' alt='' />
                             </a>
                             <button class='btn btn-success'>Recognize</button>
                             <button class='btn btn-success'>Delete</button>
