@@ -25,7 +25,8 @@ require_once 'db.php';
 
                         $sql = "SELECT name, tagid FROM tag where userid = '$userid'";
                         $result = $conn->query($sql);?>
-                        <select class="selectpicker form-control" name="tag[]">
+                        <select class="selectpicker form-control" name="tag">
+                            <option>Select tag</option>
                             <?php
 
                             if ($result->num_rows > 0) {
@@ -50,6 +51,7 @@ require_once 'db.php';
                         $sql = "SELECT name FROM category where userid = '$userid'";
                         $result = $conn->query($sql);?>
                         <select class="selectpicker form-control" name="category">
+                            <option>Select category</option>
                             <?php
 
                             if ($result->num_rows > 0) {
