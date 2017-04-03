@@ -73,6 +73,13 @@ require_once 'db.php';
 
     <div class="gallery">
         <?php
+        if(isset($_POST["searchGallery"])){
+            //if(){
+
+           // }
+
+
+        }
         $usersession = $_SESSION['userSession'];
         $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
         $urow = $user->fetch_assoc();
