@@ -25,7 +25,7 @@ if(!isset($_SESSION['userSession'])){
         ?>
         <?php if (isset($_SESSION['searchmsg'])){
             echo $_SESSION['searchmsg'];
-                $_SESSION['searchmsg'] = array();
+                $_SESSION['searchmsg'] = '';
 
 
         } ?>
