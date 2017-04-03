@@ -71,6 +71,9 @@ if(!isset($_SESSION['userSession'])){
                     <button type="submit" name ="searchGallery" class="btn btn-default">Search</button>
             </form>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
         <?php $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && ($_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0');
         if($pageWasRefreshed){
             unset($_SESSION['searchmsg']);
@@ -80,6 +83,7 @@ if(!isset($_SESSION['userSession'])){
         <?php if (isset($_SESSION['searchmsg'])){
             echo $_SESSION['searchmsg'];
         } ?>
+    </div>
     </div>
 
 </div>
