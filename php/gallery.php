@@ -13,7 +13,7 @@ require_once 'db.php';
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-            <form class ="form-inline center-block" action="" method="post">
+            <form class ="form-inline" action="" method="post">
                 <div class="form-group col-md-4">
 
                     <?php
