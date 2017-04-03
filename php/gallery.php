@@ -6,8 +6,14 @@
  * Time: 9:51 AM
  */
 session_start();
+
 require_once 'db.php';
 ?>
+<?php
+if(!isset($_SESSION['userSession'])){
+header('location:index.php');
+
+}?>
 <?php include('header.php') ?>
 <div class="container">
     <div class="row">
