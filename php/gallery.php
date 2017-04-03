@@ -15,6 +15,7 @@ require_once 'db.php';
 
         <div class="row">
             <div class="">
+                <form>
                 <div class="form-group">
                     <label for="category">Tags</label>
                     <?php
@@ -63,6 +64,7 @@ require_once 'db.php';
                         ?></select>
 
                 </div>
+                </form>
             </div>
 
         </div>
