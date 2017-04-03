@@ -34,7 +34,10 @@ require_once 'db.php';
                 ?>
                 <div class="col-md-4 col-lg-4 col-xs-12"><a href="<?php echo $imageURL; ?>" style="display:block;" data-fancybox="group" data-caption="<?php ?>" >
                     <img  class="img-thumbnail" style="display: block; height: 200px; width:200px;" src="<?php echo $imageThumbURL; ?>" alt="" />
-                </a></div>
+                </a>
+                <button class="btn btn-success">Recognize</button>
+                    <button class="btn btn-success">Delete</button>
+                </div>
                 <?php
                 if (($count+1)%3==0){
                     echo "</div><div class='row' >";
