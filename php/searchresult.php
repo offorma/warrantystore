@@ -71,6 +71,15 @@ if(!isset($_SESSION['userSession'])){
                     <button type="submit" name ="searchGallery" class="btn btn-default">Search</button>
             </form>
         </div>
+        <?php $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && ($_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0');
+        if($pageWasRefreshed){
+            unset($_SESSION['searchmsg']);
+
+        }
+        ?>
+        <?php if (isset($_SESSION['searchmsg'])){
+            echo $_SESSION['searchmsg'];
+        } ?>
     </div>
 
 </div>
@@ -114,14 +123,11 @@ if(!isset($_SESSION['userSession'])){
 
                         } $count++;
                      }
-                }
-            }else{
-                $_SESSION['searchmsg'] = "<div class='alert alert-danger'>
+                }else{
+                    $_SESSION['searchmsg'] = "<div class='alert alert-danger'>
                 <span class='glyphicon glyphicon-info-sign'></span> Oops!! No results were found for your search query </div>";
+                }
             }
-
-
-
 
             if(($_POST["tag"]!="Select tag")&&($_POST["category"]!="Select category")){
                 $tag =$_POST["tag"];
@@ -160,9 +166,56 @@ if(!isset($_SESSION['userSession'])){
                         } $count++;
                     }
                 }
-            }else{
-                $_SESSION['searchmsg'] = "<div class='alert alert-danger'>
+                else{
+                    $_SESSION['searchmsg'] = "<div class='alert alert-danger'>
                 <span class='glyphicon glyphicon-info-sign'></span> Oops!! No results were found for your search query </div>";
+                }
+            }
+        if(($_POST["tag"]=="Select tag")&&($_POST["category"]=="Select category")){
+            $_SESSION['searchmsg'] = "<div class='alert alert-danger'>
+                <span class='glyphicon glyphicon-info-sign'></span> Oops!! Buddy you have to select at least one of the search criteria </div>";
+        }
+
+            if(($_POST["tag"]=="Select tag")&&($_POST["category"]!="Select category")){
+                $cat =$_POST["category"];
+                $usersession = $_SESSION['userSession'];
+                $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
+                $urow = $user->fetch_assoc();
+                $userid = $urow['userid'];
+
+
+                //get images from database
+                $query = $conn->query("SELECT image_url FROM receipt where userid = '$userid' 
+                AND categoryid='$cat'");
+
+                if($query->num_rows > 0) {
+                    echo "<div class=' row'>";
+
+
+                    $count= 0;
+                    $imageThumbURL ;
+                    while($row = $query->fetch_assoc()){
+
+                        $imageThumbURL = $row["image_url"];
+                        $imageURL = $row["image_url"];
+
+                        echo"<div class='col-md-4 col-lg-4 col-xs-12'><a href='$imageURL' style='display:block;' data-fancybox='group' data-caption='' >
+                                <img  class='img-thumbnail' style='display: block; height: 200px; width:200px;' src='$imageThumbURL' alt='' />
+                            </a>
+                            <button class='btn btn-success'>Recognize</button>
+                            <button class='btn btn-success'>Delete</button>
+                        </div>";
+
+                        if (($count+1)%3==0){
+                            echo "</div><div class='row' >";
+
+                        } $count++;
+                    }
+                }
+                else{
+                    $_SESSION['searchmsg'] = "<div class='alert alert-danger'>
+                <span class='glyphicon glyphicon-info-sign'></span> Oops!! No results were found for your search query </div>";
+                }
             }
         }?>
     </div>
