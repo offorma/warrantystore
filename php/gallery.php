@@ -63,7 +63,7 @@ require_once 'db.php';
                         ?></select>
 
                 </div>
-        <button type="submit" name ="searchGallery" class="btn btn-default center-block">Search</button>
+        <button type="submit" name ="searchGallery" class="btn btn-default">Search</button>
             </form>
         </div>
     </div>
