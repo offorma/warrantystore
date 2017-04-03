@@ -79,6 +79,8 @@ if(!isset($_SESSION['userSession'])){
     <div class="gallery">
         <?php
         if(isset($_POST["searchGallery"])){
+            $tag =$_POST["tag"];
+            echo "$tag";
             if(($_POST["tag"]!=null)&&($_POST["category"]==null)){
                 $tag =$_POST["tag"];
                 $usersession = $_SESSION['userSession'];
