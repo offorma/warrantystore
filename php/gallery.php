@@ -38,7 +38,7 @@ require_once 'db.php';
                         ?></select>
 
                 </div>
-                <div class="form-group">
+                <div class="form-inline"">
                     <label for="category">Category</label>
                     <?php
                     $usersession = $_SESSION['userSession'];
@@ -63,6 +63,7 @@ require_once 'db.php';
                         ?></select>
 
                 </div>
+        <button type="submit" name ="searchGallery" class="btn btn-default form-inline center-block">Search</button>
             </form>
         </div>
     </div>
