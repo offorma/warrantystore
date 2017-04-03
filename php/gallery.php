@@ -15,7 +15,7 @@ require_once 'db.php';
 
             <form class ="form-inline" action="" method="post">
                 <div class="form-group ">
-                    <label for="category">Tags</label>
+                    <label for="tag">Tags</label>
                     <?php
                     $usersession = $_SESSION['userSession'];
 
@@ -25,7 +25,7 @@ require_once 'db.php';
 
                     $sql = "SELECT name, tagid FROM tag where userid = '$userid'";
                     $result = $conn->query($sql);?>
-                    <select class="selectpicker form-control" name="tag">
+                    <select class="selectpicker form-control" name="tag" id="tag">
                         <option>Select tag</option>
                         <?php
 
@@ -50,7 +50,7 @@ require_once 'db.php';
 
                     $sql = "SELECT name FROM category where userid = '$userid'";
                     $result = $conn->query($sql);?>
-                    <select class="selectpicker form-control" name="category">
+                    <select class="selectpicker form-control" name="category" id="category">
                         <option>Select category</option>
                         <?php
 
