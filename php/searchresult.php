@@ -193,7 +193,7 @@ if(!isset($_SESSION['userSession'])){
                 AND categoryid='$cat'");
 
                 if($query->num_rows > 0) {
-                    echo "<div class=' row'>";
+                    echo "<div class=' row' >";
 
                     unset($_SESSION['searchmsg']);
                     $count= 0;
