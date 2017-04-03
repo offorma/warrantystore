@@ -102,7 +102,7 @@ header('location:index.php');
                     <img  class="img-thumbnail" style="display: block; height: 200px; width:200px;" src="<?php echo $imageThumbURL; ?>" alt="" />
                 </a>
                 <button class="btn btn-success">Recognize</button>
-                    <<button class="btn btn-danger" data-href="<?php echo $imageThumbURL; ?>" data-toggle="modal" data-target="#confirm-delete"> Delete
+                    <button class="btn btn-danger" data-href="<?php echo $imageThumbURL; ?>" data-toggle="modal" data-target="#confirm-delete"> Delete
                     <i class="fa fa-trash-o"></i></button>
                 </div>
                 <?php
@@ -122,7 +122,7 @@ header('location:index.php');
                     <h4 class="modal-title">Confirmation</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure that you want to delete this module</p>
+                    <p>Are you sure that you want to delete this image</p>
                     <p class="text-warning"><small>If you click "delete" your data will be lost permanently</small></p>
                 </div>
                 <div class="modal-footer">
