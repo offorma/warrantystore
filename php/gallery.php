@@ -127,18 +127,21 @@ header('location:index.php');
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
-                    <button type="button" class="btn btn-danger btn-ok">Delete</button>
+                    <form action="delete.php"method="post"> <button type="submit" class="btn btn-danger btn-ok" value="">Delete</button></form>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        Tesseract.recognize("<?php echo $imageThumbURL; ?>", {
-            lang: 'ind',
-            tessedit_char_blacklist: 'e'
-        })
-            .progress(function(message){ console.log(message) })
-            .then(function(result) { console.log(result) });
+
+        $(document).ready(function(){
+            $('#confirm-delete').on('show.bs.modal', function(e) {
+                var imageurl = $(e.relatedTarget).data('href');
+                $('.btn-ok').setAttribute("value", "imageurl");
+
+            });
+
+        });
     </script>
 </div>
 
