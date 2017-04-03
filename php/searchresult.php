@@ -26,7 +26,7 @@ require_once 'db.php';
                     $sql = "SELECT name, tagid FROM tag where userid = '$userid'";
                     $result = $conn->query($sql);?>
                     <select class="selectpicker form-control" name="tag" id="tag">
-                        <option>Select tag</option>
+                        <option disabled>Select tag</option>
                         <?php
 
                         if ($result->num_rows > 0) {
@@ -50,7 +50,7 @@ require_once 'db.php';
                     $sql = "SELECT name, categoryid FROM category where userid = '$userid'";
                     $result = $conn->query($sql);?>
                     <select class="selectpicker form-control" name="category" id="category">
-                        <option>Select category</option>
+                        <option disabled>Select category</option>
                         <?php
 
                         if ($result->num_rows > 0) {
@@ -74,54 +74,45 @@ require_once 'db.php';
     <div class="gallery">
         <?php
         if(isset($_POST["searchGallery"])){
-            //if(){
-
-           // }
-
-
-        }
-        $usersession = $_SESSION['userSession'];
-        $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
-        $urow = $user->fetch_assoc();
-        $userid = $urow['userid'];
+            if(($_POST["tag"]!=null)&&($_POST["category"]==null)){
+                $tag =$_POST["tag"];
+                $usersession = $_SESSION['userSession'];
+                $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
+                $urow = $user->fetch_assoc();
+                $userid = $urow['userid'];
 
 
-        //get images from database
-        $query = $conn->query("SELECT image_url FROM receipt where userid = '$userid'");
+                //get images from database
+                $query = $conn->query("SELECT image_url FROM receipt where userid = '$userid' 
+                AND receiptid IN(SELECT receiptid FROM receipt_tag WHERE tagid='$tag')");
 
-        if($query->num_rows > 0){
-            ?><div class=" row">
-            <?php
-            $count= 0;
-            $imageThumbURL ;
-            while($row = $query->fetch_assoc()){
+                if($query->num_rows > 0) {
+                    echo "<div class=' row'>";
 
-                $imageThumbURL = $row["image_url"];
-                $imageURL = $row["image_url"];
-                ?>
-                <div class="col-md-4 col-lg-4 col-xs-12"><a href="<?php echo $imageURL; ?>" style="display:block;" data-fancybox="group" data-caption="<?php ?>" >
-                    <img  class="img-thumbnail" style="display: block; height: 200px; width:200px;" src="<?php echo $imageThumbURL; ?>" alt="" />
-                </a>
-                <button class="btn btn-success">Recognize</button>
-                    <button class="btn btn-success">Delete</button>
-                </div>
-                <?php
-                if (($count+1)%3==0){
-                    echo "</div><div class='row' >";
 
-                } $count++;?>
-            <?php }
-        } ?>
+                    $count= 0;
+                    $imageThumbURL ;
+                    while($row = $query->fetch_assoc()){
+
+                    $imageThumbURL = $row["image_url"];
+                    $imageURL = $row["image_url"];
+
+                       echo"<div class='col-md-4 col-lg-4 col-xs-12'><a href='$imageURL' style='display:block;' data-fancybox='group' data-caption='' >
+                                <img  class='img-thumbnail' style='display: block; height: 200px; width:200px;' src='' $imageThumbURL' alt='' />
+                            </a>
+                            <button class='btn btn-success'>Recognize</button>
+                            <button class='btn btn-success'>Delete</button>
+                        </div>";
+
+                        if (($count+1)%3==0){
+                            echo "</div><div class='row' >";
+
+                        } $count++;
+                     }
+                }
+            }
+        }?>
     </div>
-</div>
-    <script>
-        Tesseract.recognize("<?php echo $imageThumbURL; ?>", {
-            lang: 'ind',
-            tessedit_char_blacklist: 'e'
-        })
-            .progress(function(message){ console.log(message) })
-            .then(function(result) { console.log(result) });
-    </script>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
