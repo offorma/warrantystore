@@ -31,7 +31,7 @@ if(!isset($_SESSION['userSession'])){
                     $sql = "SELECT name, tagid FROM tag where userid = '$userid'";
                     $result = $conn->query($sql);?>
                     <select class="selectpicker form-control" name="tag" id="tag">
-                        <option disabled>Select tag</option>
+                        <option >Select tag</option>
                         <?php
 
                         if ($result->num_rows > 0) {
@@ -55,7 +55,7 @@ if(!isset($_SESSION['userSession'])){
                     $sql = "SELECT name, categoryid FROM category where userid = '$userid'";
                     $result = $conn->query($sql);?>
                     <select class="selectpicker form-control" name="category" id="category">
-                        <option disabled>Select category</option>
+                        <option>Select category</option>
                         <?php
 
                         if ($result->num_rows > 0) {
