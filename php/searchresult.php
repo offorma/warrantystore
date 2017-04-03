@@ -81,7 +81,7 @@ if(!isset($_SESSION['userSession'])){
         if(isset($_POST["searchGallery"])){
             $tag =$_POST["tag"];
             echo "$tag";
-            if(($_POST["tag"]!=null)&&($_POST["category"]==null)){
+            if(($_POST["tag"]!="Select tag")&&($_POST["category"]=="Select category")){
                 $tag =$_POST["tag"];
                 $usersession = $_SESSION['userSession'];
                 $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
