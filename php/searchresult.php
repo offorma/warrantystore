@@ -14,25 +14,7 @@ if(!isset($_SESSION['userSession'])){
     header('location:index.php');
 
 }?>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-        <?php $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && ($_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0');
-        if($pageWasRefreshed){
-            unset($_SESSION['searchmsg']);
 
-        }
-        ?>
-        <?php if (isset($_SESSION['searchmsg'])){
-            echo $_SESSION['searchmsg'];
-                $_SESSION['searchmsg'] = '';
-
-
-        } ?>
-    </div>
-    </div>
-
-</div>
 <div class="container">
 
     <div class="gallery">
@@ -171,7 +153,25 @@ if(!isset($_SESSION['userSession'])){
         }?>
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <?php $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && ($_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0');
+            if($pageWasRefreshed){
+                unset($_SESSION['searchmsg']);
 
+            }
+            ?>
+            <?php if (isset($_SESSION['searchmsg'])){
+                echo $_SESSION['searchmsg'];
+                $_SESSION['searchmsg'] = '';
+
+
+            } ?>
+        </div>
+    </div>
+
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
