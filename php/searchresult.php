@@ -94,6 +94,7 @@ if(!isset($_SESSION['userSession'])){
         if(isset($_POST["searchGallery"])){
             if(($_POST["tag"]!="Select tag")&&($_POST["category"]=="Select category")){
                 $tag =$_POST["tag"];
+                unset($_SESSION['searchmsg']);
                 $usersession = $_SESSION['userSession'];
                 $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
                 $urow = $user->fetch_assoc();
@@ -106,7 +107,7 @@ if(!isset($_SESSION['userSession'])){
 
                 if($query->num_rows > 0) {
                     echo "<div class=' row'>";
-                    $_SESSION['searchmsg']="";
+
 
                     $count= 0;
                     $imageThumbURL ;
@@ -135,6 +136,7 @@ if(!isset($_SESSION['userSession'])){
 
             if(($_POST["tag"]!="Select tag")&&($_POST["category"]!="Select category")){
                 $tag =$_POST["tag"];
+                unset($_SESSION['searchmsg']);
                 $cat =$_POST["category"];
                 $usersession = $_SESSION['userSession'];
                 $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
@@ -149,7 +151,6 @@ if(!isset($_SESSION['userSession'])){
                 if($query->num_rows > 0) {
                     echo "<div class=' row'>";
 
-                    $_SESSION['searchmsg']="";
                     $count= 0;
                     $imageThumbURL ;
                     while($row = $query->fetch_assoc()){
@@ -182,6 +183,7 @@ if(!isset($_SESSION['userSession'])){
 
             if(($_POST["tag"]=="Select tag")&&($_POST["category"]!="Select category")){
                 $cat =$_POST["category"];
+                unset($_SESSION['searchmsg']);
                 $usersession = $_SESSION['userSession'];
                 $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
                 $urow = $user->fetch_assoc();
@@ -195,7 +197,6 @@ if(!isset($_SESSION['userSession'])){
                 if($query->num_rows > 0) {
                     echo "<div class=' row' >";
 
-                    $_SESSION['searchmsg']="";
                     $count= 0;
                     $imageThumbURL ;
                     while($row = $query->fetch_assoc()){
