@@ -9,6 +9,7 @@ session_start();
 require_once 'db.php';
 $url=$_POST['btn-ok'];
 echo $url;
+echo "hdh";
 if (isset($_POST['btn-ok'])) {
 
 }
