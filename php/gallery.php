@@ -78,6 +78,7 @@ header('location:index.php');
 <div class="container">
 
     <div class="gallery">
+        <div class="col-md-6 col-md-offset-3">
         <?php if (isset($_SESSION['filesmsg'])){
             echo $_SESSION['filesmsg'];
             unset($_SESSION['filesmsg']);
@@ -85,7 +86,7 @@ header('location:index.php');
         <?php if (isset($_SESSION['filesuc'])){
             echo $_SESSION['filesuc'];
             unset($_SESSION['filesuc']);
-        } ?>
+        } ?></div>
         <?php
         $usersession = $_SESSION['userSession'];
         $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
