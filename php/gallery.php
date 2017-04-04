@@ -193,7 +193,7 @@ header('location:index.php');
     function runOCR(url) {
         Tesseract.recognize(url)
             .then(function(result) {
-                $('.ocr_result').attr('value', result);
+                $('.ocr_result').attr('value', result.text);
 
             }).progress(function(result) {
             document.getElementById("ocr_status")
