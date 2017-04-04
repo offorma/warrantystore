@@ -26,7 +26,7 @@ if (isset($_POST['btn-ok'])) {
         $urow = $user->fetch_assoc();
         $userid = $urow['userid'];
 
-        $query = $conn->query("DELETE * FROM receipt where userid = '$userid'AND image_url='$file'");
+        $query = $conn->query("DELETE FROM receipt where userid = '$userid'AND image_url='$file'");
 
         $_SESSION['filesuc'] = "<div class='alert alert-danger'>
                 <span class='glyphicon glyphicon-info-sign'></span> Your file was successfully deleted</div>";
