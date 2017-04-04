@@ -142,7 +142,7 @@ header('location:index.php');
     $(document).ready(function(){
         $('#confirm-delete').on('show.bs.modal', function(e) {
             var imageurl = $(e.relatedTarget).data('href');
-            $('.hiden').setAttribute("value", imageurl);
+            document.getElementsByClassName("hiden").setAttribute("value", imageurl);
 
         });
 
