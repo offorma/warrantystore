@@ -188,7 +188,7 @@ header('location:index.php');
             var imageurl = $(e.relatedTarget).data('href');
             runOCR(imageurl);
         });
-        $('#my-modal').on('hidden.bs.modal', function () {
+        $('#ocr').on('hidden.bs.modal', function () {
             document.getElementById("ocr_results")
                 .innerText = '';
         });
