@@ -151,11 +151,12 @@ header('location:index.php');
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Confirmation</h4>
+                    <h4 class="modal-title">Optical Character Regonition</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure that you want to delete this image</p>
-                    <p class="text-warning"><small>If you click "delete" your data will be lost permanently</small></p>
+                    <p class="ocr_result"></p>
+                    <p id="ocr_status"></p>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
@@ -183,8 +184,23 @@ header('location:index.php');
             var imageurl = $(e.relatedTarget).data('href');
             $('.hiden').attr('value', imageurl);
         });
+        $('#ocr').on('show.bs.modal', function(e) {
+            var imageurl = $(e.relatedTarget).data('href');
+
+        });
 
     });
+    function runOCR(url) {
+        Tesseract.recognize(url)
+            .then(function(result) {
+                $('.ocr_result').attr('value', result);
+
+            }).progress(function(result) {
+            document.getElementById("ocr_status")
+                .innerText = result["status"] + " (" +
+                (result["progress"] * 100) + "%)";
+        });
+    }
 </script>
 
 </body>
