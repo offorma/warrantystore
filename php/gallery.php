@@ -142,9 +142,10 @@ header('location:index.php');
     $(document).ready(function(){
         $('#confirm-delete').on('show.bs.modal', function(e) {
             var imageurl = $(e.relatedTarget).data('href');
-            console.log(imageurl);
-            var be= $('.hiden').setAttribute('value', imageurl);
-            console.log(be);
+            $('.btn-ok').click(function() {
+                $('.hiden').setAttribute('value', imageurl);
+            });
+
         });
 
     });
