@@ -28,7 +28,7 @@ if (isset($_POST['btn-ok'])) {
 
         $query = $conn->query("DELETE FROM receipt where userid = '$userid'AND image_url='$file'");
 
-        $_SESSION['filesuc'] = "<div class='alert alert-danger'>
+        $_SESSION['filesuc'] = "<div class='alert alert-success'>
                 <span class='glyphicon glyphicon-info-sign'></span> Your file was successfully deleted</div>";
         header('location:gallery.php');
     }
