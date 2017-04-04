@@ -128,7 +128,7 @@ header('location:index.php');
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
                     <form action="delete.php"method="post">
-                        <input class="hiden" type="hidden" name="url" value="kkk">
+                        <input class="hiden" type="text" name="url" value="kkk">
                         <button type="submit" class="btn btn-danger btn-ok" name="btn-ok" value="">Delete</button>
                     </form>
                 </div>
@@ -137,21 +137,20 @@ header('location:index.php');
     </div>
 
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
 
     $(document).ready(function(){
         $('#confirm-delete').on('show.bs.modal', function(e) {
             var imageurl = $(e.relatedTarget).data('href');
             console.log(imageurl);
-            $('.hiden').setAttribute('value', imageurl);
-
+            var be= $('.hiden').setAttribute('value', imageurl);
+            console.log(be);
         });
 
     });
 </script>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
