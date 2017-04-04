@@ -186,7 +186,7 @@ header('location:index.php');
         });
         $('#ocr').on('show.bs.modal', function(e) {
             var imageurl = $(e.relatedTarget).data('href');
-
+            runOCR(imageurl);
         });
 
     });
