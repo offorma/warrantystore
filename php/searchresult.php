@@ -47,9 +47,9 @@ if(!isset($_SESSION['userSession'])){
                        echo"<div class='col-md-4 col-lg-4 col-xs-12'><a href='$imageURL' style='display:block;' data-fancybox='group' data-caption='' >
                                 <img  class='img-thumbnail' style='display: block; height: 200px; width:200px;' src='$imageThumbURL' alt='' />
                             </a>
-                            <button class='btn btn-success' data-href='<?php echo $imageThumbURL; ?>' data-toggle='modal' data-target='#ocr'> Recognize
+                            <button class='btn btn-success' data-href='$imageThumbURL' data-toggle='modal' data-target='#ocr'> Recognize
                         <i class='fa'></i></button>
-                    <button class='btn btn-danger' data-href='<?php echo $imageThumbURL; ?>' data-toggle='modal' data-target='#confirm-delete\'> Delete
+                    <button class='btn btn-danger' data-href='$imageThumbURL' data-toggle='modal' data-target='#confirm-delete\'> Delete
                     <i class='fa fa-trash-o'></i></button>
                         </div>";
 
@@ -91,9 +91,9 @@ if(!isset($_SESSION['userSession'])){
                         echo"<div class='col-md-4 col-lg-4 col-xs-12'><a href='$imageURL' style='display:block;' data-fancybox='group' data-caption='' >
                                 <img  class='img-thumbnail' style='display: block; height: 200px; width:200px;' src='$imageThumbURL' alt='' />
                             </a>
-                            <button class='btn btn-success' data-href='<?php echo $imageThumbURL; ?>' data-toggle='modal' data-target='#ocr'> Recognize
+                            <button class='btn btn-success' data-href='$imageThumbURL' data-toggle='modal' data-target='#ocr'> Recognize
                         <i class='fa'></i></button>
-                    <button class='btn btn-danger' data-href='<?php echo $imageThumbURL; ?>' data-toggle='modal' data-target='#confirm-delete\'> Delete
+                    <button class='btn btn-danger' data-href='$imageThumbURL' data-toggle='modal' data-target='#confirm-delete\'> Delete
                     <i class='fa fa-trash-o'></i></button>
                         </div>";
 
@@ -139,9 +139,9 @@ if(!isset($_SESSION['userSession'])){
                         echo"<div class='col-md-4 col-lg-4 col-xs-12'><a href='$imageURL' style='display:block;' data-fancybox='group' data-caption='' >
                                 <img  class='img-thumbnail' style='display: block; height: 200px; width:200px;' src='$imageThumbURL' alt='' />
                             </a>
-                            <button class='btn btn-success' data-href='<?php echo $imageThumbURL; ?>' data-toggle='modal' data-target='#ocr'> Recognize
+                            <button class='btn btn-success' data-href=' $imageThumbURL' data-toggle='modal' data-target='#ocr'> Recognize
                         <i class='fa'></i></button>
-                    <button class='btn btn-danger' data-href='<?php echo $imageThumbURL; ?>' data-toggle='modal' data-target='#confirm-delete\'> Delete
+                    <button class='btn btn-danger' data-href=' $imageThumbURL' data-toggle='modal' data-target='#confirm-delete\'> Delete
                     <i class='fa fa-trash-o'></i></button>
                         </div>";
 
