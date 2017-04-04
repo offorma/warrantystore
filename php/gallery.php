@@ -110,7 +110,8 @@ header('location:index.php');
                 <div class="col-md-4 col-lg-4 col-xs-12"><a href="<?php echo $imageURL; ?>" style="display:block;" data-fancybox="group" data-caption="<?php ?>" >
                     <img  class="img-thumbnail" style="display: block; height: 200px; width:200px;" src="<?php echo $imageThumbURL; ?>" alt="" />
                 </a>
-                <button class="btn btn-success">Recognize</button>
+                    <button class="btn btn-success" data-href="<?php echo $imageThumbURL; ?>" data-toggle="modal" data-target="#ocr"> Recognize
+                        <i class="fa"></i></button>
                     <button class="btn btn-danger" data-href="<?php echo $imageThumbURL; ?>" data-toggle="modal" data-target="#confirm-delete"> Delete
                     <i class="fa fa-trash-o"></i></button>
                 </div>
@@ -144,6 +145,29 @@ header('location:index.php');
             </div>
         </div>
     </div>
+
+    <div id="ocr" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure that you want to delete this image</p>
+                    <p class="text-warning"><small>If you click "delete" your data will be lost permanently</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
+                    <form class="mod" action="delete.php"method="post">
+                        <input class="hiden" type="hidden" name="url" value="">
+                        <button type="submit" class="btn btn-danger btn-ok" name="btn-ok" value="">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
