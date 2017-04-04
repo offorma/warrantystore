@@ -127,7 +127,10 @@ header('location:index.php');
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
-                    <form action="delete.php"method="post"> <button type="submit" class="btn btn-danger btn-ok" value="">Delete</button></form>
+                    <form action="delete.php"method="post">
+                        <input class="hiden"type="hidden" name="url" value="">
+                        <button type="submit" class="btn btn-danger btn-ok" name="btn-ok" value="">Delete</button>
+                    </form>
                 </div>
             </div>
         </div>
