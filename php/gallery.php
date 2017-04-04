@@ -135,17 +135,7 @@ header('location:index.php');
             </div>
         </div>
     </div>
-    <script>
 
-        $(document).ready(function(){
-            $('#confirm-delete').on('show.bs.modal', function(e) {
-                var imageurl = $(e.relatedTarget).data('href');
-                $('.hiden').setAttribute("value", imageurl);
-
-            });
-
-        });
-    </script>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -155,6 +145,17 @@ header('location:index.php');
 <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
 <script type="text/javascript">
     $("[data-fancybox]").fancybox({ });
+</script>
+<script>
+
+    $(document).ready(function(){
+        $('#confirm-delete').on('show.bs.modal', function(e) {
+            var imageurl = $(e.relatedTarget).data('href');
+            $('.hiden').setAttribute("value", imageurl);
+
+        });
+
+    });
 </script>
 </body>
 </html>
