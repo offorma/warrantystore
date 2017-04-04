@@ -7,7 +7,7 @@
  */
 session_start();
 require_once 'db.php';
-$url=$_POST['btn-ok'];
+$url=$_POST['url'];
 echo $url;
 
 if (isset($_POST['btn-ok'])) {
