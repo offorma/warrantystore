@@ -154,7 +154,7 @@ header('location:index.php');
                     <h4 class="modal-title">Optical Character Regonition</h4>
                 </div>
                 <div class="modal-body">
-                    <p id="ocr_result"></p>
+                    <p id="ocr_results"></p>
                     <p id="ocr_status"></p>
 
                 </div>
