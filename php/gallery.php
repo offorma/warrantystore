@@ -154,7 +154,7 @@ header('location:index.php');
                     <h4 class="modal-title">Optical Character Regonition</h4>
                 </div>
                 <div class="modal-body">
-                    <p class="ocr_result"></p>
+                    <p id="ocr_result"></p>
                     <p id="ocr_status"></p>
 
                 </div>
@@ -193,7 +193,8 @@ header('location:index.php');
     function runOCR(url) {
         Tesseract.recognize(url)
             .then(function(result) {
-                $('.ocr_result').attr('value', result.text);
+                document.getElementById("ocr_results")
+                    .innerText = result.text;
 
             }).progress(function(result) {
             document.getElementById("ocr_status")
