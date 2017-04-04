@@ -148,7 +148,7 @@ header('location:index.php');
         $("[data-fancybox]").fancybox({ });
         $('#confirm-delete').on('show.bs.modal', function(e) {
             var imageurl = $(e.relatedTarget).data('href');
-            $('.hiden').setAttribute('value', imageurl);
+            $('.hiden').attr('value', imageurl);
 
 
         });
