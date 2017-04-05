@@ -18,11 +18,14 @@ if(isset($_POST["feed"])) {
         $message = $conn->real_escape_string($mes);
 
         $query = "INSERT INTO feedback(details, userid) VALUES('$message','$userid')";
-
-        $_SESSION['feedmsg'] = "<div class='alert alert-success'>
-     <span class='glyphicon glyphicon-info-sign'></span> Your feedback has been recieved and will be treated as soon as possible</div>";
-        header("Location: index.php");
-
+        if ($conn->query($query)) {
+            $_SESSION['feedmsg'] = "<div class='alert alert-success'>
+            <span class='glyphicon glyphicon-info-sign'></span> Your feedback has been recieved and will be treated as soon as possible</div>";
+            header("Location: index.php");
+        }else{
+            $_SESSION['feedmsg'] = "<div class='alert alert-danger'>
+     <span class='glyphicon glyphicon-info-sign'></span> Somthing went wrong and your feedback has not been sent</div>";
+        }
     }else{
         $_SESSION['feedmsg'] = "<div class='alert alert-danger'>
      <span class='glyphicon glyphicon-info-sign'></span> Somthing went wrong and your feedback has not been sent</div>";
