@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label> <input
-                                type="text" class="form-control" name="message" id=""></input>
+                                type="textarea" class="form-control" name="message" id=""></input>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
