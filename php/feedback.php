@@ -15,7 +15,7 @@ if(isset($_POST["feed"])) {
 
         $mes = strip_tags($_POST['message']);
 
-        $massage = $conn->real_escape_string($mes);
+        $message = $conn->real_escape_string($mes);
 
         $query = "INSERT INTO feedback(details, userid) VALUES('$message','$userid')";
 
