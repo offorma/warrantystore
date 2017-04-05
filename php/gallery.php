@@ -5,16 +5,17 @@
  * Date: 3/21/17
  * Time: 9:51 AM
  */
-session_start();
+
 
 require_once 'db.php';
 ?>
+<?php include('header.php') ?>
 <?php
 if(!isset($_SESSION['userSession'])){
 header('location:index.php');
 
 }?>
-<?php include('header.php') ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3 gsearch">

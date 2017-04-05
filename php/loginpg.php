@@ -5,7 +5,7 @@
  * Date: 3/9/17
  * Time: 3:54 PM
  */
-session_start();
+
 include('header.php'); ?>
 
     <div class=" container">

@@ -5,7 +5,7 @@
  * Date: 2/26/17
  * Time: 4:05 P
  */
-session_start();?>
+?>
 
 
 <?php include('header.php') ?>

@@ -1,4 +1,6 @@
-
+<?php require_once 'db.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +12,13 @@
     <link rel="stylesheet" href="../views/css/style.css">
 </head>
 <body>
-
+<?php
+    $usersession = $_SESSION['userSession'];
+    $user = $conn->query("SELECT userid,username FROM user WHERE username='$usersession'");
+    $urow = $user->fetch_assoc();
+    $userid = $urow['userid'];
+    $username = $urow['username'];
+?>
 <div id="confirm-delete" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -22,7 +30,7 @@
                 <form method ="post" action="feeback.php">
                     <div class="form-group">
                         <label for="user">Username</label> <input
-                                type="text" class="form-control" name="user" value="username" disabled></input>
+                                type="text" class="form-control" name="user" value='<?php echo "$username";?>' disabled></input>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label> <textarea
