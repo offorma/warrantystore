@@ -25,8 +25,8 @@
                                 type="text" class="form-control" name="user" value="username" disabled></input>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label> <input
-                                type="textarea" class="form-control" name="message" id=""></input>
+                        <label for="message">Message</label> <textarea
+                                 class="form-control" name="message" id=""></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
