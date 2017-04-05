@@ -30,7 +30,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
-                        <button type="button" class="btn btn-danger btn-ok">Delete</button>
+                        <button type="button" class="btn btn-success btn-ok">Submit</button>
                     </div>
                 </form>
             </div>
