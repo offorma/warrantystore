@@ -84,6 +84,14 @@ header('location:index.php');
             echo $_SESSION['filesmsg'];
             unset($_SESSION['filesmsg']);
         } ?>
+        <?php if (isset($_SESSION['feedmsg'])){
+            echo $_SESSION['feedmsg'];
+            unset($_SESSION['feedmsg']);
+        } ?>
+        <?php if (isset($_SESSION['feedmsg'])){
+            echo $_SESSION['feedmsg'];
+            unset($_SESSION['feedmsg']);
+        } ?>
         <?php if (isset($_SESSION['filesuc'])){
             echo $_SESSION['filesuc'];
             unset($_SESSION['filesuc']);

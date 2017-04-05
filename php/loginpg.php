@@ -25,31 +25,43 @@ include('header.php'); ?>
                 <?php
                 if (isset($_SESSION['loginmessage'])){
                     echo $_SESSION['loginmessage'];
+                    unset($_SESSION['loginmessage']);
+                } ?>
+                <?php if (isset($_SESSION['feedmsg'])){
+                    echo $_SESSION['feedmsg'];
+                    unset($_SESSION['feedmsg']);
                 } ?>
                 <?php if (isset($_SESSION['emailmessage'])){
                     echo $_SESSION['emailmessage'];
+                    unset($_SESSION['emailmessage']);
                 } ?>
                 <?php if (isset($_SESSION['passwordmessage'])){
                     echo $_SESSION['passwordmessage'];
+                    unset($_SESSION['passwordmessage']);
                 } ?>
                 <?php if (isset($_SESSION['passmsg'])){
                     echo $_SESSION['passmsg'];
+                    unset($_SESSION['passmsg']);
                 }
                 ?>
                 <?php if (isset($_SESSION['usernamemsg'])){
                     echo $_SESSION['usernamemsg'];
+                    unset($_SESSION['usernamemsg']);
                 }
                 ?>
                 <?php if (isset($_SESSION['emailmsg'])){
                     echo $_SESSION['emailmsg'];
+                    unset($_SESSION['emailmsg']);
                 };
                 ?>
                 <?php if (isset($_SESSION['sqlmsg'])){
                     echo $_SESSION['sqlmsg'];
+                    unset($_SESSION['sqlmsg']);
                 }
                 ?>
                 <?php if (isset($_SESSION['errormsg'])){
                     echo $_SESSION['errormsg'];
+                    unset($_SESSION['errormsg']);
                 }
                 ?>
                 <ul class="nav nav-tabs">

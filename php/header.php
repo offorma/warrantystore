@@ -34,11 +34,11 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label> <textarea
-                                 class="form-control" name="message" id=""></textarea>
+                                 class="form-control" name="message" required id=""></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
-                        <button type="submit" class="btn btn-success btn-ok">Submit</button>
+                        <button type="submit" class="btn btn-success btn-ok" name="feed">Submit</button>
                     </div>
                 </form>
             </div>

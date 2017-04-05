@@ -65,6 +65,10 @@ if(!isset($_SESSION['userSession'])){
                         unset($_SESSION['tagreqmsg']);
                     } ?>
 
+                        <?php if (isset($_SESSION['feedmsg'])){
+                            echo $_SESSION['feedmsg'];
+                            unset($_SESSION['feedmsg']);
+                        } ?>
                     </div>
                 </div>
                 <div class="row">
