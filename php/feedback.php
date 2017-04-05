@@ -9,7 +9,7 @@ session_start();
 require_once 'db.php';
 if(isset($_POST["feed"])) {
     if((empty($_POST['feed']))&&(empty($_POST['message']))){
-        $user = $conn->query("SELECT userid,username FROM user WHERE username='$usersession'");
+        $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
         $urow = $user->fetch_assoc();
         $userid = $urow['userid'];
 
@@ -17,10 +17,11 @@ if(isset($_POST["feed"])) {
 
         $massage = $conn->real_escape_string($mes);
 
-        $query = "INSERT INTO feedback(details, userid) VALUES('$massage','$userid')";
+        $query = "INSERT INTO feedback(details, userid) VALUES('$message','$userid')";
+
         $_SESSION['feedmsg'] = "<div class='alert alert-success'>
      <span class='glyphicon glyphicon-info-sign'></span> Your feedback has been recieved and will be treated as soon as possible</div>";
-
+        header("Location: index.php");
 
     }else{
         $_SESSION['feedmsg'] = "<div class='alert alert-danger'>
