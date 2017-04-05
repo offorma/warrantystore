@@ -27,7 +27,7 @@ session_start();
                 <h4 class="modal-title">Feedback Form</h4>
             </div>
             <div class="modal-body">
-                <form method ="post" action="feeback.php">
+                <form method ="post" action="feedback.php">
                     <div class="form-group">
                         <label for="user">Username</label> <input
                                 type="text" class="form-control" name="user" value='<?php echo "$username";?>' disabled></input>
