@@ -19,7 +19,7 @@
                 <h4 class="modal-title">Feedback Form</h4>
             </div>
             <div class="modal-body">
-                <form method ="post" action="createmodule">
+                <form method ="post" action="feeback.php">
                     <div class="form-group">
                         <label for="user">Username</label> <input
                                 type="text" class="form-control" name="user" value="username" disabled></input>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
-                        <button type="button" class="btn btn-success btn-ok">Submit</button>
+                        <button type="submit" class="btn btn-success btn-ok">Submit</button>
                     </div>
                 </form>
             </div>
