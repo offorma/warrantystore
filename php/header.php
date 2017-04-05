@@ -11,6 +11,39 @@
 </head>
 <body>
 
+<div id="confirm-delete" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Feedback Form</h4>
+            </div>
+            <div class="modal-body">
+                <form method ="post" action="createmodule">
+                    <div class="form-group">
+                        <label for="Modulecode">Module Code</label> <input
+                                type="text" class="form-control" name="Modulecode" id= "Modulecode"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="Modulename">Module Name</label> <input
+                                type="text" class="form-control" name="Modulename" id="Modulename"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="Weeklyhour">Total Weekly Hour</label> <input
+                                type="text" class="form-control" name="Weeklyhour" id="Weeklyhour"></input>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
+                        <button type="button" class="btn btn-danger btn-ok">Delete</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -29,7 +62,9 @@
             <?php
             if (isset($_SESSION['userSession'])) {
                 echo' <li><a href="gallery.php">Gallery</a></li>';
-                echo' <li><a href="landing.php">Upload</a></li>'; 
+                echo' <li><a href="landing.php">Upload</a></li>';
+                echo' <li><a href=".php" data-toggle="modal" data-target="#confirm-delete">Feedback</a></li>';
+
             }?>
 
         </ul>
