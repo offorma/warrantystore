@@ -9,6 +9,7 @@ session_start();
 require_once 'db.php';
 if(isset($_POST["feed"])) {
     if(!(empty($_POST['message']))){
+        $usersession = $_SESSION['userSession'];
         $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
         $urow = $user->fetch_assoc();
         $userid = $urow['userid'];
