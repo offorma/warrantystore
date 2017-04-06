@@ -29,8 +29,18 @@ if(isset($_POST["make"])) {
 
     if(isset($_POST["uma"])) {
         $uid = $_POST["uid"];
+        $user = $conn->query("SELECT * FROM user WHERE userid='$uid'");
+        $urow = $user->fetch_assoc();
+        $userid = $urow['userid'];
+        $admin=$urow['admin'];
+        $active = $urow['active'];
+        $password = $urow['password'];
+        $hash=$urow['hash'];
+        $username=$urow['username'];
+        $email=$urow['email'];
 
-        if ($conn->query("UPDATE user SET admin=0 WHERE userid='$uid'")) {
+        if ($conn->query("UPDATE user SET admin = 0,active = $active,hash = '$hash',username = '$username'
+            ,email= '$email',password = '$password',userid = '$userid'WHERE `userid` = '$userid'")) {
             $_SESSION['verifymsg'] = "<div class='alert alert-success'>
             <span class='glyphicon glyphicon-info-sign'></span>Admin privilege has been revoked!
             </div>";
