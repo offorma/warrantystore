@@ -43,14 +43,14 @@ if(isset($_POST["make"])) {
             header("Location: viewusers.php");
         } else {
             $_SESSION['verifymsg'] = "<div class='alert alert-danger'>
-                             <span class='glyphicon glyphicon-info-sign'></span>User account failed to be revoked!
-                            </div>";
+             <span class='glyphicon glyphicon-info-sign'></span>User account failed to be revoked!
+             </div>";
             header("Location: viewusers.php");
         }
     }else{
             $_SESSION['verifymsg'] = "<div class='alert alert-danger'>
-                             <span class='glyphicon glyphicon-info-sign'></span>You cannot revoke your own account privilege!
-                            </div>";
+            <span class='glyphicon glyphicon-info-sign'></span>You cannot revoke your own account privilege!
+            </div>";
             header("Location: viewusers.php");
     }
 
