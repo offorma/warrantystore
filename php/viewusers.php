@@ -33,7 +33,7 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
     $row=$query->fetch_assoc();
 
     foreach ($row as $user){
-        var_dump($user);
+        var_dump($row);
             echo'<tr>
 								<td class=>'.$user["username"].'</td>
 								<td class=>'.$user["email"].'</td>
