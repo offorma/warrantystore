@@ -77,8 +77,7 @@ $mail = new PHPMailer;
                             $_SESSION['mailmsg']= "<div class='alert alert-success'>
                              <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Failed to send Verification Email !
                             </div>";
-                            $_SESSION['userSession']=$uname;
-                            header("Location: landing.php");
+                            header("Location: loginpg.php");
                         }
                         } else {
                             $_SESSION['mailmsg']= "<div class='alert alert-success'>
