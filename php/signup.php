@@ -9,6 +9,9 @@ session_start();
 
 require_once 'db.php';
 
+require '/PHPMailer/PHPMailerAutoload.php';
+$mail = new PHPMailer;
+
         if(isset($_POST['signup-btn'])) {
             if (($_POST['password1'] != $_POST['password2']) || (empty($_POST['password1'])) || (empty($_POST['password2']))) {// this checks to see if both password fields are a match
                 $_SESSION['passmsg'] = "<div class='alert alert-danger'>
@@ -57,12 +60,10 @@ require_once 'db.php';
                     if ($conn->query($query)) {
 
 
-
-                        $to      = $email; // Send email to our user
-                        $subject = 'Signup | Verification'; // Give the email a subject
-                        $message = '
- 
-                        Thanks for signing up!
+                        $mail->setFrom('offorma@gmail.com', 'Warranty Store');
+                        $mail->addAddress("$email", "$uname");
+                        $mail->Subject  = 'Signup | Verification';
+                        $mail->Body     = 'Thanks for signing up!
                         Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
  
                         ------------------------
@@ -71,35 +72,36 @@ require_once 'db.php';
                         ------------------------
  
                         Please click this link to activate your account:
-                        http://www.yourwebsite.com/verify.php?email='.$email.'&hash='.$hash.''; // Our message above including the link
+                        http://teamewarranty.azurewebsites.net/php/verify.php?email='.$email.'&hash='.$hash.'';
+                        if(!$mail->send()) {
+                            $_SESSION['mailmsg']= "<div class='alert alert-success'>
+                             <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Failed to send Verification Email !
+                            </div>";
+                            $_SESSION['userSession']=$uname;
+                            header("Location: landing.php");
+                        }
+                        } else {
+                            $_SESSION['mailmsg']= "<div class='alert alert-success'>
+                            <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Successfully registered please verify account by clicking on the link sent to your email !
+                            </div>";
 
-                        $headers = 'From:noreply@teamewarranty.azurewebsites.net' . "\r\n"; // Set from headers
-                        mail($to, $subject, $message, $headers); // Send our email
+                            header("Location: loginpg.php");
+                        }
 
-
-
-                        $msg = "<div class='alert alert-success'>
-                  <span class='glyphicon glyphicon-info-sign'></span> &nbsp; successfully registered !
-                 </div>";
-                        $_SESSION['userSession']=$uname;
-                        header("Location: landing.php");
                     }else {
 
                         $_SESSION['sqlmsg'] = "<div class='alert alert-danger'>
-                  <span class='glyphicon glyphicon-info-sign'></span> &nbsp; error while registering !
-                 </div>"; header("Location: loginpg.php");
+                        <span class='glyphicon glyphicon-info-sign'></span> &nbsp; error while registering !
+                        </div>"; header("Location: loginpg.php");
                     }
 
-                } else {
-
+        } else {
                     $_SESSION['errormsg'] = "<div class='alert alert-danger'>
-                 <span class='glyphicon glyphicon-info-sign'></span> &nbsp; sorry email already taken !
-                </div>";
+                    <span class='glyphicon glyphicon-info-sign'></span> &nbsp; sorry email already taken !
+                    </div>";
                     header("Location: loginpg.php");
                 }
 
-            }
-
-            $conn->close();
+    $conn->close();
         ?>
 
