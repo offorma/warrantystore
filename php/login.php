@@ -36,6 +36,9 @@ if (isset($_POST['login-btn'])) {
         if($admin==1){
             $_SESSION['admin'] = true;
         }
+        if($active==1){
+            $_SESSION['active'] = true;
+        }
         if (password_verify($password, $row['password']) && $count==1) {
             $_SESSION['userSession'] = $row['username'];
             header("Location: index.php");

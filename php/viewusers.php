@@ -9,6 +9,10 @@ require_once 'db.php';
 ?>
 <?php include('header.php') ?>
 <?php
+if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
+    header('location:logout.php');
+
+}
 if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
     header('location:index.php');
 

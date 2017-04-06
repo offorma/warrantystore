@@ -6,6 +6,10 @@
  * Time: 11:18 AM
  */
 session_start();
+if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
+    header('location:logout.php');
+
+}
 require_once 'db.php';
     if(isset($_POST["file-btn"])) {
 
