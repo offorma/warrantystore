@@ -32,27 +32,26 @@ if(isset($_POST["make"])) {
         $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
         $urow = $user->fetch_assoc();
         $userid = $urow['userid'];
-        if($userid!=$uid) {
-            if ($conn->query("UPDATE user SET admin=0 WHERE userid='$uid'")){
+
+        if ($conn->query("UPDATE user SET admin=0 WHERE userid='$uid'")) {
 
 
-                $_SESSION['admin']=false;
-                $_SESSION['verifymsg'] = "<div class='alert alert-success'>
+            $_SESSION['admin'] = false;
+            $_SESSION['verifymsg'] = "<div class='alert alert-success'>
                              <span class='glyphicon glyphicon-info-sign'></span>Admin privilege has been revoked!
                             </div>";
-                header("Location: viewusers.php");
-            } else {
-                $_SESSION['verifymsg'] = "<div class='alert alert-danger'>
+            header("Location: viewusers.php");
+        } else {
+            $_SESSION['verifymsg'] = "<div class='alert alert-danger'>
                              <span class='glyphicon glyphicon-info-sign'></span>User account failed to be revoked!
                             </div>";
-                header("Location: viewusers.php");
-            }
-        }else{
+            header("Location: viewusers.php");
+        }
+    }else{
             $_SESSION['verifymsg'] = "<div class='alert alert-danger'>
                              <span class='glyphicon glyphicon-info-sign'></span>You cannot revoke your own account privilege!
                             </div>";
             header("Location: viewusers.php");
-        }
     }
 
 }?>
