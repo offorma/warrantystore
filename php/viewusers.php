@@ -29,19 +29,22 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
 					</thead>";
 
 
-    $query = $conn->query("SELECT username, email, active, admin FROM user");
+    $query = $conn->query("SELECT username, userid, email, active, admin FROM user");
 
     while ($row=$query->fetch_assoc()) {
         echo'
     							<td class=>'.$row["username"].'</td>
-								<td class=>'.$row["email"].'</td>
-								<td class=></td>
-							    <td class=></td>
-							    <td class=></td>
-            
-            
-            ';
+								<td class=>'.$row["email"].'</td>';
+					if ($row["active"]==0){
+					echo"<td>
+                        <form action='adverify.php' method='post'>
+                        <button type='submit' name='activate' class='btn btn-success'>Activate</button>
+                        </form></td>";
+					}else{
+                       echo"<td><button type='submit' name='activate' class='btn btn-success' disabled>Activate</button></td>";
+                    }
     }
+
     echo '</tr></table>';
 }?>
 
