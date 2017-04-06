@@ -33,7 +33,7 @@ if(isset($_POST["make"])) {
         $urow = $user->fetch_assoc();
         $userid = $urow['userid'];
         if($userid!=$id) {
-            if ($conn->query("UPDATE user SET admin=0 WHERE userid='$id'")) {
+            if ($conn->query("UPDATE user SET admin=3 WHERE userid='$id'")) {
                 $_SESSION['admin']=false;
                 $_SESSION['verifymsg'] = "<div class='alert alert-success'>
                              <span class='glyphicon glyphicon-info-sign'></span>Admin privilege has been revoked!
