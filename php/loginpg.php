@@ -48,6 +48,11 @@ include('header.php'); ?>
                     unset($_SESSION['passmsg']);
                 }
                 ?>
+                <?php if (isset($_SESSION['verifymsg'])){
+                    echo $_SESSION['verifymsg'];
+                    unset($_SESSION['verifymsg']);
+                }
+                ?>
                 <?php if (isset($_SESSION['usernamemsg'])){
                     echo $_SESSION['usernamemsg'];
                     unset($_SESSION['usernamemsg']);
