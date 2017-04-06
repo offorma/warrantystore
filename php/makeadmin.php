@@ -32,8 +32,8 @@ if(isset($_POST["make"])) {
         $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
         $urow = $user->fetch_assoc();
         $userid = $urow['userid'];
-        if($userid!=$id) {
-            if ($conn->query("UPDATE user SET admin=0 WHERE userid='$uid'")) {
+        if($userid!=$uid) {
+            if ($conn->query("UPDATE user SET admin=0 WHERE userid='$uid'")){
 
 
                 $_SESSION['admin']=false;
