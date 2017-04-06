@@ -38,7 +38,7 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
 								<td class=>'.$user["email"].'</td>
 								<td class=></td>
 							    <td class=></td>
-							    <td class=></td></tr>
+							    <td class=></td></tr></table>
             
             
             ';
