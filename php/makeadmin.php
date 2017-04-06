@@ -27,7 +27,7 @@ if(isset($_POST["make"])) {
         header("Location: viewusers.php");
     }
 
-    if(isset($_POST["unmake"])) {
+    if(isset($_POST["uma"])) {
         $id = $_POST["uid"];
         $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
         $urow = $user->fetch_assoc();
