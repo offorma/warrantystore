@@ -60,6 +60,17 @@ $mail = new PHPMailer;
                     if ($conn->query($query)) {
 
 
+
+                        $mail->IsSMTP();
+                        $mail->Host = 'ssl://smtp.gmail.com';
+                        $mail->Port = 465; //can be 587
+                        $mail->SMTPAuth = TRUE;
+
+                        $mail->Username = 'warrantystoresafe@gmail.com';
+
+                        $mail->Password = 'warranty@team3';
+
+
                         $mail->setFrom('offorma@gmail.com', 'Warranty Store');
                         $mail->addAddress("$email", "$uname");
                         $mail->Subject  = 'Signup | Verification';
