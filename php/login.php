@@ -27,21 +27,29 @@ if (isset($_POST['login-btn'])) {
     $email = $conn->real_escape_string($email);
     $password = $conn->real_escape_string($password);
 
-    $query = $conn->query("SELECT username, email, password FROM user WHERE email='$email'");
+    $query = $conn->query("SELECT username, email, password, active FROM user WHERE email='$email'");
     $row=$query->fetch_array();
 
+    $active = $row['active'];
     $count = $query->num_rows; // if email/password are correct returns must be 1 row
+    if($active==1){
+        if (password_verify($password, $row['password']) && $count==1) {
+            $_SESSION['userSession'] = $row['username'];
+            header("Location: index.php");
+        } else {
 
-    if (password_verify($password, $row['password']) && $count==1) {
-        $_SESSION['userSession'] = $row['username'];
-        header("Location: index.php");
-    } else {
-
+            $_SESSION['loginmessage'] = "<div class='alert alert-danger'>
+         <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Invalid Username or Password !
+        </div>";
+            header("Location: loginpg.php");
+        }
+    }else{
         $_SESSION['loginmessage'] = "<div class='alert alert-danger'>
-     <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Invalid Username or Password !
-    </div>";
+         <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Please verify your account by clicking the link sent to your email!
+        </div>";
         header("Location: loginpg.php");
     }
-    $conn->close();
+
+$conn->close();
 
 }
