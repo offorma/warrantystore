@@ -30,12 +30,11 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
 
 
     $query = $conn->query("SELECT username, email, active, admin FROM user");
-    $row=$query->fetch_assoc();
-    foreach ($row As $user){
-        print_r($user);
-            echo'<tr>
-								<td class=>'.$user["username"].'</td>
-								<td class=>'.$user["email"].'</td>
+
+    while ($row=$query->fetch_assoc()) {
+        echo'
+    							<td class=>'.$row["username"].'</td>
+								<td class=>'.$row["email"].'</td>
 								<td class=></td>
 							    <td class=></td>
 							    <td class=></td>
