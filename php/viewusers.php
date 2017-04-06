@@ -67,7 +67,7 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
                         echo"<td>
                         <form action='makeadmin.php' method='post'>
                         <input type='hidden' name= 'id' value='{$row["userid"]}'>
-                        <button type='submit' name='unmake' class='btn btn-danger'>Remove Admin Privilege</button>
+                        <button type='submit' name='unmake' class='btn btn-danger'>Revoke Admin Privilege</button>
                         </form></td>";
                     }
     }
