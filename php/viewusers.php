@@ -60,13 +60,13 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
                     if ($row["admin"]==0){
                         echo"<td>
                                     <form action='makeadmin.php' method='post'>
-                                    <input type='hidden' name= 'id' value='{$row["userid"]}'>
+                                    <input type='hidden' name= 'uid' value='{$row["userid"]}'>
                                     <button type='submit' name='make' class='btn btn-success'>Assign Admin privilege</button>
                                     </form></td>";
                     }else{
                         echo"<td>
                         <form action='makeadmin.php' method='post'>
-                        <input type='hidden' name= 'id' value='{$row["userid"]}'>
+                        <input type='hidden' name= 'uid' value='{$row["userid"]}'>
                         <button type='submit' name='unmake' class='btn btn-danger'>Revoke Admin Privilege</button>
                         </form></td>";
                     }

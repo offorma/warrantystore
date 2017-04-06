@@ -12,7 +12,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
 }
 
 if(isset($_POST['make'])) {
-    $id = $_POST['id'];
+    $id = $_POST['uid'];
 
     if($conn->query("UPDATE user SET admin=1 WHERE userid='$id'")) {
         $_SESSION['verifymsg'] = "<div class='alert alert-success'>
@@ -27,7 +27,7 @@ if(isset($_POST['make'])) {
     }
 
     if(isset($_POST['unmake'])) {
-        $id = $_POST['id'];
+        $id = $_POST['uid'];
         echo "$id";
         if ($conn->query("UPDATE user SET admin=0 WHERE userid='$id'")){
             $_SESSION['verifymsg'] = "<div class='alert alert-success'>
