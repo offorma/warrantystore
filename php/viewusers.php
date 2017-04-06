@@ -35,8 +35,8 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
     foreach ($row as $user){
 
             echo'<tr>
-								<td class=>'.$user["username"].'</td>
-								<td class=>'.$user["email"].'</td>
+								<td class=>'.$user[username].'</td>
+								<td class=>'.$user[email].'</td>
 								<td class=></td>
 							    <td class=></td>
 							    <td class=></td>
