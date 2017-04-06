@@ -27,12 +27,15 @@ if (isset($_POST['login-btn'])) {
     $email = $conn->real_escape_string($email);
     $password = $conn->real_escape_string($password);
 
-    $query = $conn->query("SELECT username, email, password, active FROM user WHERE email='$email'");
+    $query = $conn->query("SELECT username, email, password, active, admin FROM user WHERE email='$email'");
     $row=$query->fetch_array();
-
+    $admin =$row['admin'];
     $active = $row['active'];
     $count = $query->num_rows; // if email/password are correct returns must be 1 row
     if($active==1){
+        if($admin==1){
+            $_SESSION['admin'] = true;
+        }
         if (password_verify($password, $row['password']) && $count==1) {
             $_SESSION['userSession'] = $row['username'];
             header("Location: index.php");

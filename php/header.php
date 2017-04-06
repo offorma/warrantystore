@@ -70,8 +70,19 @@ session_start();
                 echo' <li><a href=".php" data-toggle="modal" data-target="#confirm-delete">Feedback</a></li>';
 
             }?>
-
         </ul>
+            <?php
+            if (isset($_SESSION['admin'])) {
+            echo"<ul class='nav navbar-nav'>
+                <li class='dropdown'>
+                    <a class='dropdown-toggle' data-toggle='dropdown' href=''#'>Admin<span class='caret'></span></a>
+                    <ul class='dropdown-menu'>
+                        <li><a href=''</a>View Users</li>
+                        <li><a href=''>View Feedback</a></li>
+                    </ul>
+                </li>
+               
+            </ul>";}?>
 
         <ul class="nav navbar-nav navbar-right">
             <?php
