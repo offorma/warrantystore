@@ -73,7 +73,8 @@ session_start();
             }?>
         </ul>
             <?php
-            if ($_SESSION['admin']) {
+            $admin=$_SESSION['admin'];
+            if ($admin) {
             echo"<ul class='nav navbar-nav'>
                 <li class='dropdown'>
                     <a class='dropdown-toggle' data-toggle='dropdown' href=''#'>Admin<span class='caret'></span></a>
