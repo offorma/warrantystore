@@ -41,6 +41,10 @@ require_once 'db.php';
                 $email = $conn->real_escape_string($emai);
                 $upass = $conn->real_escape_string($upas);
 
+                $hash = md5( rand(0,1000) ); // Generate random 32 character hash and
+                $active=0;
+                $admin=0;
+
                 $hashed_password = password_hash($upass, PASSWORD_DEFAULT); //here i am hashing the password
 
                 $check_email = $conn->query("SELECT email FROM user WHERE email ='$email'");
@@ -48,9 +52,32 @@ require_once 'db.php';
 
                 if ($count==0) {
 
-                    $query = "INSERT INTO user(username,email,password) VALUES('$uname','$email','$hashed_password')";
+                    $query = "INSERT INTO user(username,email,password,hash,active,admin) VALUES('$uname','$email','$hashed_password','$hash','$active','$admin')";
 
                     if ($conn->query($query)) {
+
+
+
+                        $to      = $email; // Send email to our user
+                        $subject = 'Signup | Verification'; // Give the email a subject
+                        $message = '
+ 
+                        Thanks for signing up!
+                        Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+ 
+                        ------------------------
+                        Username: '.$unam.'
+                        Password: '.$upass.'
+                        ------------------------
+ 
+                        Please click this link to activate your account:
+                        http://www.yourwebsite.com/verify.php?email='.$email.'&hash='.$hash.''; // Our message above including the link
+
+                        $headers = 'From:noreply@teamewarranty.azurewebsites.net' . "\r\n"; // Set from headers
+                        mail($to, $subject, $message, $headers); // Send our email
+
+
+
                         $msg = "<div class='alert alert-success'>
                   <span class='glyphicon glyphicon-info-sign'></span> &nbsp; successfully registered !
                  </div>";
