@@ -17,6 +17,7 @@ $mail = new PHPMailer;
                 $_SESSION['passmsg'] = "<div class='alert alert-danger'>
                  <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Password fields cannot be empty or they do not match</div>";
                 header("Location: loginpg.php");
+                $up=null;
             } else {
                 $up = $_POST['password1'];
             }
@@ -38,7 +39,7 @@ $mail = new PHPMailer;
 
             $unam = strip_tags($un);
             $emai = strip_tags($em);
-            $upas = strip_tags($up);
+            $upas = strip_tags(isset($up));
 
             $uname = $conn->real_escape_string($unam);
             $email = $conn->real_escape_string($emai);
