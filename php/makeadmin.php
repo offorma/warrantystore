@@ -15,6 +15,7 @@ if(isset($_POST["make"])) {
     $id = $_POST["uid"];
 
     if($conn->query("UPDATE user SET admin=1 WHERE userid='$id'")) {
+        $_SESSION['admin']=true;
         $_SESSION['verifymsg'] = "<div class='alert alert-success'>
                              <span class='glyphicon glyphicon-info-sign'></span>User account has been assigned admin privilege!
                             </div>";
@@ -33,6 +34,7 @@ if(isset($_POST["make"])) {
         $userid = $urow['userid'];
         if($userid!=$id) {
             if ($conn->query("UPDATE user SET admin=0 WHERE userid='$id'")) {
+                $_SESSION['admin']=false;
                 $_SESSION['verifymsg'] = "<div class='alert alert-success'>
                              <span class='glyphicon glyphicon-info-sign'></span>Admin privilege has been revoked!
                             </div>";
