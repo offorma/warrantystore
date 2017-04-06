@@ -29,9 +29,6 @@ if(isset($_POST["make"])) {
 
     if(isset($_POST["uma"])) {
         $uid = $_POST["uid"];
-        $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
-        $urow = $user->fetch_assoc();
-        $userid = $urow['userid'];
 
         if ($conn->query("UPDATE user SET admin=0 WHERE userid='$uid'")) {
             $_SESSION['verifymsg'] = "<div class='alert alert-success'>
@@ -44,11 +41,5 @@ if(isset($_POST["make"])) {
             </div>";
             header("Location: viewusers.php");
         }
-    }else{
-            $_SESSION['verifymsg'] = "<div class='alert alert-danger'>
-            <span class='glyphicon glyphicon-info-sign'></span>You cannot revoke your own account privilege!
-            </div>";
-            header("Location: viewusers.php");
     }
-
 }?>
