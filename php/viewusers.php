@@ -10,7 +10,7 @@ require_once 'db.php';
 <?php include('header.php') ?>
 <?php
 if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
-    header('location:logout.php');
+    header('locationPrivilegep');
 
 }
 if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
@@ -54,17 +54,21 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
                         echo"<td>
                         <form action='adverify.php' method='post'>
                         <input type='hidden' name= 'id' value='{$row["userid"]}'>
-                        <button type='submit' name='deactivate' class='btn btn-success'>De-activate</button>
+                        <button type='submit' name='deactivate' class='btn btn-danger'>De-activate</button>
                         </form></td>";
                     }
                     if ($row["admin"]==0){
                         echo"<td>
                                     <form action='makeadmin.php' method='post'>
                                     <input type='hidden' name= 'id' value='{$row["userid"]}'>
-                                    <button type='submit' name='make' class='btn btn-success'>Make Administrator</button>
+                                    <button type='submit' name='make' class='btn btn-success'>Assign Admin privilege</button>
                                     </form></td>";
                     }else{
-                        echo"<td><button type='submit' name='make' class='btn btn-success' disabled>Make Administrator</button></td>";
+                        echo"<td>
+                        <form action='makeadmin.php' method='post'>
+                        <input type='hidden' name= 'id' value='{$row["userid"]}'>
+                        <button type='submit' name='unmake' class='btn btn-danger'>Remove Admin Privilege</button>
+                        </form></td>";
                     }
     }
 
