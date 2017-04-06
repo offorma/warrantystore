@@ -35,8 +35,8 @@ if(isset($_POST["make"])) {
 
         if ($conn->query("UPDATE user SET admin=0 WHERE userid='$uid'")) {
             $_SESSION['verifymsg'] = "<div class='alert alert-success'>
-                             <span class='glyphicon glyphicon-info-sign'></span>Admin privilege has been revoked!
-                            </div>";
+            <span class='glyphicon glyphicon-info-sign'></span>Admin privilege has been revoked!
+            </div>";
             header("Location: viewusers.php");
         } else {
             $_SESSION['verifymsg'] = "<div class='alert alert-danger'>
