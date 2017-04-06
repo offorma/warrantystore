@@ -96,19 +96,19 @@ include('header.php'); ?>
                         <form id="signup" action ="signup.php" method="post">
                             <div class="form-group">
                                 <label for="email1">Email address</label>
-                                <input type="email" class="form-control" id="email1" name="email" placeholder="Email">
+                                <input type="email" class="form-control" id="email1" name="email" placeholder="Email" required>
                             </div>
                             <div class="form-group">
                                 <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username"required>
                             </div>
                             <div class="form-group">
                                 <label for="password1">Password</label>
-                                <input type="password" class="form-control" id="password1" name="password1" placeholder="Password">
+                                <input type="password" class="form-control" id="password1" name="password1" placeholder="Password"required>
                             </div>
                             <div class="form-group">
                                 <label for="password2">Confirm Password</label>
-                                <input type="password" class="form-control" id="password2" name="password2" placeholder="Password">
+                                <input type="password" class="form-control" id="password2" name="password2" placeholder="Password" required>
                             </div>
 
                             <button type="submit" name ="signup-btn" class="btn btn-default">Submit</button>
