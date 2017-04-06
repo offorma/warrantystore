@@ -9,7 +9,7 @@ session_start();
 
 require_once 'db.php';
 
-require '/PHPMailer/class.phpmailer.php';
+require 'PHPMailer/PHPMailerAutoload.php';
 $mail = new PHPMailer;
 
         if(isset($_POST['signup-btn'])) {
