@@ -28,12 +28,12 @@ if(isset($_POST["make"])) {
     }
 
     if(isset($_POST["uma"])) {
-        $id = $_POST["uid"];
+        $uid = $_POST["uid"];
         $user = $conn->query("SELECT userid FROM user WHERE username='$usersession'");
         $urow = $user->fetch_assoc();
         $userid = $urow['userid'];
         if($userid!=$id) {
-            if ($conn->query("UPDATE user SET admin='0' WHERE userid='$id'")) {
+            if ($conn->query("UPDATE user SET admin='0' WHERE userid ='$uid'")) {
 
 
                 $_SESSION['admin']=false;
