@@ -31,15 +31,15 @@ if(isset($_POST['make'])) {
 
     if(isset($_POST['unmake'])) {
         $id = $_POST['id'];
-        echo $id;
-        if ($conn->query("UPDATE user SET admin=0 WHERE userid='$id'")) {
+
+        if ($conn->query("UPDATE user SET admin=0 WHERE userid='$id'")){
             $_SESSION['verifymsg'] = "<div class='alert alert-success'>
-                             <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Admin privilege has been revoked!
+                             <span class='glyphicon glyphicon-info-sign'></span>Admin privilege has been revoked!
                             </div>";
             header("Location: viewusers.php");
         } else {
             $_SESSION['verifymsg'] = "<div class='alert alert-danger'>
-                             <span class='glyphicon glyphicon-info-sign'></span> &nbsp;User account failed to be revoked!
+                             <span class='glyphicon glyphicon-info-sign'></span>User account failed to be revoked!
                             </div>";
             header("Location: viewusers.php");
         }
