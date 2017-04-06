@@ -31,7 +31,6 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
 
     $query = $conn->query("SELECT username, email, active, admin FROM user");
     $row=$query->fetch_assoc();
-    print_r($row);
     foreach ($row As $user){
         print_r($user);
             echo'<tr>
