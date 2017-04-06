@@ -13,13 +13,13 @@ require 'PHPMailer/PHPMailerAutoload.php';
 $mail = new PHPMailer;
 
         if(isset($_POST['signup-btn'])) {
-            if (($_POST['password1'] != $_POST['password2'])) {// this checks to see if both password fields are a match
+            if (($_POST['password1'] == $_POST['password2'])) {// this checks to see if both password fields are a match
+                $up = $_POST['password1'];
+            } else {
                 $_SESSION['passmsg'] = "<div class='alert alert-danger'>
                  <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Password fields cannot be empty or they do not match</div>";
                 header("Location: loginpg.php");
-                $up=null;
-            } else {
-                $up = $_POST['password1'];
+
             }
             if (empty($_POST['username'])) {//this checks if username field is empty
                 $_SESSION['usernamemsg'] = "<div class='alert alert-danger'>
@@ -39,7 +39,7 @@ $mail = new PHPMailer;
 
             $unam = strip_tags($un);
             $emai = strip_tags($em);
-            $upas = strip_tags(isset($up));
+            $upas = strip_tags($up);
 
             $uname = $conn->real_escape_string($unam);
             $email = $conn->real_escape_string($emai);

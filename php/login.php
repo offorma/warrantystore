@@ -31,7 +31,7 @@ if (isset($_POST['login-btn'])) {
     $row=$query->fetch_array();
     $admin =$row['admin'];
     $active = $row['active'];
-    $count = $query->num_rows; // if email/password are correct returns must be 1 row
+    $count = $query->num_rows; // if email is correct returns must be 1 row
     if($active==1){
         if($admin==1){
             $_SESSION['admin'] = true;
