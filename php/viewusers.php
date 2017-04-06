@@ -15,7 +15,12 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
 }else{
     echo "<div class=' container'>
         <div class='row'>
-            <div class='col-lg-8 col-lg-offset-2'>
+            <div class='col-lg-8 col-lg-offset-2'>";?>
+             <?php if (isset($_SESSION['verifymsg'])){
+                    echo $_SESSION['verifymsg'];
+                    unset($_SESSION['verifymsg']);
+                } ?>
+<?php echo"
         <table id ='listrooms' class='table table-condensed table-striped'>
 					<thead>
 						<tr>
@@ -42,16 +47,20 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
                         <button type='submit' name='activate' class='btn btn-success'>Activate</button>
                         </form></td>";
 					}else{
-                       echo"<td><button type='submit' name='activate' class='btn btn-success' disabled>Activate</button></td>";
+                        echo"<td>
+                        <form action='adverify.php' method='post'>
+                        <input type='hidden' name= 'id' value='{$row["userid"]}'>
+                        <button type='submit' name='deactivate' class='btn btn-success'>De-activate</button>
+                        </form></td>";
                     }
                     if ($row["admin"]==0){
                         echo"<td>
                                     <form action='makeadmin.php' method='post'>
                                     <input type='hidden' name= 'id' value='{$row["userid"]}'>
-                                    <button type='submit' name='activate' class='btn btn-success'>Make Administrator</button>
+                                    <button type='submit' name='make' class='btn btn-success'>Make Administrator</button>
                                     </form></td>";
                     }else{
-                        echo"<td><button type='submit' name='activate' class='btn btn-success' disabled>Make Administrator</button></td>";
+                        echo"<td><button type='submit' name='make' class='btn btn-success' disabled>Make Administrator</button></td>";
                     }
     }
 
