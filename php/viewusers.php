@@ -23,7 +23,7 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
 							<th class=>Email</th>
 							<th class=></th>
 							<th class=></th>
-							<th class=></th>
+							
 							
 						</tr>
 					</thead>";
@@ -38,10 +38,20 @@ if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
 					if ($row["active"]==0){
 					echo"<td>
                         <form action='adverify.php' method='post'>
+                        <input type='hidden' name= 'id' value='{$row["userid"]}'>
                         <button type='submit' name='activate' class='btn btn-success'>Activate</button>
                         </form></td>";
 					}else{
                        echo"<td><button type='submit' name='activate' class='btn btn-success' disabled>Activate</button></td>";
+                    }
+                    if ($row["admin"]==0){
+                        echo"<td>
+                                    <form action='makeadmin.php' method='post'>
+                                    <input type='hidden' name= 'id' value='{$row["userid"]}'>
+                                    <button type='submit' name='activate' class='btn btn-success'>Make Administrator</button>
+                                    </form></td>";
+                    }else{
+                        echo"<td><button type='submit' name='activate' class='btn btn-success' disabled>Make Administrator</button></td>";
                     }
     }
 
