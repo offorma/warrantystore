@@ -31,6 +31,10 @@ include('header.php'); ?>
                     echo $_SESSION['feedmsg'];
                     unset($_SESSION['feedmsg']);
                 } ?>
+                <?php if (isset($_SESSION['mailmsg'])){
+                    echo $_SESSION['mailmsg'];
+                    unset($_SESSION['mailmsg']);
+                } ?>
                 <?php if (isset($_SESSION['emailmessage'])){
                     echo $_SESSION['emailmessage'];
                     unset($_SESSION['emailmessage']);

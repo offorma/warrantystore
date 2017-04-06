@@ -101,13 +101,13 @@ $mail = new PHPMailer;
                     }else {
 
                         $_SESSION['sqlmsg'] = "<div class='alert alert-danger'>
-                        <span class='glyphicon glyphicon-info-sign'></span> &nbsp; error while registering !
+                        <span class='glyphicon glyphicon-info-sign'></span> &nbsp; sorry email already taken !
                         </div>"; header("Location: loginpg.php");
                     }
 
         } else {
                     $_SESSION['errormsg'] = "<div class='alert alert-danger'>
-                    <span class='glyphicon glyphicon-info-sign'></span> &nbsp; sorry email already taken !
+                    <span class='glyphicon glyphicon-info-sign'></span> &nbsp; sorry somthing went wrong !
                     </div>";
                     header("Location: loginpg.php");
                 }
