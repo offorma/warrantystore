@@ -31,7 +31,7 @@ $mail = new PHPMailer;
             }
             if (empty($_POST['email'])) {// this checks if email field is empty
                 $_SESSION['emailmsg'] = "<div class='alert alert-danger'>
-                 <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Email field cannot be empty</div>";
+                <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Email field cannot be empty</div>";
                 header("Location: loginpg.php");
             } else {
                 $em = $_POST['email'];
@@ -54,7 +54,7 @@ $mail = new PHPMailer;
             $check_email = $conn->query("SELECT email FROM user WHERE email ='$email'");
             $count = $check_email->num_rows;
 
-            if ($count == 0) {
+            if (($count == 0)&&($_POST['password1'] == $_POST['password2'])) {
 
                 $query = "INSERT INTO user(username,email,password,hash,active,admin) VALUES('$uname','$email','$hashed_password','$hash','$active','$admin')";
 
