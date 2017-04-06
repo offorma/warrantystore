@@ -19,12 +19,12 @@ if(isset($_POST['make'])) {
 
     if($conn->query("UPDATE user SET admin=1 WHERE userid='$id'")) {
         $_SESSION['verifymsg'] = "<div class='alert alert-success'>
-                             <span class='glyphicon glyphicon-info-sign'></span> &nbsp;User account has been assigned admin privilege!
+                             <span class='glyphicon glyphicon-info-sign'></span>User account has been assigned admin privilege!
                             </div>";
         header("Location: viewusers.php");
     }else{
         $_SESSION['verifymsg'] = "<div class='alert alert-success'>
-                             <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Failed to assign admin privilege!
+                             <span class='glyphicon glyphicon-info-sign'></span>Failed to assign admin privilege!
                             </div>";
         header("Location: viewusers.php");
     }
