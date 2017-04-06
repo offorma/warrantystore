@@ -6,13 +6,10 @@
  * Time: 6:24 PM
  */
 session_start();
+require_once 'db.php';
 if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
     header('location:logout.php');
-
 }
-
-require_once 'db.php';
-
 
 if(isset($_POST['make'])) {
     $id = $_POST['id'];
