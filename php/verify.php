@@ -5,6 +5,7 @@
  * Date: 4/6/17
  * Time: 12:33 PM
  */
+session_start();
 require_once 'db.php';
 
 if ((!empty($_GET['email']))&&(!empty($_GET['hash']))) {
