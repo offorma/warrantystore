@@ -27,8 +27,8 @@ if(isset($_POST["make"])) {
         header("Location: viewusers.php");
     }
 
-    if(isset($_POST["uma"])) {
-        $uid = $_POST["uid"];
+    if(isset($_POST['uma'])) {
+        $uid = $_POST['uid'];
         $user = $conn->query("SELECT * FROM user WHERE userid='$uid'");
         $urow = $user->fetch_assoc();
         $userid = $urow['userid'];
@@ -39,8 +39,9 @@ if(isset($_POST["make"])) {
         $username=$urow['username'];
         $email=$urow['email'];
 
-        if ($conn->query("UPDATE user SET admin = 0,active = $active,hash = '$hash',username = '$username'
-            ,email= '$email',password = '$password',userid = '$userid'WHERE `userid` = '$userid'")) {
+        $checks=$conn->query("UPDATE user SET admin = 0,active = $active,hash = '$hash',username = '$username'
+            ,email= '$email',password = '$password',userid = '$userid'WHERE `userid` = '$userid'");
+            if ($checks) {
             $_SESSION['verifymsg'] = "<div class='alert alert-success'>
             <span class='glyphicon glyphicon-info-sign'></span>Admin privilege has been revoked!
             </div>";
