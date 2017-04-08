@@ -47,6 +47,7 @@ else{
         $query = $conn->query("SELECT username, email FROM user Where userid ='$uid'");
         $row=$query->fetch_array();
         $email=$row["email"];
+        $username=$row["username"];
         echo'
     							<td class=>'.$row["username"].'</td>
 								<td class=>'.$row["email"].'</td>
@@ -55,6 +56,7 @@ else{
             echo"<td>
                                     <form action='createfeedback.php' method='post'>
                                     <input type='hidden' name= 'uid' value='$uid'>
+                                    <input type='hidden' name= 'uid' value='$username'>
                                     <input type='hidden' name= 'details' value='$details'>
                                     <input type='hidden' name= 'feedbackid' value='$feedbackid'>
                                     <input type='hidden' name= 'email' value='$email'>

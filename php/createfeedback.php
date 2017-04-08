@@ -25,6 +25,9 @@ if($_POST["make"]){
                                     <input type="hidden" class="form-control" id="email1" name="email" value="warrantystoresafe@gmail.com" >
                                 </div>
                                 <div class="form-group">
+                                    <input type="hidden" class="form-control"  name="username" value='<?php echo"{$_POST['username']}"?>' >
+                                </div>
+                                <div class="form-group">
                                     <label for="toemail">To</label>
                                     <input type="email" class="form-control" id="toemail1" disabled name="toemail" value='<?php echo"$toemail"?>' >
                                 </div>

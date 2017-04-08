@@ -16,10 +16,10 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
 require 'PHPMailer/PHPMailerAutoload.php';
 $mail = new PHPMailer;
 
-
-if($_POST["send"]){
+if(isset($_POST["send"])){
 $email=$_POST["toemail"];
 $details=$_POST["details"];
+    $username=$_POST["username"];
     $mail->IsSMTP();
     $mail->Host = 'ssl://smtp.gmail.com';
     $mail->Port = 465; //can be 587
@@ -31,7 +31,7 @@ $details=$_POST["details"];
 
 
     $mail->setFrom('offorma@gmail.com', 'Warranty Store');
-    $mail->addAddress("$email", "$uname");
+    $mail->addAddress("$email", "$username");
     $mail->Subject = 'Feedback Reply';
     $mail->Body = "$details";
     if (!$mail->send()) {
