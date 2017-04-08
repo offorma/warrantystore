@@ -28,9 +28,6 @@ else{
 							<th class=>Username</th>
 							<th class=>Feedback</th>
 							<th class=></th>
-							<th class=></th>
-							
-							
 						</tr>
 					</thead>";
 
