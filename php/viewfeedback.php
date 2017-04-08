@@ -53,7 +53,7 @@ else{
 
             echo"<td>
                                     <form action='makeadmin.php' method='post'>
-                                    <input type='hidden' name= 'uid' value='{$row["userid"]}'>
+                                    <input type='hidden' name= 'uid' value='.$uid.'>
                                     <button type='submit' name='make' value='make' class='btn btn-success'>Reply</button>
                                     </form></td></tr>";
 
