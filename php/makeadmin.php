@@ -11,7 +11,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
     header('location:logout.php');
 }
 
-if(isset($_POST["make"])) {
+if(isset($_POST["uma"])) {
     $id = $_POST["uid"];
 
     if ($conn->query("UPDATE user SET admin=1 WHERE userid='$id'")) {
