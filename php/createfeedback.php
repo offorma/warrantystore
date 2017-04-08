@@ -29,11 +29,11 @@ if($_POST["make"]){
                                 </div>
                                 <div class="form-group">
                                     <label for="toemail">To</label>
-                                    <input class="form-control" id="toemail" disabled="disabled" name="toemail" value='<?php echo"$toemail"?>' >
+                                    <input class="form-control" id="toemail" disabled="disabled" name="toemail" value='<?php echo"$toemail";?>' >
                                 </div>
                                 <div class="form-group">
                                     <label for="details">Feedback</label>
-                                    <textarea class="form-control" id="details" disabled="disabled" name="details" ><?php echo"{$_POST['details']}"?></textarea>
+                                    <textarea class="form-control" id="details" disabled="disabled" name="details" ><?php echo"{$_POST['details']};"?></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="reply">Reply</label>
