@@ -19,6 +19,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
 $mail = new PHPMailer;
 
 if(isset($_POST["send"])){
+    print_r($_POST);
         $email=$_POST["toemail"];
         $details=$_POST["details"];
         $reply=$_POST["reply"];
