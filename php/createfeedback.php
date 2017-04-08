@@ -15,7 +15,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
 }
 
 $toemail=$_POST['email'];
-$_POST['details'];
+echo "{$_POST['details']}";
 ?>
     <div class="container">
             <div class="row">
