@@ -40,6 +40,9 @@ if(isset($_POST["send"])){
     $mail->addAddress("$email", "$username");
     $mail->Subject = 'Feedback Reply';
     $mail->Body =
+        "\n----------------------------------------------\n".
+        "\t\t"."Your Feedback".
+        "\n----------------------------------------------\n".
         $details
 
     ."\n----------------------------------------------\n".
