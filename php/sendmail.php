@@ -43,8 +43,10 @@ if(isset($_POST["send"])){
         $details
 
     ."----------------------------------------------".
-
-        $reply;
+      "Hi ".$username.",".
+        $reply
+    ."Best Regards
+    WarrantySafe Team";
 
     if (!$mail->send()) {
         $_SESSION['verifymsg'] = "<div class='alert alert-success'>

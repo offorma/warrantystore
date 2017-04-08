@@ -32,7 +32,7 @@ if($_POST["make"]){
                                     <input type="hidden" class="form-control"  name="tomail" value='.$toemail.' >
                                 </div>
                                 <div class="form-group">
-                                    <input type="hidden" class="form-control"  name="todetails" value='.$details.' >
+                                    <textarea hidden="hidden" class="form-control"  name="todetails">'.$details.'</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="toemail">To</label>
