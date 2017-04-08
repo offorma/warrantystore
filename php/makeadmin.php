@@ -39,7 +39,13 @@ if(isset($_POST["make"])) {
         $username=$urow['username'];
         $email=$urow['email'];
 
-        $checks=$conn->query("UPDATE user SET admin = 0,active = $active,hash = '$hash',username = '$username'
+
+        $_SESSION['verifymsg'] = "<div class='alert alert-success'>
+            <span class='glyphicon glyphicon-info-sign'></span>Admin privilege has been revoked!
+            </div>";
+        header("Location: viewusers.php");
+
+        /*$checks=$conn->query("UPDATE user SET admin = 0,active = $active,hash = '$hash',username = '$username'
             ,email= '$email',password = '$password',userid = '$userid'WHERE `userid` = '$userid'");
             if ($checks) {
             $_SESSION['verifymsg'] = "<div class='alert alert-success'>
@@ -51,6 +57,6 @@ if(isset($_POST["make"])) {
             <span class='glyphicon glyphicon-info-sign'></span>User account failed to be revoked!
             </div>";
             header("Location: viewusers.php");
-        }
+        }*/
     }
 }?>
