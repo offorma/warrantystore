@@ -26,7 +26,7 @@ $toemail=$_POST['email'];
                                 </div>
                                 <div class="form-group">
                                     <label for="toemail">To</label>
-                                    <input type="email" class="form-control" id="toemail1" name="toemail" value='<?php echo"$toemail"?>' >
+                                    <input type="email" class="form-control" id="toemail1" disabled name="toemail" value='<?php echo"$toemail"?>' >
                                 </div>
                                 <div class="form-group">
                                     <label for="details">Feedback</label>
