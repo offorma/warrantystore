@@ -21,7 +21,7 @@ if(isset($_POST["send"])){
 $email=$_POST["toemail"];
 $details=$_POST["details"];
 $reply=$_POST["reply"];
-
+echo"$details"."$reply"."$email";
 $username=$_POST["username"];
 
     $mail->IsSMTP();
@@ -34,7 +34,7 @@ $username=$_POST["username"];
     $mail->Password = 'warranty@team3';
 
 
-    $mail->setFrom('offorma@gmail.com', 'Warranty Store');
+    $mail->setFrom('warrantystoresafe@gmail.com', 'Warranty Store');
     $mail->addAddress("$email", "$username");
     $mail->Subject = 'Feedback Reply';
     $mail->Body = $details
@@ -44,12 +44,12 @@ $username=$_POST["username"];
                 $reply;
     if (!$mail->send()) {
         $_SESSION['verifymsg'] = "<div class='alert alert-success'>
-                             <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Failed to send reply !
+                             <span class='glyphicon glyphicon-info-sign'></span> Failed to send reply!
                             </div>";
         header("Location: viewfeedback.php");
     } else {
         $_SESSION['verifymsg'] = "<div class='alert alert-success'>
-                            <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Reply was successfully sent !
+                            <span class='glyphicon glyphicon-info-sign'></span> Reply was successfully sent!
                             </div>";
 
         header("Location: viewfeedback.php");
