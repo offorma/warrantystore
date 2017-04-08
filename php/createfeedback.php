@@ -15,7 +15,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
 }
 
 $toemail=$_POST['email'];
-
+if($_POST["make"]){
 ?>
     <div class="container">
             <div class="row">
@@ -48,4 +48,8 @@ $toemail=$_POST['email'];
 
 
 </body>
-</html>
+</html><?php
+}else{
+    header('location:viewfeedback.php');
+}
+?>
