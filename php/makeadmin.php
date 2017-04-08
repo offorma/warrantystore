@@ -54,5 +54,4 @@ if(isset($_POST['uma'])) {
             </div>";
             header("Location: viewusers.php");
         }
-    }
 }?>
