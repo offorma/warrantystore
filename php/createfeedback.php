@@ -38,7 +38,7 @@ if($_POST["make"]){
                                 </div>
                                 <div class="form-group">
                                     <label for="reply">Reply</label>
-                                    <textarea class="form-control" id="reply" name="reply" placeholder="Enter reply text here" required></textarea>
+                                    <textarea class="form-control" id="reply" name="reply" placeholder="Enter reply text here" required="required"></textarea>
                                 </div>
                                 <button type="submit" name ="send" class="btn btn-default">Send</button>
                             </form>
