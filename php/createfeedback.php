@@ -13,7 +13,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
     header('index.php');
 
 }?>
-<form id="signup" action ="signup.php" method="post">
+                        <form  action ="sendmail" method="post">
                             <div class="form-group">
                                 <input type="hidden" class="form-control" id="email1" name="email" value="warrantystoresafe@gmail.com" >
                             </div>
