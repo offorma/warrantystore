@@ -5,6 +5,7 @@
  * Date: 4/8/17
  * Time: 3:01 PM
  */
+
 require_once 'db.php';
 require 'PHPMailer/PHPMailerAutoload.php';
 ?>
@@ -22,7 +23,6 @@ if(isset($_POST["send"])){
         $details=$_POST["details"];
         $reply=$_POST["reply"];
 
-        echo"$details"."$reply"."$email";
         $username=$_POST["username"];
 
     $mail->IsSMTP();
@@ -43,6 +43,7 @@ if(isset($_POST["send"])){
     ."----------------------------------------------".
 
                 $reply;
+    $mail->send();
     if (!$mail->send()) {
         $_SESSION['verifymsg'] = "<div class='alert alert-success'>
                              <span class='glyphicon glyphicon-info-sign'></span> Failed to send reply!
