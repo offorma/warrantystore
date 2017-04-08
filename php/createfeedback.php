@@ -15,6 +15,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
 }
 
 $toemail=$_POST['email'];
+$details=$_POST['details'];
 if($_POST["make"]){
 ?>
     <div class="container">
@@ -33,7 +34,7 @@ if($_POST["make"]){
                                 </div>
                                 <div class="form-group">
                                     <label for="details">Feedback</label>
-                                    <textarea class="form-control" id="details" disabled="disabled" name="details" ><?php echo"{$_POST['details']};"?></textarea>
+                                    <textarea class="form-control" id="details" disabled="disabled" name="details" ><?php echo"$details";?></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="reply">Reply</label>
