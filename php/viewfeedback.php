@@ -54,10 +54,10 @@ else{
 
             echo"<td>
                                     <form action='createfeedback.php' method='post'>
-                                    <input type='hidden' name= 'uid' value='.$uid.'>
-                                    <input type='hidden' name= 'details' value='.$details.'>
-                                    <input type='hidden' name= 'feedbackid' value='.$feedbackid.'>
-                                    <input type='hidden' name= 'email' value='.$email.'>
+                                    <input type='hidden' name= 'uid' value='$uid'>
+                                    <input type='hidden' name= 'details' value='$details'>
+                                    <input type='hidden' name= 'feedbackid' value='$feedbackid'>
+                                    <input type='hidden' name= 'email' value='$email'>
                                     <button type='submit' name='make' value='make' class='btn btn-success'>Reply</button>
                                     </form></td></tr>";
 
