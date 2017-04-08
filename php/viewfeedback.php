@@ -26,7 +26,7 @@ else{
 					<thead>
 						<tr>
 							<th class=>Username</th>
-							<th class=>Feedback</th>
+							<th class=>Email</th>
 							<th class=>Feedback</th>
 							<th class=></th>
 						</tr>
