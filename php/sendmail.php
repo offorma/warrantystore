@@ -42,10 +42,10 @@ if(isset($_POST["send"])){
     $mail->Body =
         $details
 
-    ."/n----------------------------------------------/n".
-      "Hi ".$username.",/n".
+    ."\n----------------------------------------------\n".
+      "Hi ".$username.",\n".
         $reply
-    ."/n/nBest Regards
+    ."\r\nBest Regards
     WarrantySafe Team";
 
     if (!$mail->send()) {
