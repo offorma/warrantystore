@@ -68,7 +68,7 @@ session_start();
             if (isset($_SESSION['userSession'])) {
                 echo' <li><a href="gallery.php">Gallery</a></li>';
                 echo' <li><a href="landing.php">Upload</a></li>';
-                echo' <li><a href=".php" data-toggle="modal" data-target="#confirm-delete">Feedback</a></li>';
+                echo' <li><a href="#" data-toggle="modal" data-target="#confirm-delete">Feedback</a></li>';
 
             }?>
         </ul>
