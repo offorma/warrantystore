@@ -52,16 +52,16 @@ if(isset($_POST["send"])){
     WarrantySafe Team";
 
     if (!$mail->send()) {
-        $_SESSION['verifymsg'] = "<div class='alert alert-success'>
+        $_SESSION['verifmsg'] = "<div class='alert alert-success'>
                              <span class='glyphicon glyphicon-info-sign'></span> Failed to send reply!
                             </div>";
-        //header("Location: viewfeedback.php");
+        header("Location: viewfeedback.php");
     } else {
-        $_SESSION['verifymsg'] = "<div class='alert alert-success'>
+        $_SESSION['verifmsg'] = "<div class='alert alert-success'>
                             <span class='glyphicon glyphicon-info-sign'></span> Reply was successfully sent!
                             </div>";
 
-        //header("Location: viewfeedback.php");
+        header("Location: viewfeedback.php");
     }
     print_r($_POST);
 }

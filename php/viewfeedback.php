@@ -21,6 +21,10 @@ else{
         echo $_SESSION['verifymsg'];
         unset($_SESSION['verifymsg']);
     } ?>
+    <?php if (isset($_SESSION['verifmsg'])){
+        echo $_SESSION['verifmsg'];
+        unset($_SESSION['verifmsg']);
+    } ?>
     <?php echo"
         <table id ='listrooms' class='table table-condensed table-striped'>
 					<thead>
