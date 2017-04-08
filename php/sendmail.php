@@ -20,6 +20,8 @@ $mail = new PHPMailer;
 if(isset($_POST["send"])){
 $email=$_POST["toemail"];
 $details=$_POST["details"];
+$reply=$_POST["reply"];
+
 $username=$_POST["username"];
 
     $mail->IsSMTP();
@@ -35,7 +37,11 @@ $username=$_POST["username"];
     $mail->setFrom('offorma@gmail.com', 'Warranty Store');
     $mail->addAddress("$email", "$username");
     $mail->Subject = 'Feedback Reply';
-    $mail->Body = $details;
+    $mail->Body = $details
+
+    ."----------------------------------------------".
+
+                $reply;
     if (!$mail->send()) {
         $_SESSION['verifymsg'] = "<div class='alert alert-success'>
                              <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Failed to send reply !
