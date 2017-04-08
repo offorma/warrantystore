@@ -18,11 +18,12 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
 $mail = new PHPMailer;
 
 if(isset($_POST["send"])){
-$email=$_POST["toemail"];
-$details=$_POST["details"];
-$reply=$_POST["reply"];
-echo"$details"."$reply"."$email";
-$username=$_POST["username"];
+        $email=$_POST["toemail"];
+        $details=$_POST["details"];
+        $reply=$_POST["reply"];
+
+        echo"$details"."$reply"."$email";
+        $username=$_POST["username"];
 
     $mail->IsSMTP();
     $mail->Host = 'ssl://smtp.gmail.com';
