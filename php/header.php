@@ -80,7 +80,7 @@ session_start();
                     <a class='dropdown-toggle' data-toggle='dropdown' href=''#'>Admin<span class='caret'></span></a>
                     <ul class='dropdown-menu'>
                         <li><a href='viewusers.php'</a>View Users</li>
-                        <li><a href=''>View Feedback</a></li>
+                        <li><a href='viewfeedback.php'>View Feedback</a></li>
                     </ul>
                 </li>
                
