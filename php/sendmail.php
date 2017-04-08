@@ -35,7 +35,7 @@ $username=$_POST["username"];
     $mail->setFrom('offorma@gmail.com', 'Warranty Store');
     $mail->addAddress("$email", "$username");
     $mail->Subject = 'Feedback Reply';
-    $mail->Body = "$details";
+    $mail->Body = $details;
     if (!$mail->send()) {
         $_SESSION['verifymsg'] = "<div class='alert alert-success'>
                              <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Failed to send reply !
