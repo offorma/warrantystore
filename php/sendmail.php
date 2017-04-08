@@ -46,6 +46,8 @@ if(isset($_POST["send"])){
         $details
 
     ."\n----------------------------------------------\n".
+        "\t\t"."WarrantySafe Reply ".
+        "\n----------------------------------------------\n".
       "Hi ".$username.",\n".
         $reply
     ."\r\nBest Regards
