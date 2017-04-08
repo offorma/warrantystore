@@ -15,8 +15,8 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
 }?>
     <div class="container">
             <div class="row">
-                    <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 image-form"
-                            <form  action ="sendmail" method="post">
+                    <div class="col-lg-6 col-lg-offset-3 ">
+                            <form  action ="sendmail.php" method="post">
                                 <div class="form-group">
                                     <input type="hidden" class="form-control" id="email1" name="email" value="warrantystoresafe@gmail.com" >
                                 </div>
