@@ -30,7 +30,7 @@ echo "{$_POST['details']}";
                                 </div>
                                 <div class="form-group">
                                     <label for="details">Feedback</label>
-                                    <textarea class="form-control" id="details" disabled name="details" Value='<?php echo"{$_POST['details']}"?>'></textarea>
+                                    <textarea class="form-control" id="details" disabled name="details" value='<?php echo"{$_POST['details']}"?>'></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="reply">Reply</label>
