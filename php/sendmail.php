@@ -51,12 +51,12 @@ if(isset($_POST["send"])){
         $_SESSION['verifymsg'] = "<div class='alert alert-success'>
                              <span class='glyphicon glyphicon-info-sign'></span> Failed to send reply!
                             </div>";
-        header("Location: viewfeedback.php");
+        //header("Location: viewfeedback.php");
     } else {
         $_SESSION['verifymsg'] = "<div class='alert alert-success'>
                             <span class='glyphicon glyphicon-info-sign'></span> Reply was successfully sent!
                             </div>";
 
-        header("Location: viewfeedback.php");
+        //header("Location: viewfeedback.php");
     }
 }
