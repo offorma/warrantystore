@@ -12,7 +12,11 @@ require_once 'db.php';
 if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
     header('index.php');
 
-}?>
+}
+
+$toemail=$_POST['email'];
+$details=$_POST['details'];
+?>
     <div class="container">
             <div class="row">
                     <div class="col-lg-6 col-lg-offset-3 ">
@@ -22,11 +26,11 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
                                 </div>
                                 <div class="form-group">
                                     <label for="toemail">To</label>
-                                    <input type="email" class="form-control" id="toemail1" name="toemail" value='<?php echo"{$_POST['email']}"?>' >
+                                    <input type="email" class="form-control" id="toemail1" name="toemail" value='<?php echo"$toemail"?>' >
                                 </div>
                                 <div class="form-group">
                                     <label for="details">Feedback</label>
-                                    <textarea class="form-control" id="details" name="details" Value='<?php echo"{$_POST['details']}"?>'>
+                                    <textarea class="form-control" id="details" name="details" Value='<?php echo"$details"?>'>
                                 </div>
                                 <div class="form-group">
                                     <label for="reply">Reply</label>
