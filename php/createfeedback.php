@@ -30,7 +30,7 @@ if($_POST["make"]){
                                 </div>
                                 <div class="form-group">
                                     <label for="toemail">To</label>
-                                    <input class="form-control" id="toemail" disabled="disabled" name="toemail" value='.$toemail.' >
+                                    <input type="email" class="form-control" id="toemail" disabled="disabled" name="toemail" value='.$toemail.' >
                                 </div>
                                 <div class="form-group">
                                     <label for="details">Feedback</label>
