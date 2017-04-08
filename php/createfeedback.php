@@ -22,14 +22,14 @@ if($_POST["make"]){
                     <div class="col-lg-6 col-lg-offset-3 ">
                             <form  action ="sendmail.php" method="post">
                                 <div class="form-group">
-                                    <input type="hidden" class="form-control" id="email1" name="email" value="warrantystoresafe@gmail.com" >
+                                    <input type="hidden" class="form-control" name="email" value="warrantystoresafe@gmail.com" >
                                 </div>
                                 <div class="form-group">
                                     <input type="hidden" class="form-control"  name="username" value='<?php echo"{$_POST['username']}"?>' >
                                 </div>
                                 <div class="form-group">
                                     <label for="toemail">To</label>
-                                    <input type="email" class="form-control" id="toemail1" disabled name="toemail" value='<?php echo"$toemail"?>' >
+                                    <input type="email" class="form-control" id="toemail" disabled name="toemail" value='<?php echo"$toemail"?>' >
                                 </div>
                                 <div class="form-group">
                                     <label for="details">Feedback</label>
@@ -37,7 +37,7 @@ if($_POST["make"]){
                                 </div>
                                 <div class="form-group">
                                     <label for="reply">Reply</label>
-                                    <textarea class="form-control" id="reply" name="reply" placeholder="Enter reply text here"required></textarea>
+                                    <textarea class="form-control" id="reply" name="reply" placeholder="Enter reply text here" required></textarea>
                                 </div>
                                 <button type="submit" name ="send" class="btn btn-default">Send</button>
                             </form>
