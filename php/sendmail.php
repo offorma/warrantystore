@@ -20,8 +20,8 @@ $mail = new PHPMailer;
 
 if(isset($_POST["send"])){
 
-        $email=$_POST["toemail"];
-        $details=$_POST["details"];
+        $email=$_POST["tomail"];
+        $details=$_POST["todetails"];
         $reply=$_POST["reply"];
 
         $username=$_POST["username"];
