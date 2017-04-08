@@ -24,7 +24,6 @@ if(isset($_POST["send"])){
         $details=$_POST["details"];
         $reply=$_POST["reply"];
 
-        echo"$details"."$reply"."$email";
         $username=$_POST["username"];
 
     $mail->IsSMTP();
