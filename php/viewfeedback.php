@@ -41,11 +41,6 @@ else{
         echo'
     							<td class=>'.$row["username"].'</td>
 								<td class=>'.$row["email"].'</td>';
-            echo"<td>
-                        <form action='adverify.php' method='post'>
-                        <input type='hidden' name= 'id' value='{$row["userid"]}'>
-                        <button type='submit' name='activate' class='btn btn-success'>View</button>
-                        </form></td>";
 
             echo"<td>
                                     <form action='makeadmin.php' method='post'>
