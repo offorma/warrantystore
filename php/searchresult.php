@@ -127,7 +127,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
                 AND categoryid='$cat'");
 
                 if($query->num_rows > 0) {
-                    echo "<div class=' row' >";
+                    echo "<div class='row'>";
 
                     $count= 0;
                     $imageThumbURL ;

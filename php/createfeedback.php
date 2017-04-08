@@ -17,8 +17,8 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
 $toemail=$_POST['email'];
 $details=$_POST['details'];
 if($_POST["make"]){
-?>
-    <div class="container">
+
+   echo' <div class="container">
             <div class="row">
                     <div class="col-lg-6 col-lg-offset-3 ">
                             <form  action ="sendmail.php" method="post">
@@ -26,15 +26,15 @@ if($_POST["make"]){
                                     <input type="hidden" class="form-control" name="email" value="warrantystoresafe@gmail.com" >
                                 </div>
                                 <div class="form-group">
-                                    <input type="hidden" class="form-control"  name="username" value='<?php echo"{$_POST['username']}"?>' >
+                                    <input type="hidden" class="form-control"  name="username" value='.$_POST['username'].' >
                                 </div>
                                 <div class="form-group">
                                     <label for="toemail">To</label>
-                                    <input class="form-control" id="toemail" disabled="disabled" name="toemail" value='<?php echo"$toemail";?>' >
+                                    <input class="form-control" id="toemail" disabled="disabled" name="toemail" value='.$toemail.' >
                                 </div>
                                 <div class="form-group">
                                     <label for="details">Feedback</label>
-                                    <textarea class="form-control" id="details" disabled="disabled" name="details" ><?php echo"$details";?></textarea>
+                                    <textarea class="form-control" id="details" disabled="disabled" name="details" >'.$details.'</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="reply">Reply</label>
@@ -52,7 +52,7 @@ if($_POST["make"]){
 
 
 </body>
-</html><?php
+</html>';
 }else{
     header('location:viewfeedback.php');
 }
