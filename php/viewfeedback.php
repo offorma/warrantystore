@@ -10,7 +10,7 @@ require_once 'db.php';
 <?php include('header.php') ?>
 <?php
 if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
-    header('locationPrivilegep');
+    header('location:index.php');
 
 }
 else{
@@ -53,11 +53,11 @@ else{
                                  <td class=>'.$details.'</td>';
 
             echo"<td>
-                                    <form action='makeadmin.php' method='post'>
+                                    <form action='createfeedback.php' method='post'>
                                     <input type='hidden' name= 'uid' value='.$uid.'>
-                                    <input type='hidden' name= 'uid' value='.$details.'>
-                                    <input type='hidden' name= 'uid' value='.$feedbackid.'>
-                                    <input type='hidden' name= 'uid' value='.$email.'>
+                                    <input type='hidden' name= 'details' value='.$details.'>
+                                    <input type='hidden' name= 'feedbackid' value='.$feedbackid.'>
+                                    <input type='hidden' name= 'email' value='.$email.'>
                                     <button type='submit' name='make' value='make' class='btn btn-success'>Reply</button>
                                     </form></td></tr>";
 
