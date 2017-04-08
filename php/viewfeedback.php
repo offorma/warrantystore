@@ -27,17 +27,29 @@ else{
 						<tr>
 							<th class=>Username</th>
 							<th class=>Feedback</th>
+							<th class=>Feedback</th>
 							<th class=></th>
 						</tr>
 					</thead>";
 
+    $feed = $conn->query("SELECT feedbackid, details, userid FROM feedback");
+
+
 
     $query = $conn->query("SELECT username, userid, email, active, admin FROM user");
 
-    while ($row=$query->fetch_assoc()) {
+    while ($back=$feed->fetch_array()) {
+
+        $details =$back['details'];
+        $uid =$back['userid'];
+        $feedbackid =$back['feedbackid'];
+
+        $query = $conn->query("SELECT username, email FROM user Where userid ='$uid'");
+        $row=$query->fetch_array();
         echo'
     							<td class=>'.$row["username"].'</td>
-								<td class=>'.$row["email"].'</td>';
+								<td class=>'.$row["email"].'</td>
+                                 <td class=>'.$details.'</td>';
 
             echo"<td>
                                     <form action='makeadmin.php' method='post'>
