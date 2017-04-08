@@ -54,7 +54,7 @@ else{
                                  <td class=>'.$details.'</td>';
 
             echo"<td>
-                                    <form action='createfeedback.php' method='post'>
+                                    <form action='sendmail.php' method='post'>
                                     <input type='hidden' name= 'uid' value='$uid'>
                                     <input type='hidden' name= 'uid' value='$username'>
                                     <input type='hidden' name= 'details' value='$details'>
