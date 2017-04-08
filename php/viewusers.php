@@ -13,10 +13,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
     header('locationPrivilegep');
 
 }
-if(!isset($_SESSION['userSession'])&& $_SESSION['admin']==false){
-    header('location:index.php');
-
-}else{
+else{
     echo "<div class=' container'>
         <div class='row'>
             <div class='col-lg-8 col-lg-offset-2'>";?>
