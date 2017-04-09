@@ -75,7 +75,7 @@ $mail = new PHPMailer;
                     $mail->addAddress("$email", "$uname");
                     $mail->Subject = 'Signup | Verification';
                     $mail->Body = 'Thanks for signing up!
-                        Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+                        Your account has been created, you can login with the following credentials after you have activated your account by clicking on the url below.
  
                         ------------------------
                         Username: ' . $unam . '
