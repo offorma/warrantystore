@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'db.php';
 include('header.php');
 /**
@@ -9,9 +8,9 @@ include('header.php');
  * Time: 5:33 PM
  */
 
-if(!isset($_SESSION['userSession'])){
-    header('location:index.php');
-    
+if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
+    header('location:logout.php');
+
 }?>
         <body>
             <div class="container">
@@ -31,33 +30,45 @@ if(!isset($_SESSION['userSession'])){
                     ?>
                         <?php if (isset($_SESSION['fileextention'])){
                         echo $_SESSION['fileextention'];
+                            unset($_SESSION['fileextention']);
                     } ?>
                         <?php if (isset($_SESSION['imgsize'])){
                         echo $_SESSION['imgsize'];
+                            unset($_SESSION['imgsize']);
                     } ?>
                         <?php if (isset($_SESSION['fileerror'])){
                         echo $_SESSION['fileerror'];
+                            unset($_SESSION['fileerror']);
                     } ?>
                         <?php
                     if (isset($_SESSION['filesuccess'])){
                         echo $_SESSION['filesuccess'];
+                        unset($_SESSION['filesuccess']);
                     } ?>
                         <?php
                     if (isset($_SESSION['emptyInput'])){
                         echo $_SESSION['emptyInput'];
+                        unset($_SESSION['emptyInput']);
                     } ?>
                          <?php if (isset($_SESSION['msgstag'])){
                         echo $_SESSION['msgstag'];
+                            unset($_SESSION['msgstag']);
                     } ?>
                         <?php
                     if (isset($_SESSION['tagsqlmsg'])){
                         echo $_SESSION['tagsqlmsg'];
+                        unset($_SESSION['tagsqlmsg']);
                     } ?>
                         <?php
                     if (isset($_SESSION['tagreqmsg'])){
                         echo $_SESSION['tagreqmsg'];
+                        unset($_SESSION['tagreqmsg']);
                     } ?>
 
+                        <?php if (isset($_SESSION['feedmsg'])){
+                            echo $_SESSION['feedmsg'];
+                            unset($_SESSION['feedmsg']);
+                        } ?>
                     </div>
                 </div>
                 <div class="row">

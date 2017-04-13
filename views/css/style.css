@@ -53,3 +53,9 @@ p{
     transition: .3s;
     margin-bottom: 10px;
 }
+.gsearch{
+    margin-bottom: 5%;
+}
+.mod{
+    display: inline;
+}

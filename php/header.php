@@ -1,4 +1,6 @@
-
+<?php require_once 'db.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +9,45 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css">
+    <link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../views/css/style.css">
 </head>
 <body>
+<?php
+    $usersession = $_SESSION['userSession'];
+    $user = $conn->query("SELECT userid,username FROM user WHERE username='$usersession'");
+    $urow = $user->fetch_assoc();
+    $userid = $urow['userid'];
+    $username = $urow['username'];
+?>
+<div id="confirm-delete" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Feedback Form</h4>
+            </div>
+            <div class="modal-body">
+                <form method ="post" action="feedback.php">
+                    <div class="form-group">
+                        <label for="user">Username</label> <input
+                                type="text" class="form-control" name="user" value='<?php echo "$username";?>' disabled></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label> <textarea
+                                 class="form-control" name="message" required id=""></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times-circle-o "></i></button>
+                        <button type="submit" class="btn btn-success btn-ok" name="feed">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -29,16 +67,25 @@
             <?php
             if (isset($_SESSION['userSession'])) {
                 echo' <li><a href="gallery.php">Gallery</a></li>';
-                echo' <li><a href="landing.php">Upload</a></li>'; 
-            }?>
+                echo' <li><a href="landing.php">Upload</a></li>';
+                echo' <li><a href="#" data-toggle="modal" data-target="#confirm-delete">Feedback</a></li>';
 
+            }?>
         </ul>
-        <form class="navbar-form navbar-left">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+            <?php
+            $admin=$_SESSION['admin'];
+            if ($admin) {
+            echo"<ul class='nav navbar-nav'>
+                <li class='dropdown'>
+                    <a class='dropdown-toggle' data-toggle='dropdown' href=''#'>Admin<span class='caret'></span></a>
+                    <ul class='dropdown-menu'>
+                        <li><a href='viewusers.php'</a>View Users</li>
+                        <li><a href='viewfeedback.php'>View Feedback</a></li>
+                    </ul>
+                </li>
+               
+            </ul>";}?>
+
         <ul class="nav navbar-nav navbar-right">
             <?php
             if (isset($_SESSION['userSession'])) {
