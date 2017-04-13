@@ -48,7 +48,7 @@ if(isset($_POST["tag"])) {
         $receiptids[] = $urow;
         $count++;
     }
-    $imageThumbURL;
+
 
 
     for($i=0;$i<$count; $i++) {
@@ -60,7 +60,6 @@ if(isset($_POST["tag"])) {
         //echo $results;
        //$urow = $results->fetch_assoc();
         $image_url = $row['image_url'];
-        echo $image_url;
 
 
 
