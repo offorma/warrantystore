@@ -55,12 +55,12 @@ if(isset($_POST["tag"])) {
         $receiptid = $receiptids[$i]["receiptid"];
 //get image
         $get_img = "select image_url from receipt where  receiptid='$receiptid'";
-echo $get_img;
         $results = $conn->query ($get_img);
         $row = mysqli_fetch_assoc($results);
         //echo $results;
        //$urow = $results->fetch_assoc();
         $image_url = $row['image_url'];
+        echo $image_url;
 
 
 
