@@ -162,15 +162,11 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <?php $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && ($_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0');
-            if($pageWasRefreshed){
-                unset($_SESSION['searchmsg']);
 
-            }
-            ?>
             <?php if (isset($_SESSION['searchmsg'])){
                 echo $_SESSION['searchmsg'];
                 $_SESSION['searchmsg'] = '';
+                unset($_SESSION['searchmsg']);
 
 
             } ?>
