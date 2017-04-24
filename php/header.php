@@ -62,8 +62,6 @@ session_start();
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
             <li><a href="index.php">Home</a></li>
-            <li><a href="#">What is it?</a></li>
-            <li><a href="#">Who are we?</a></li>
             <?php
             if (isset($_SESSION['userSession'])) {
                 echo' <li><a href="gallery.php">Gallery</a></li>';
