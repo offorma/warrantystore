@@ -49,7 +49,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
                             </a>
                             <button class='btn btn-success' data-href='$imageThumbURL' data-toggle='modal' data-target='#ocr'> Recognize
                         <i class='fa'></i></button>
-                    <button class='btn btn-danger' data-href='$imageThumbURL' data-toggle='modal' data-target='#confirm-delete\'> Delete
+                    <button class='btn btn-danger' data-href='$imageThumbURL' data-toggle='modal' data-target='#confirm'> Delete
                     <i class='fa fa-trash-o'></i></button>
                         </div>";
 
@@ -93,7 +93,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
                             </a>
                             <button class='btn btn-success' data-href='$imageThumbURL' data-toggle='modal' data-target='#ocr'> Recognize
                         <i class='fa'></i></button>
-                    <button class='btn btn-danger' data-href='$imageThumbURL' data-toggle='modal' data-target='#confirm-delete\'> Delete
+                    <button class='btn btn-danger' data-href='$imageThumbURL' data-toggle='modal' data-target='#confirm'> Delete
                     <i class='fa fa-trash-o'></i></button>
                         </div>";
 
