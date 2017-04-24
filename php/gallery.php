@@ -121,7 +121,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
                 </a>
                     <button class="btn btn-success" data-href="<?php echo $imageThumbURL; ?>" data-toggle="modal" data-target="#ocr"> Recognize
                         <i class="fa"></i></button>
-                    <button class="btn btn-danger" data-href="<?php echo $imageThumbURL; ?>" data-toggle="modal" data-target="#confirm-delete"> Delete
+                    <button class="btn btn-danger" data-href="<?php echo $imageThumbURL; ?>" data-toggle="modal" data-target="#confirm-delet"> Delete
                     <i class="fa fa-trash-o"></i></button>
                 </div>
                 <?php
@@ -133,7 +133,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
         } ?>
     </div>
 </div>
-    <div id="confirm-delete" class="modal fade">
+    <div id="confirm-delet" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -186,7 +186,7 @@ if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
 
     $(document).ready(function(){
         $("[data-fancybox]").fancybox({ });
-        $('#confirm-delete').on('show.bs.modal', function(e) {
+        $('#confirm-delet').on('show.bs.modal', function(e) {
             var imageurl = $(e.relatedTarget).data('href');
             $('.hiden').attr('value', imageurl);
         });
