@@ -9,7 +9,7 @@ session_start();
 if(!isset($_SESSION['userSession'])||$_SESSION['active'] == false){
     header('location:logout.php');
 
-}?>
+}
 require_once 'db.php';
 if(!isset($_SESSION['userSession'])){
     header('location:index.php');
